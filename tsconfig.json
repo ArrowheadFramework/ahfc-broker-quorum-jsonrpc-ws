@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "target/@types",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "target",
+        "sourceMap": true,
+        "target": "es6",
+        "typeRoots": [
+            "node_modules/@types",
+            "source/@types"
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "target"
+    ]
+}

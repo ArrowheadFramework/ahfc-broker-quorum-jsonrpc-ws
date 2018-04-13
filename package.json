@@ -1,0 +1,26 @@
+{
+  "name": "ahfc-broker-websockets-ws",
+  "version": "0.1.0",
+  "description": "",
+  "engines": {
+    "node": ">=8.10"
+  },
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "npm run build",
+    "start": "node target/main/main.js",
+    "pretest": "npm run build",
+    "test": "node target/test/main.js"
+  },
+  "author": "Emanuel Palm <emanuel.palm@ltu.se>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": ">=8.10",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArrowheadFramework/ahfc-broker-websockets-ws.git"
+  }
+}
