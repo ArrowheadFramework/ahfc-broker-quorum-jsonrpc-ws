@@ -6,6 +6,21 @@ import * as model from "../model";
  */
 export interface BrokerAccounting {
     /**
+     * Gets `Party` representing the service using this interface.
+     *
+     * # The Broker is an Agent
+     *
+     * The AHF Broker acts on behalf of services using it. It may or may not
+     * represent its clients using multiple different identities. It is
+     * guaranteed, however, that the same service is always represented by the
+     * same identity, unless the identity is changed by a system administrator
+     * or some other authority.
+     *
+     * @returns Identity of calling service, in the form of a `Party` object.
+     */
+    getAgent(): model.Party;
+
+    /**
      * Queries for `Exchange`s.
      * 
      * @param query Specification of what `Exchange`s to acquire.
