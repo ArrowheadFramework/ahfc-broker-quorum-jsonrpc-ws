@@ -69,7 +69,7 @@ export function isParty(set: PartySet): set is Party {
  * Checks whether given `parties` represents all relevant `Party` instances.
  * 
  * @param set Checked `PartySet`.
- * @returns Whether given `PartySet` is of type `PartyALL`.
+ * @returns Whether given `PartySet` is of type `PartyAll`.
  */
 export function isPartyAll(set: PartySet): set is PartyAll {
     return set === undefined || set === null || typeof set === "object"
@@ -81,7 +81,7 @@ export function isPartyAll(set: PartySet): set is PartyAll {
  * instances.
  * 
  * @param parties Checked `PartySet`.
- * @returns Whether given `PartySet` is of type `PartyLIST`.
+ * @returns Whether given `PartySet` is of type `PartyArray`.
  */
 export function isPartyArray(set: PartySet): set is PartyArray {
     return (<PartyArray>set).parties !== undefined;

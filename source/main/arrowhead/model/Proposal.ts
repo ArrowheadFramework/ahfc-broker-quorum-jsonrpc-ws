@@ -45,7 +45,7 @@ export interface Proposal {
     give: model.TokenSet,
 
     /**
-     * A description of what parties received the proposal.
+     * A description of what parties receives the proposal.
      */
     receivers: model.PartySet,
 }
