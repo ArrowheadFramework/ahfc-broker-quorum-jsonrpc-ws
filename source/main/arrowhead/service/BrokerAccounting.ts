@@ -1,5 +1,4 @@
 import * as model from "../model";
-import { Ownership } from "../model";
 
 /**
  * A service able to account for all `Token`s, `Ownership`s and `Exchange`s
