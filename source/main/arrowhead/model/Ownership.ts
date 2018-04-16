@@ -1,7 +1,7 @@
 import * as model from ".";
 
 /**
- * Specifies what `Token`s are owned by a `Party`.
+ * Specifies that one particular `Token` is owned by a `Party`.
  */
 export interface Ownership {
     /**
@@ -10,7 +10,7 @@ export interface Ownership {
     party: model.Party;
 
     /**
-     * The `id` each `Token` owned by `party`. 
+     * The `id` of one `Token` owned by `party`.
      */
-    tokenIds: string[];
+    tokenId: string;
 }
