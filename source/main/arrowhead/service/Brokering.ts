@@ -1,8 +1,7 @@
 import * as model from "../model";
 
 /**
- * Represents an Arrowhead service useful for exchanging ownerhip `Token`s
- * through a three-step process.
+ * A service useful for exchanging `Token`s through a three-step process.
  *
  * # Sender's Interface
  *
@@ -44,14 +43,14 @@ import * as model from "../model";
  * The state machine facilitated by this interface allows two parties to
  * continually negotiate about an exchange through the use of _unqualified_
  * _proposals_. A `Proposal` is unqualified only if it cointains any source of
- * ambiguity, meaning it contains `OR` or `XOR` constructs, or at least one
- * `Token` without an `id`.
+ * ambiguity, meaning it contains `TokenIOR` or `TokenXOR` constructs, or at
+ * least one `Token` without an `id`.
  * 
- * An unqualified `Proposal` can only be rejected by its receiver, but can serve
- * as foundation for formulating a counter-`Proposal`. By starting with an
- * unqualified `Proposal`, two parties can exchange proposals with decreasing
- * ambiguity until a _qualified proposal_ has been formulated, which can be
- * accepted and confirmed if desired by the two parties.
+ * An unqualified `Proposal` cannot be accepted or rejected by its receiver, but
+ * can serve as foundation for formulating a counter-`Proposal`. By starting
+ * with an unqualified `Proposal`, two parties can exchange proposals with
+ * decreasing ambiguity until a _qualified proposal_ has been formulated, which
+ * can be accepted and confirmed if desired by the two parties.
  *
  * ## Exchanges and Confidence
  *
@@ -74,12 +73,11 @@ import * as model from "../model";
  * following things:
  *
  * 1. A single _deed_ is created that holds (1) the signatures of both parties
- *    performing the exchange, (2) the fully qualified token sets being
- *    exchanged, and (3) an explicit designation of which party is the owner of
- *    which of the two token sets after the exchange. It may also hold any other
- *    data of relevance to the trading platform, such as dates, etc.
- *    Essentially, enough data needs to be registered for an `Exchange` object
- *    to be constructed.
+ *    performing the exchange, (2) the qualified token sets being exchanged, and
+ *    (3) an explicit designation of which party is the owner of which of the
+ *    two token sets after the exchange. It may also hold any other data of
+ *    relevance to the trading platform, such as dates, etc. Essentially, enough
+ *    data needs to be registered for an `Exchange` object to be constructed.
  * 2. Each token in the sets included in the created deed must either (a) not
  *    exist before the exchange, or (b) be owned by the party transferring its
  *    ownership. A `Token` is considered previously non-existing only if there
@@ -89,7 +87,7 @@ export interface Brokering {
     /**
      * Proposes a `Token` exchange.
      *
-     * __Global Proposals__. If the `proposal` `receivers` is `PartyALL`, then
+     * __Global Proposals__. If `proposal.receivers` is of type `PartyAll`, then
      * the method returns `null`.
      *
      * @param proposal Exchange `Proposal`.
@@ -98,18 +96,22 @@ export interface Brokering {
     propose(proposal: model.Proposal): [Buffer, string][];
 
     /**
-     * Accepts a _fully qualified proposal_, making it pending ratification.
+     * Accepts a _qualified_ `Proposal`, making it pending ratification.
      *
-     * If the accepted `Proposal` isn't fully qualified, or if `deadline` has
-     * already expired, the call fails and an `Error` is thrown.
+     * __Errors__. If the accepted `Proposal` isn't qualified, or if `deadline`
+     * has already expired, the call fails and an `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
-     * @param deadline Moment when this acceptance seizes to be valid.
+     * @param deadline Moment when this acceptance ceases to be valid.
      */
     accept(id: string, deadline: Date);
 
     /**
-     * Rejects `Proposal`.
+     * Rejects a _qualified_ `Proposal`.
+     *
+     * __Errors__. If the rejected `Proposal` isn't qualified, the call fails
+     * and an `Error` is thrown. As unqualified `Proposal`s cannot be
+     * meaningfully accepted, there is no reason to reject them either.
      *
      * @param id Exchange `Proposal` identifier.
      */
@@ -118,8 +120,9 @@ export interface Brokering {
     /**
      * Confirms an accepted `Proposal`, making it binding.
      *
-     * If the confirmed `Proposal` isn't fully qualified by you and accepted by
-     * a counter-party, the call fails and an `Error` is thrown.
+     * __Errors__. If the confirmed `Proposal` was not originally proposed by
+     * you, is qualified, and was accepted by another party, the call fails and
+     * an `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
      */
@@ -128,8 +131,9 @@ export interface Brokering {
     /**
      * Aborts accepted exchange `Proposal`.
      * 
-     * If the aborted `Proposal` isn't fully qualified by you and accepted by a
-     * counter-party, the call fails and an `Error` is thrown.
+     * __Errors__. If the aborted `Proposal` was not originally proposed by you,
+     * is qualified, and was accepted by another party, the call fails and an
+     * `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
      */

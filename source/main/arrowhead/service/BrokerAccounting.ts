@@ -1,8 +1,8 @@
 import * as model from "../model";
 
 /**
- * Represents an Arrowhead service accounting for previously completed
- * ownership exchanges, exchanging parties, and exchanged tokens.
+ * A service able to account for all `Token`s, `Ownership`s and `Exchange`s
+ * known by some Broker system.
  */
 export interface BrokerAccounting {
     /**

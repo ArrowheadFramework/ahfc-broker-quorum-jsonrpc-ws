@@ -109,10 +109,10 @@ export function isTokenXOR(set: TokenSet): set is TokenXOR {
 }
 
 /**
- * Checks whether given `tokens` represent a fully qualified set of `Tokens`s.
+ * Checks whether given `tokens` represent a qualified set of `Tokens`s.
  *
  * @param set Checked `TokenSet`.
- * @returns Whether given `TokenSet` is fully qualified.
+ * @returns Whether given `TokenSet` is qualified.
  */
 export function isTokenSetQualified(set: TokenSet): boolean {
     if (isToken(set)) {
@@ -125,10 +125,10 @@ export function isTokenSetQualified(set: TokenSet): boolean {
 }
 
 /**
- * Checks whether given `token` is fully qualified.
+ * Checks whether given `token` is qualified.
  *
  * @param token Checked `Token`.
- * @returns Whether given `Token` is fully qualified.
+ * @returns Whether given `Token` is qualified.
  */
 export function isTokenQualified(token: Token): boolean {
     return typeof token.id === "string";

@@ -1,8 +1,7 @@
 import * as model from "../model";
 
 /**
- * Represents an Arrowhead service useful for exchanging ownerhip `Token`s
- * through a three-step process.
+ * A service useful for exchanging `Token`s through a three-step process.
  *
  * # Receiver's Interface
  *

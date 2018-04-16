@@ -22,7 +22,7 @@ export interface Exchange {
     /**
      * The party that sent and confirmed the `proposal`.
      *
-     * This party gave up the tokens in `proposal.give`, and received ownerthip
+     * This party gave up the tokens in `proposal.give`, and received ownership
      * of the tokens in `proposal.want`.
      */
     sender: model.Party;

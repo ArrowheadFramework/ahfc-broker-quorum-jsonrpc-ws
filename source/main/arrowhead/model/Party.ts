@@ -14,7 +14,7 @@ export interface Party {
 export interface PartyALL {}
 
 /**
- * A set of included `PartySet`s.
+ * An array of `Party` objects.
  */
 export interface PartyLIST {
     /**
