@@ -51,6 +51,23 @@ export interface Proposal {
 }
 
 /**
+ * Checks whether given `Proposal` can be accepted.
+ *
+ * @param proposal Checked `Proposal`.
+ * @param fudgeInMs Permitted error when comparing current time to `Proposal`
+ *                  `baseline` and `deadline`. Defaults to 300 ms.
+ * @returns Whether `proposal` is acceptable.
+ */
+export function isProposalAcceptable(proposal: Proposal, fudgeInMs = 300) {
+    if (!isProposalQualified(proposal)) {
+        return false;
+    }
+    const now = Date.now();
+    return now >= (proposal.baseline.getTime() - fudgeInMs)
+        && now < (proposal.deadline.getTime() + fudgeInMs);
+}
+
+/**
  * Checks whether given `Proposal` is qualified.
  *
  * @param proposal Checked `Proposal`.
