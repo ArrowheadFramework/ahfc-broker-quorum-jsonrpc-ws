@@ -11,22 +11,19 @@ export interface Party {
 /**
  * The set of all parties.
  */
-export interface PartyALL {}
+export interface PartyAll {}
 
 /**
  * An array of `Party` objects.
  */
-export interface PartyLIST {
-    /**
-     * Included `PartySet`s.
-     */
+export interface PartyArray {
     parties: Party[];
 }
 
 /**
  * Represents any kind of `Party` object set.
  */
-export type PartySet = Party | PartyALL | PartyLIST;
+export type PartySet = Party | PartyAll | PartyArray;
 
 /**
  * Checks whether given `parties` represents a single `Party`.
@@ -44,18 +41,18 @@ export function isParty(set: PartySet): set is Party {
  * @param set Checked `PartySet`.
  * @returns Whether given `PartySet` is of type `PartyALL`.
  */
-export function isPartyALL(set: PartySet): set is PartyALL {
+export function isPartyAll(set: PartySet): set is PartyAll {
     return set === null || set === undefined ||
         set["key"] === undefined && set["parties"] === undefined;
 }
 
 /**
- * Checks whether given `parties` represents a list of included `Party`
+ * Checks whether given `parties` represents an array of included `Party`
  * instances.
  * 
  * @param parties Checked `PartySet`.
  * @returns Whether given `PartySet` is of type `PartyLIST`.
  */
-export function isPartyLIST(set: PartySet): set is PartyLIST {
-    return (<PartyLIST>set).parties !== undefined;
+export function isPartyArray(set: PartySet): set is PartyArray {
+    return (<PartyArray>set).parties !== undefined;
 }
