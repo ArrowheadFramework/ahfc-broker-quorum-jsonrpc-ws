@@ -1,18 +1,11 @@
 import * as model from "../model";
+import { Ownership } from "../model";
 
 /**
  * A service able to account for all `Token`s, `Ownership`s and `Exchange`s
  * known by some Broker system.
  */
 export interface BrokerAccounting {
-    /**
-     * Requests `Exchange` by its unique `id`.
-     * 
-     * @param exchangeId `id` of reqested `Exchange`.
-     * @returns `Exchange`, or `null` if not found.
-     */
-    getExchange(exchangeId: string): model.Exchange | null;
-
     /**
      * Queries for `Exchange`s.
      * 
@@ -22,20 +15,12 @@ export interface BrokerAccounting {
     getExchanges(query: ExchangeQuery): ExchangeResultSet;
 
     /**
-     * Attemts to resolve what `Party` owns the identified `Token`.
+     * Queries for `Ownership`s.
      * 
-     * @param tokenId `id` of some `Token`.
-     * @returns `Party`, or `null` if no matching `Token` exists.
+     * @param query Specification of what `Ownership`s to acquire.
+     * @returns Any `Ownership` objects matching given `OwnershipQuery`.
      */
-    getOwnerOf(tokenId: string): model.Party | null;
-
-    /**
-     * Requests `Token` by uts unique `id`.
-     * 
-     * @param tokenId `id` of requested `Token`.
-     * @returns `Token`, or `null` if not found.
-     */
-    getToken(tokenId: string): model.Token | null;
+    getOwnerships(query: OwnershipQuery): OwnershipResultSet;
 
     /**
      * Queries for `Token`s.
@@ -43,13 +28,52 @@ export interface BrokerAccounting {
      * @param query Specification of what `Token`s to acquire.
      * @returns Any `Token`s matching the given `TokenQuery`.
      */
-    getTokens(filter: TokenQuery): TokenResultSet;
+    getTokens(query: TokenQuery): TokenResultSet;
+}
+
+/**
+ * A specification of a desired set of `items`.
+ */
+export interface Query {
+    /**
+     * Number of items to exclude from the result, from the beginning of the
+     * full sequence of items matching any other query criteria.
+     */
+    offset?: number;
+
+    /**
+     * The maximum number of items to include in the result.
+     */
+    limit?: number;
+}
+
+/**
+ * A set of `items` matching some original `Query`.
+ *
+ * # Truncation
+ *
+ * The receiver of a `Query` is allowed to truncate the set of `items` in its
+ * result. If, however, this is done, it must be reflected in the `limit` field
+ * in the `ResultSet`.
+ *
+ * # Offset out of Bounds
+ *
+ * If the `offset` of a `Query` exceeds the number of matching items, the
+ * `Query` receiver __must__ reduce the `offset` in the `ResultSet` to the
+ * number of matching items, set `limit` to `0` and provide `items` as an empty
+ * `Array`.
+ */
+export interface ResultSet<T> extends Query {
+    /**
+     * An `Array` of the items matching an original query. May be empty.
+     */
+    items: T[];
 }
 
 /**
  * A specification of what of any existing `Exchange` objects are desired.
  */
-export interface ExchangeQuery {
+export interface ExchangeQuery extends Query {
     /**
      * Limits requested `Exchange` objects to those with an `id` matching any
      * one of those given.
@@ -75,51 +99,40 @@ export interface ExchangeQuery {
      * Requests only `Exchanges`s where the identified `Party` is _receiver_.
      */
     receiver?: model.Party;
-
-    /**
-     * Number of `Exchange`s to exclude from the result, from the beginning of
-     * the full sequence of items matching all other query criteria.
-     */
-    offset?: number;
-
-    /**
-     * The maximum number of `Exchange`s to include in the result.
-     */
-    limit?: number;
 }
 
 /**
- * A specification of what `Exchange` objects were retrieved in response to some
- * `ExchangeQuery`.
- *
- * An `ExchangeResultSet` may contain less `Exchange`s than requested in its
- * corresponding `ExchangeQuery`, if deemed necessary for performance-related
- * reasons.
+ * `Exchange`s retrieved in response to some `ExchangeQuery`.
  */
-export interface ExchangeResultSet extends ExchangeQuery {
+export interface ExchangeResultSet
+    extends ExchangeQuery, ResultSet<model.Exchange> { }
+
+/**
+ * A specification of what `Ownership`s are desired.
+ */
+export interface OwnershipQuery extends Query {
     /**
-     * If the original `ExchangeQuery` specified an offset larger than the
-     * number of available `Exchange`s, this field is changed to that number.
+     * Limits requested owners to those owning a `Token` with an `id` matching
+     * any one of those given.
      */
-    offset: number;
+    ids?: string[];
 
     /**
-     * If the original `ExchangeQuery` specified a limit larger than the number
-     * of `Exchange`s actually provided, the field is set to the actual number
-     * of objects.
+     * Limits requested owners to those included in the given array.
      */
-    limit: number;
-
-    /**
-     * An `Array` of the `Exchange`s matching the original query. May be empty.
-     */
-    exchanges: model.Exchange[];
+    parties?: model.Party[];
 }
+
+/**
+ * `Ownership`s retrieved in response to some `OwnershipQuery`.
+ */
+export interface OwnershipResultSet
+    extends OwnershipQuery, ResultSet<model.Ownership> { }
 
 /**
  * A specification of what of any existing `Token` objects are desired.
  */
-export interface TokenQuery {
+export interface TokenQuery extends Query {
     /**
      * Limits requested `Token` objects to those with an `id` matching any
      * one of those given.
@@ -136,43 +149,10 @@ export interface TokenQuery {
      * Requests only `Token`s owned by identified `Party`.
      */
     owner?: model.Party;
-
-    /**
-     * Number of `Tokens`s to exclude from the result, from the beginning of
-     * the full sequence of items matching all other query criteria.
-     */
-    offset?: number;
-
-    /**
-     * The maximum number of `Token`s to include in the result.
-     */
-    limit?: number;
 }
 
 /**
- * A specification of what `Token` objects were retrieved in response to some
- * `TokenQuery`.
- *
- * An `TokenResultSet` may contain less `Token`s than requested in its
- * corresponding `TokenQuery`, if deemed necessary for performance-related
- * reasons.
+ * `Token`s retrieved in response to some `TokenQuery`.
  */
-export interface TokenResultSet extends TokenQuery {
-    /**
-     * If the original `TokenQuery` specified an offset larger than the number
-     * of available `Token`s, this field is changed to that number.
-     */
-    offset: number;
-
-    /**
-     * If the original `TokenQuery` specified a limit larger than the number of
-     * `Token`s actually provided, the field is set to the actual number of
-     * objects.
-     */
-    limit: number;
-
-    /**
-     * An `Array` of the `Token`s matching the original query. May be empty.
-     */
-    tokens: model.Token[];
-}
+export interface TokenResultSet
+    extends TokenQuery, ResultSet<model.Token> { }
