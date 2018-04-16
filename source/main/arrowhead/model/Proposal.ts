@@ -25,6 +25,11 @@ export interface Proposal {
     public: boolean,
 
     /**
+     * The moment in time when this `Proposal` becomes acceptable.
+     */
+    baseline: Date,
+
+    /**
      * The moment in time when this `Proposal` ceases to be acceptable.
      */
     deadline: Date,
