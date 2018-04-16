@@ -11,7 +11,7 @@ export interface Party {
 /**
  * The set of all parties.
  */
-export interface PartyAll {}
+export type PartyAll = undefined | null | {};
 
 /**
  * An array of `Party` objects.
@@ -42,8 +42,8 @@ export function isParty(set: PartySet): set is Party {
  * @returns Whether given `PartySet` is of type `PartyALL`.
  */
 export function isPartyAll(set: PartySet): set is PartyAll {
-    return set === null || set === undefined ||
-        set["key"] === undefined && set["parties"] === undefined;
+    return set === undefined || set === null || typeof set === "object"
+        && set["key"] === undefined && set["parties"] === undefined;
 }
 
 /**
@@ -55,4 +55,11 @@ export function isPartyAll(set: PartySet): set is PartyAll {
  */
 export function isPartyArray(set: PartySet): set is PartyArray {
     return (<PartyArray>set).parties !== undefined;
+}
+
+/**
+ * @returns An object representing all relevant `Party` instances.
+ */
+export function partyAll(): PartyAll {
+    return undefined;
 }
