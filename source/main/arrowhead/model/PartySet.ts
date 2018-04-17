@@ -13,9 +13,7 @@ export type PartyAll = null;
 /**
  * An array of `Party` objects.
  */
-export interface PartyArray {
-    parties: Party[];
-}
+export type PartyArray = Party[];
 
 /**
  * Checks whether given `parties` represents a single `Party`.
@@ -24,7 +22,7 @@ export interface PartyArray {
  * @returns Whether given `PartySet` is of type `Party`.
  */
 export function isParty(set: PartySet): set is Party {
-    return set !== null && (<Party>set).key !== undefined;
+    return typeof set === "object" && (<Party>set).key !== undefined;
 }
 
 /**
@@ -44,7 +42,7 @@ export function isPartyAll(set: PartySet): set is PartyAll {
  * @returns Whether given `PartySet` is of type `PartyArray`.
  */
 export function isPartyArray(set: PartySet): set is PartyArray {
-    return set !== null && (<PartyArray>set).parties !== undefined;
+    return Array.isArray(set);
 }
 
 /**
