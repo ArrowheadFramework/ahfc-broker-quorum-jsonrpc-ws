@@ -18,127 +18,36 @@ import * as model from "../model";
  */
 export interface BrokerTagging {
     /**
-     * Queries for `ExchangeTag`s.
+     * Queries for `Exchange` `Tag`s.
      *
-     * @param query Specification of what `ExchangeTag`s to acquire.
-     * @returns Promise of any `ExchangeTag`s matching the given
-     *          `ExchangeTagQuery`.
+     * @param query Specification of what `Exchange` `Tag`s to acquire.
+     * @returns Promise of any `Exchange` `Tag`s matching the given `TagQuery`.
      */
-    getExchangeTags(query: ExchangeTagQuery): Promise<ExchangeTagResultSet>;
+    getExchangeTags(query: model.TagQuery): Promise<model.TagResultSet>;
 
     /**
-     * Queries for `TokenTag`s.
+     * Queries for `Token` `Tag`s.
      *
      * @param query Specification of what `TokenTag`s to acquire.
-     * @returns Promise of any `TokenTag`s matching the given `TokenTagQuery`.
+     * @returns Promise of any `Token` `Tag`s matching the given `TagQuery`.
      */
-    getTokenTags(query: TokenTagQuery): Promise<TokenTagResultSet>;
+    getTokenTags(query: model.TagQuery): Promise<model.TagResultSet>;
 
     /**
-     * Saves given `ExchangeTag`, potentially replacing any previous such with
-     * the same `tag.id` or `tag.kind` and `tag.exchangeId`.
+     * Saves given `Exchange` `Tag`, potentially replacing any previous such
+     * with the same `tag.id` or `tag.kind` and `tag.subjectId`.
      *
-     * @param tag `ExchangeTag` to insert.
-     * @returns Promise of inserted `ExchangeTag` identifier.
+     * @param tag `Exchange` `Tag` to insert.
+     * @returns Promise of inserted `Exchange` `Tag` identifier.
      */
-    putExchangeTag(tag: ExchangeTag): Promise<string>;
+    putExchangeTag(tag: model.Tag): Promise<string>;
 
     /**
-     * Saves given `TokenTag`, potentially replacing any previous such with
-     * the same `tag.id` or `tag.kind` and `tag.tokenId`.
+     * Saves given `Token` `Tag`, potentially replacing any previous such with
+     * the same `tag.id` or `tag.kind` and `tag.subjectId`.
      *
-     * @param tag `TokenTag` to insert.
-     * @returns Promise of inserted `TokenTag` identifier.
+     * @param tag `Token` `Tag` to insert.
+     * @returns Promise of inserted `Token` `Tag` identifier.
      */
-    putTokenTag(tag: TokenTag): Promise<string>;
+    putTokenTag(tag: model.Tag): Promise<string>;
 }
-
-/**
- * Arbitrary `data` associated with some other _Broker_ data entry.
- */
-export interface Tag {
-    /**
-     * String uniquely identifying this `Tag`.
-     */
-    id?: string;
-
-    /**
-     * Arbitrary string classifying the contents of this `Tag`.
-     */
-    kind: string;
-
-    /**
-     * Arbitrary metadata associated with a tagged data entry.
-     */
-    data: any;
-}
-
-/**
- * Specifies properties of a desired set of `Tag`s.
- */
-export interface TagQuery extends model.Query {
-    /**
-     * Limits requested `Tag`s to those with an `id` matching any one of those
-     * given.
-     */
-    ids?: string[];
-
-    /**
-     * Limites requested `Tag`s to those with a `kind` matching the one given.
-     */
-    kind?: any;
-}
-
-/**
- * Arbitrary `data` associated with some `Exchange`.
- */
-export interface ExchangeTag extends Tag {
-    /**
-     * String identifying the tagged `Exchange`.
-     */
-    exchangeId: string;
-}
-
-/**
- * Specifies properties of a desired set of `ExchangeTag`s.
- */
-export interface ExchangeTagQuery extends TagQuery {
-    /**
-     * Limits requested `ExchangeTag`s to those with an `exchangeId` matching
-     * any one of those given.
-     */
-    exchangeIds?: string[];
-}
-
-/**
- * `ExchangeTag`s retrieved in response to some `ExchangeTagQuery`.
- */
-export interface ExchangeTagResultSet
-    extends ExchangeTagQuery, model.ResultSet<ExchangeTag> { }
-
-/**
- * Arbitrary `data` associated with some `Token`.
- */
-export interface TokenTag extends Tag {
-    /**
-     * String identifying the tagged `Token`.
-     */
-    tokenId: string;
-}
-
-/**
- * Specifies properties of a desired set of `TokenTag`s.
- */
-export interface TokenTagQuery extends TagQuery {
-    /**
-     * Limits requested `TokenTag`s to those with an `tokenId` matching any one
-     * of those given.
-     */
-    tokenIds?: string[];
-}
-
-/**
- * `TokenTag`s retrieved in response to some `TokenTagQuery`.
- */
-export interface TokenTagResultSet
-    extends TokenTagQuery, model.ResultSet<TokenTag> { }

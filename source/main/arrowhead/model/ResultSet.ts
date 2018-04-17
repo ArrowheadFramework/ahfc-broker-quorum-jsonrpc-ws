@@ -1,4 +1,4 @@
-import * as model from ".";
+import { Query } from ".";
 
 /**
  * A set of `items` matching some original `Query`.
@@ -16,9 +16,9 @@ import * as model from ".";
  * number of matching items, set `limit` to `0` and provide `items` as an empty
  * `Array`.
  */
-export interface ResultSet<T> extends model.Query {
+export interface ResultSet<Item> extends Query {
     /**
      * An `Array` of the items matching an original query. May be empty.
      */
-    items: T[];
+    items: Item[];
 }

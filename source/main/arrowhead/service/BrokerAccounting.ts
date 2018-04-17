@@ -27,7 +27,7 @@ export interface BrokerAccounting {
      * @param query Specification of what `Exchange`s to acquire.
      * @returns Promise of any `Exchange`s matching the given `ExchangeQuery`.
      */
-    getExchanges(query: ExchangeQuery): Promise<ExchangeResultSet>;
+    getExchanges(query: model.ExchangeQuery): Promise<model.ExchangeResultSet>;
 
     /**
      * Queries for `Ownership`s.
@@ -36,7 +36,7 @@ export interface BrokerAccounting {
      * @returns Promise of any `Ownership` objects matching given
      *          `OwnershipQuery`.
      */
-    getOwnerships(query: OwnershipQuery): Promise<OwnershipResultSet>;
+    getOwnerships(query: model.OwnershipQuery): Promise<model.OwnershipResultSet>;
 
     /**
      * Queries for `Token`s.
@@ -44,92 +44,5 @@ export interface BrokerAccounting {
      * @param query Specification of what `Token`s to acquire.
      * @returns Promise of any `Token`s matching the given `TokenQuery`.
      */
-    getTokens(query: TokenQuery): Promise<TokenResultSet>;
+    getTokens(query: model.TokenQuery): Promise<model.TokenResultSet>;
 }
-
-/**
- * Specifies properties of a desired set of `Exchange` objects.
- */
-export interface ExchangeQuery extends model.Query {
-    /**
-     * Limits requested `Exchange` objects to those with an `id` matching any
-     * one of those given.
-     */
-    ids?: string[];
-
-    /**
-     * Requests only `Exchange`s completed prior to the given `Date`.
-     */
-    before?: Date;
-
-    /**
-     * Requests only `Exchange`s completed after the given `Date`.
-     */
-    after?: Date;
-
-    /**
-     * Requests only `Exchange`s where the identified `Party` is _sender_.
-     */
-    sender?: model.Party;
-
-    /**
-     * Requests only `Exchanges`s where the identified `Party` is _receiver_.
-     */
-    receiver?: model.Party;
-}
-
-/**
- * `Exchange`s retrieved in response to some `ExchangeQuery`.
- */
-export interface ExchangeResultSet
-    extends ExchangeQuery, model.ResultSet<model.Exchange> { }
-
-/**
- * Specifies properties of a desired set of `Ownership`s.
- */
-export interface OwnershipQuery extends model.Query {
-    /**
-     * Limits requested owners to those owning a `Token` with an `id` matching
-     * any one of those given.
-     */
-    ids?: string[];
-
-    /**
-     * Limits requested owners to those included in the given array.
-     */
-    parties?: model.Party[];
-}
-
-/**
- * `Ownership`s retrieved in response to some `OwnershipQuery`.
- */
-export interface OwnershipResultSet
-    extends OwnershipQuery, model.ResultSet<model.Ownership> { }
-
-/**
- * Specifies properties of a desired set of `Token`s.
- */
-export interface TokenQuery extends model.Query {
-    /**
-     * Limits requested `Token` objects to those with an `id` matching any
-     * one of those given.
-     */
-    ids?: string[];
-
-    /**
-     * Limits requested `Token` objects to those with a `kind` matching any
-     * one of those given.
-     */
-    kinds?: string[];
-
-    /**
-     * Requests only `Token`s owned by identified `Party`.
-     */
-    owner?: model.Party;
-}
-
-/**
- * `Token`s retrieved in response to some `TokenQuery`.
- */
-export interface TokenResultSet
-    extends TokenQuery, model.ResultSet<model.Token> { }

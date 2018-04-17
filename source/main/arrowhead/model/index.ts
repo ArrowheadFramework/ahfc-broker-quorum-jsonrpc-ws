@@ -6,11 +6,20 @@
  */
 
 export * from "./Exchange";
+export * from "./ExchangeQuery";
+export * from "./ExchangeResultSet";
 export * from "./Ownership";
+export * from "./OwnershipQuery";
+export * from "./OwnershipResultSet";
 export * from "./Party";
 export * from "./PartySet";
 export * from "./Proposal";
 export * from "./Query";
 export * from "./ResultSet";
+export * from "./Tag";
+export * from "./TagQuery";
+export * from "./TagResultSet";
 export * from "./Token";
+export * from "./TokenQuery";
+export * from "./TokenResultSet";
 export * from "./TokenSet";
