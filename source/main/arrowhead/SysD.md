@@ -1,6 +1,11 @@
-# The Arrowhead Broker – Black Box Design
+# The Arrowhead Broker (Quorum/JSON-RPC/WS) – Black Box Design
 
 ## Abstract
+
+This document provides a description of the _Quorum/JSON-RPC 2.0/Web Service_
+variant of the Arrowhead Broker System, an Arrowhead Core Automation Support
+System. The system acts as a mediator, allowing consuming services to access and
+use the _Quorum_ distributed ledger as a _trading platform_.
 
 ## 1. Overview
 
