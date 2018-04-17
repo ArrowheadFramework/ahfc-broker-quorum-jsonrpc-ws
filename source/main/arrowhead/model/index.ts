@@ -9,4 +9,6 @@ export * from "./Exchange";
 export * from "./Ownership";
 export * from "./Party";
 export * from "./Proposal";
+export * from "./Query";
+export * from "./ResultSet";
 export * from "./Token";
