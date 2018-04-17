@@ -48,7 +48,7 @@ export interface BrokerAccounting {
 }
 
 /**
- * A specification of what of any existing `Exchange` objects are desired.
+ * Specifies properties of a desired set of `Exchange` objects.
  */
 export interface ExchangeQuery extends model.Query {
     /**
@@ -85,7 +85,7 @@ export interface ExchangeResultSet
     extends ExchangeQuery, model.ResultSet<model.Exchange> { }
 
 /**
- * A specification of what `Ownership`s are desired.
+ * Specifies properties of a desired set of `Ownership`s.
  */
 export interface OwnershipQuery extends model.Query {
     /**
@@ -107,7 +107,7 @@ export interface OwnershipResultSet
     extends OwnershipQuery, model.ResultSet<model.Ownership> { }
 
 /**
- * A specification of what of any existing `Token` objects are desired.
+ * Specifies properties of a desired set of `Token`s.
  */
 export interface TokenQuery extends model.Query {
     /**
