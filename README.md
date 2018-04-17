@@ -1,8 +1,8 @@
-# Arrowhead Broker System (JSON-RPC/WS)
+# Arrowhead Broker System (Quorum/JSON-RPC/WS)
 
-[Arrowhead][arrow] Broker System, useful for allowing IoT devices to use a
-_trading platform_, such as a blockchain system, for buying and selling special
-_tokens_.
+[Arrowhead][arrow] Broker System, useful for allowing IoT devices to use the
+[Quorum][quoru] distributed ledger as a _trading platform_, allowing them to buy
+and sell _tokens_ representing arbitrary value.
 
 This implementation communicates exclusively using [JSON-RPC 2.0][jsrpc]
 messages sent via [WebSocket][webso]s.
@@ -35,6 +35,7 @@ consider reading source code at the designated locations.
 [arrow]: http://www.arrowhead.eu/
 [arwik]: https://forge.soa4d.org/plugins/mediawiki/wiki/arrowhead-f/index.php/Main_Page
 [clwik]: https://forge.soa4d.org/plugins/mediawiki/wiki/arrowhead-f/index.php/Local_automation_clouds
+[quoru]: https://www.jpmorgan.com/global/Quorum
 [jsrpc]: http://www.jsonrpc.org/specification
 [webso]: https://tools.ietf.org/html/rfc6455
 
