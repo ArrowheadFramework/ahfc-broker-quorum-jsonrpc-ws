@@ -23,8 +23,8 @@ import * as model from "../model";
  * | CONCENTIO| Proposal accepted and awaiting __A__ confirmation or abortion. |
  * | RECIPIO  | Proposal confirmed, and thereby put in force.                  |
  *
- * The state machine is illustrated below. The star (*) states represent the
- * premature termination of an exchange.
+ * The state machine is illustrated below. The stars (*) represent terminating
+ * states.
  *
  * ```diagram
  *  propose!
@@ -33,9 +33,9 @@ import * as model from "../model";
  * +--------+ accepted? +-----------+ confirmed? +---------+
  * | OFFERO |---------->| CONCENTIO |----------->| RECIPIO |
  * +--------+           +-----------+            +---------+
- *     | rejected?           | aborted?
- *     V                     V
- *     *                     *
+ *     | rejected?           | aborted?               |
+ *     V                     V                        V
+ *     *                     *                        *
  * ```
  * 
  * ## Exchange Negotiation
