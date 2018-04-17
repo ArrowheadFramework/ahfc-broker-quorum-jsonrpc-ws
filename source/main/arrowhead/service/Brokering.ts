@@ -91,9 +91,10 @@ export interface Brokering {
      * the method returns `null`.
      *
      * @param proposal Exchange `Proposal`.
-     * @returns Receiving party public keys and `Proposal` identifiers, if any.
+     * @returns Promise of receiving party public keys and `Proposal`
+     *          identifiers, if any.
      */
-    propose(proposal: model.Proposal): [Buffer, string][];
+    propose(proposal: model.Proposal): Promise<[Buffer, string][]>;
 
     /**
      * Accepts a _qualified_ `Proposal`, making it pending ratification.
@@ -103,8 +104,9 @@ export interface Brokering {
      * 
      * @param id Exchange `Proposal` identifier.
      * @param deadline Moment when this acceptance ceases to be valid.
+     * @returns Promise of operation completion.
      */
-    accept(id: string, deadline: Date);
+    accept(id: string, deadline: Date): Promise<void>;
 
     /**
      * Rejects a _qualified_ `Proposal`.
@@ -114,8 +116,9 @@ export interface Brokering {
      * meaningfully accepted, there is no reason to reject them either.
      *
      * @param id Exchange `Proposal` identifier.
+     * @returns Promise of operation completion.
      */
-    reject(id: string);
+    reject(id: string): Promise<void>;
 
     /**
      * Confirms an accepted `Proposal`, making it binding.
@@ -125,8 +128,9 @@ export interface Brokering {
      * an `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
+     * @returns Promise of operation completion.
      */
-    confirm(id: string);
+    confirm(id: string): Promise<void>;
 
     /**
      * Aborts accepted exchange `Proposal`.
@@ -136,6 +140,7 @@ export interface Brokering {
      * `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
+     * @returns Promise of operation completion.
      */
-    abort(id: string);
+    abort(id: string): Promise<void>;
 }

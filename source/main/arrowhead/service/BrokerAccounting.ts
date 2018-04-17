@@ -16,33 +16,35 @@ export interface BrokerAccounting {
      * same identity, unless the identity is changed by a system administrator
      * or some other authority.
      *
-     * @returns Identity of calling service, in the form of a `Party` object.
+     * @returns Promise of identity of calling service, in the form of a `Party`
+     *          object.
      */
-    getAgent(): model.Party;
+    getAgent(): Promise<model.Party>;
 
     /**
      * Queries for `Exchange`s.
      * 
      * @param query Specification of what `Exchange`s to acquire.
-     * @returns Any `Exchange`s matching the given `ExchangeQuery`.
+     * @returns Promise of any `Exchange`s matching the given `ExchangeQuery`.
      */
-    getExchanges(query: ExchangeQuery): ExchangeResultSet;
+    getExchanges(query: ExchangeQuery): Promise<ExchangeResultSet>;
 
     /**
      * Queries for `Ownership`s.
      * 
      * @param query Specification of what `Ownership`s to acquire.
-     * @returns Any `Ownership` objects matching given `OwnershipQuery`.
+     * @returns Promise of any `Ownership` objects matching given
+     *          `OwnershipQuery`.
      */
-    getOwnerships(query: OwnershipQuery): OwnershipResultSet;
+    getOwnerships(query: OwnershipQuery): Promise<OwnershipResultSet>;
 
     /**
      * Queries for `Token`s.
      * 
      * @param query Specification of what `Token`s to acquire.
-     * @returns Any `Token`s matching the given `TokenQuery`.
+     * @returns Promise of any `Token`s matching the given `TokenQuery`.
      */
-    getTokens(query: TokenQuery): TokenResultSet;
+    getTokens(query: TokenQuery): Promise<TokenResultSet>;
 }
 
 /**
