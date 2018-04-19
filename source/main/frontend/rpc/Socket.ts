@@ -26,7 +26,7 @@ export interface Socket extends events.EventEmitter {
      * @param event `"error"`
      * @param listener Callback executed when a `"error"` event is raised.
      */
-    addListener(event: "error", listener: (event: SocketErrorEvent) => void);
+    addListener(event: "error", listener: (error: Error) => void);
 
     /**
      * Deregisters `"call"` event listener.
@@ -53,7 +53,7 @@ export interface Socket extends events.EventEmitter {
      * @param listener Callback to no longer be executed when `"error"` events
      *                 are raised.
      */
-    removeListener(event: "error", listener: (event: SocketErrorEvent) => void);
+    removeListener(event: "error", listener: (error: Error) => void);
 
     /**
      * Submits invocation request of named procedure with provided arguments.
@@ -83,27 +83,24 @@ export interface SocketCallEvent {
     /**
      * Name of called procedure.
      */
-    name: string;
+    method: string;
 
     /**
      * Procedure arguments.
      */
-    arguments: any[];
-}
-
-/**
- * Event raised in the event of a `Socket` error.
- */
-export interface SocketErrorEvent {
-    /**
-     * Arbitrary error.
-     */
-    error: any;
+    params: any[];
 
     /**
-     * Arbitrary message.
+     * Function for responding to incoming procedure call.
+     *
+     * If the received message is a notification, this property is not
+     * provided. If provided, however, exactly one of its functions should be
+     * called exactly once.
      */
-    message: any;
+    respond?: {
+        return?: (result: any) => Promise<void>;
+        throw?: (error: Error) => Promise<void>;
+    }
 }
 
 /**
@@ -113,7 +110,7 @@ export interface SocketCloseEvent {
     /**
      * Whether or not `Socket` was closed without errors.
      */
-    clean: boolean;
+    wasClean: boolean;
 
     /**
      * Text indicating reason for `Socket` being closed.
