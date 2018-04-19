@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>WebSockets/JSON-RPC 2.0 Tester</title>
+        <script language="javascript" type="text/javascript">
+            let wsUri = "ws://localhost:8080";
+        
+            let output;
+        
+            let id = 0;
+
+            let buttonDisconnect;
+            let textMethod;
+            let textParams;
+            let buttonSend;
+        
+            function init() {
+                output = document.getElementById("output");
+                buttonDisconnect = document.getElementById("disconnect");
+                textMethod = document.getElementById("method");
+                textParams = document.getElementById("params");
+                buttonSend = document.getElementById("send");
+                testWebSocket();
+        
+                buttonDisconnect.addEventListener("click", () => {
+                    websocket.close();
+                });
+
+                buttonSend.addEventListener("click", () => {
+                    try {
+                        const method = textMethod.value.trim();
+                        const params = JSON.parse(textParams.value.trim());
+                        doSend(JSON.stringify({
+                            jsonrpc: "2.0",
+                            method,
+                            params,
+                            id: id++
+                        }));
+                    } catch (error) {
+                        onError(error);
+                    }
+                });
+            }
+        
+            function testWebSocket() {
+                websocket = new WebSocket(wsUri);
+                websocket.onopen = function (evt) { onOpen(evt) };
+                websocket.onclose = function (evt) { onClose(evt) };
+                websocket.onmessage = function (evt) { onMessage(evt) };
+                websocket.onerror = function (evt) { onError(evt) };
+            }
+        
+            function onOpen(evt) {
+                writeToScreen("CONNECTED");
+            }
+        
+            function onClose(evt) {
+                writeToScreen("DISCONNECTED");
+            }
+        
+            function onMessage(evt) {
+                writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
+            }
+        
+            function onError(evt) {
+                writeToScreen('<span style="color: red;">ERROR:</span> ' + (evt.data || evt));
+            }
+        
+            function doSend(message) {
+                writeToScreen("SENT: " + message);
+                websocket.send(message);
+            }
+        
+            function writeToScreen(message) {
+                var p = document.createElement("p");
+                p.style.wordWrap = "break-word";
+                p.innerHTML = message;
+                output.appendChild(p);
+            }
+        
+            window.addEventListener("load", init, false);
+        </script>
+    </head>
+    <body>
+        <h1>WebSockets/JSON-RPC 2.0 Tester</h1>
+    
+        <input type="button" id="disconnect" value="Disconnect" />
+
+        <h2>Send message:</h2>
+
+        <p>To send a message, enter the name of a method and a JSON array of arguments into the below two fields and press "Send".</p>
+        
+        <input type="text" id="method" value="getAgent" /> <input type="text" id="params" value="[]" />
+        <input type="button" id="send" value="Send" />
+        
+        <h2>Log:</h2>
+        
+        <div id="output"></div>
+    </body>
+</html>
