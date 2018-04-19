@@ -3,7 +3,7 @@
 This folder contains documentation and TypeScript interfaces related to the
 formal Arrowhead specification of the Broker system.
 
-Significantly, this folder contains the following files and folders:
+## Significant Files and Folders
 
 | File Entry             | Description                                         |
 |:-----------------------|:----------------------------------------------------|

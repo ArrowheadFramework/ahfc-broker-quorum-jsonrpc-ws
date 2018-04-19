@@ -18,18 +18,18 @@ automation systems. It is centered around the idea of so-called
 intranets with real-time operation support. For more information, please refer
 to the [Arrowhead Wiki][arwik].
 
-## Significant Source Code Directories
+## Significant Files and Folders
 
 The following is a list of particularily significant source code folders. Any
 readers wishing to get a grasp of what this respository contains are adviced to
 consider reading source code at the designated locations.
 
-| Directory                           | Description                            |
+| File Entry                          | Description                            |
 |:------------------------------------|:---------------------------------------|
 |[`/source/demo`][dem]                | Various demo programs and utilities.   |
 |[`/source/main`][mai]                | Main source code folder.               |
 |[`/source/main/arrowhead`][sar]      | Arrowhead integration.                 |
-|[`/source/main/arrowhead/spec`][sas] | AHF Broker specification.              |
+|[`/source/main/arrowhead/spec`][sas] | Arrowhead Broker specification.        |
 |[`/source/main/quorum`][quo]         | Quorum integration.                    |
 |[`/source/test`][tst]                | Test source code folder.               |
 

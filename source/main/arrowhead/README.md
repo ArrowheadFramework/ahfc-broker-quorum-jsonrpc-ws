@@ -1,6 +1,6 @@
 # Arrowhead Integration and Specification
 
-Significantly, this folder contains the following files and folders:
+## Significant Files and Folders
 
 | File Entry             | Description                                         |
 |:-----------------------|:----------------------------------------------------|

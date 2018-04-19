@@ -3,9 +3,9 @@
 This folder contains TypeScript data interfaces and utility functions together
 specifying an Arrowhead _Abstract Information Model_.
 
-Significantly, this folder contains the below listed files.
+## Significant Files and Folders
 
-## Core Data Types
+### Core Data Types
 
 These are the primary primitives required to interact with an AHF Broker via its
 service interfaces:
@@ -14,7 +14,7 @@ service interfaces:
 |:----------------------|:-----------------------------------------------------------------|
 | [`Exchange.ts`][exc]  | Describes a previously accepted and confirmed [`Proposal`][pro]. |
 | [`Ownership.ts`][own] | States that one [`Party`][par] owns a particular [`Token`][tok]. |
-| [`Party.ts`][par]     | Identifies one party that can own and exchange [`Token`s][tok].  |
+| [`Party.ts`][par]     | Identifies one party that can own and exchange [`Token`][tok]s.  |
 | [`Proposal.ts`][pro]  | Describes a [`Token`][tok] exchange proposal.                    |
 | [`Tag.ts`][tag]       | Associated metadata with an [`Exchange`][exc] or [`Token`][tok]. |
 | [`Token.ts`][tok]     | Uniquely identifies an ownable entity.                           |
@@ -26,19 +26,19 @@ service interfaces:
 [tag]: Tag.ts
 [tok]: Token.ts
 
-## Set Types
+### Set Types
 
 These types allow special sets of core data types to be described.
 
 | File Entry           | Description                                           |
 |:---------------------|:------------------------------------------------------|
 | [`PartySet.ts`][pas] | Identifies one, some or all available parties.        |
-| [`TokenSet.ts`][tos] | Identifies a logical set of [`Token`s][tok].          |
+| [`TokenSet.ts`][tos] | Identifies a logical set of [`Token`][tok]s.          |
 
 [pas]: PartySet.ts
 [tos]: TokenSet.ts
 
-## Query Types
+### Query Types
 
 These types are used solely for specifying which core type instances are desired
 of all such known by some AHF Broker.
@@ -46,18 +46,18 @@ of all such known by some AHF Broker.
 | File Entry                 | Description                                     |
 |:---------------------------|:------------------------------------------------|
 | [`Query.ts`][que]          | Data interface inherited by query types.        |
-| [`ExchangeQuery.ts`][exq]  | A request for [`Exchange`s][exc].               |
-| [`OwnershipQuery.ts`][owq] | A request for [`Ownership`s][own].              |
-| [`TagQuery.ts`][Taq]       | A request for [`Tag`s][tag].                    |
-| [`TokenQuery.ts`][Toq]     | A request for [`Token`s][tok].                  |
+| [`ExchangeQuery.ts`][exq]  | A request for [`Exchange`][exc]s.               |
+| [`OwnershipQuery.ts`][owq] | A request for [`Ownership`][own]s.              |
+| [`TagQuery.ts`][taq]       | A request for [`Tag`][tag]s.                    |
+| [`TokenQuery.ts`][toq]     | A request for [`Token`][tok]s.                  |
 
 [que]: Query.ts
 [exq]: ExchangeQuery.ts
 [owq]: OwnershipQuery.ts
-[Taq]: TagQuery.ts
-[Toq]: TokenQuery.ts
+[taq]: TagQuery.ts
+[toq]: TokenQuery.ts
 
-## Query Result Types
+### Query Result Types
 
 These primitives are used to hold the results of requests for core type
 instances.
@@ -65,10 +65,10 @@ instances.
 | File Entry                     | Description                                     |
 |:-------------------------------|:------------------------------------------------|
 | [`ResultSet.ts`][res]          | Data interface inherited by query result types. |
-| [`ExchangeResultSet.ts`][exr]  | A query result of [`Exchange`s][exc].           |
-| [`OwnershipResultSet.ts`][owr] | A query result of [`Ownership`s][own].          |
-| [`TagResultSet.ts`][tar]       | A query result of [`Tag`s][tag].                |
-| [`TokenResultSet.ts`][tor]     | A query result of [`Token`s][tok].              |
+| [`ExchangeResultSet.ts`][exr]  | A query result of [`Exchange`][exc]s.           |
+| [`OwnershipResultSet.ts`][owr] | A query result of [`Ownership`][own]s.          |
+| [`TagResultSet.ts`][tar]       | A query result of [`Tag`][tag]s.                |
+| [`TokenResultSet.ts`][tor]     | A query result of [`Token`][tok]s.              |
 
 [res]: ResultSet.ts
 [exr]: ExchangeResultSet.ts

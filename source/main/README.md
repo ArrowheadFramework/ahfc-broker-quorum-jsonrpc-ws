@@ -2,9 +2,9 @@
 
 This folder contains all primary application source code.
 
-Significantly, this folder contains the following directories:
+## Significant Files and Folders
 
-| Directory              | Description                                         |
+| File Entry             | Description                                         |
 |:-----------------------|:----------------------------------------------------|
 |[`arrowhead/`][arr]     | AHF Broker specification and API implementation.    |
 |[`quorum/`][quo]        | Quorum integration code.                            |
