@@ -6,6 +6,11 @@ import { Socket } from ".";
  */
 export interface Server extends events.EventEmitter {
     /**
+     * Unique server instance identifier.
+     */
+    readonly id: string;
+
+    /**
      * Registers `"connection"` event listener.
      *
      * @param event `"connection"`

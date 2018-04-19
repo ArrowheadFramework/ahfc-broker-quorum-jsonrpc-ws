@@ -5,6 +5,11 @@ import * as events from 'events';
  */
 export interface Socket extends events.EventEmitter {
     /**
+     * Unique socket instance identifier.
+     */
+    readonly id: string;
+
+    /**
      * Registers `"call"` event listener.
      *
      * @param event `"call"`
