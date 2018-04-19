@@ -7,10 +7,10 @@ formal Arrowhead service interface specification of the Broker system.
 
 | File Entry                   | Description                                                            |
 |:-----------------------------|:-----------------------------------------------------------------------|
-| [`BrokerAccounting.ts`][bac] | Accounts for [`Exchange`s][ex], [`Ownership`s][ow] and [`Token`s][to]. |
-| [`Brokering.ts`][bro]        | Allows distribution, ratifiation and rejection of [`Proposal`s][pr].   |
-| [`BrokeringPush.ts`][brp]    | Allows reception of [`Proposal`s][pr] and related messages.            |
-| [`BrokerTagging.ts`][bta]    | Facilitates [`Tag`ging][ta] of [`Exchange`s][ex] and [`Token`s][to].   |
+| [`BrokerAccounting.ts`][bac] | Accounts for [`Exchange`][ex]s, [`Ownership`][ow]s and [`Token`][to]s. |
+| [`Brokering.ts`][bro]        | Allows distribution, ratifiation and rejection of [`Proposal`][pr]s.   |
+| [`BrokeringPush.ts`][brp]    | Allows reception of [`Proposal`][pr]s and related messages.            |
+| [`BrokerTagging.ts`][bta]    | Facilitates [`Tag`][ta]ging of [`Exchange`][ex]s and [`Token`][to]s.   |
 
 [bac]: BrokerAccounting.ts
 [bro]: Brokering.ts
