@@ -13,7 +13,7 @@ class Application {
      * @param argv Application command line arguments.
      */
     constructor(argv = process.argv.slice(2)) {
-        console.log("+ Argv: " + argv);
+        console.log("+ argv: " + argv);
         this.server = new frontend.ArrowheadServer();
     }
 
@@ -21,18 +21,18 @@ class Application {
      * Application start routine.
      */
     public async start() {
-        console.log("+ Starting ...");
+        console.log("+ starting ...");
         await this.server.start();
-        console.log("+ Started.")
+        console.log("+ started")
     }
 
     /**
      * Application exit routine.
      */
     public async exit() {
-        console.log("+ Exiting ...");
+        console.log("+ exiting ...");
         await this.server.stop();
-        console.log("+ Bye!");
+        console.log("+ bye!");
     }
 }
 
@@ -50,7 +50,7 @@ class Application {
         application.exit()
             .then(() => process.exit(0))
             .catch(error => {
-                console.log("+ Orderly exit failed.");
+                console.log("+ orderly exit failed");
                 console.log("Reason:");
                 console.log(error);
                 process.exit(2);
@@ -63,7 +63,7 @@ class Application {
 
     application.start()
         .catch(error => {
-            console.log("+ System start failed.");
+            console.log("+ system start failed");
             console.log("Reason:");
             console.log(error);
             process.exit(1);
