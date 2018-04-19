@@ -3,7 +3,7 @@ import * as rpc from "./rpc";
 /**
  * Serves the Arrowhead _Broker_ services.
  */
-export class ArrowheadServer {
+export class Broker {
     private readonly server: rpc.Server;
 
     /**

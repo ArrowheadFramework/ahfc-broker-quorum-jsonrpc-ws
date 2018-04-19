@@ -1,11 +1,11 @@
-import * as frontend from "./frontend";
+import { Broker } from "./arrowhead";
 import * as process from "process";
 
 /**
  * Application main class.
  */
 class Application {
-    private readonly server: frontend.ArrowheadServer;
+    private readonly broker: Broker;
 
     /**
      * Creates new application.
@@ -14,7 +14,7 @@ class Application {
      */
     constructor(argv = process.argv.slice(2)) {
         console.log("+ argv: " + argv);
-        this.server = new frontend.ArrowheadServer();
+        this.broker = new Broker();
     }
 
     /**
@@ -22,7 +22,7 @@ class Application {
      */
     public async start() {
         console.log("+ starting ...");
-        await this.server.start();
+        await this.broker.start();
         console.log("+ started")
     }
 
@@ -31,7 +31,7 @@ class Application {
      */
     public async exit() {
         console.log("+ exiting ...");
-        await this.server.stop();
+        await this.broker.stop();
         console.log("+ bye!");
     }
 }

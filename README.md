@@ -24,13 +24,14 @@ The following is a list of particularily significant source code folders. Any
 readers wishing to get a grasp of what this respository contains are adviced to
 consider reading source code at the designated locations.
 
-| Directory                             | Description                          |
-|:--------------------------------------|:-------------------------------------|
-|[`/source/main`][mai]                  | Main source code folder.             |
-|[`/source/main/arrowhead`][arr]        | AHF Broker specification.            |
-|[`/source/main/arrowhead/model`][amo]  | AHF Broker data model.               |
-|[`/source/main/arrowhead/service`][asr]| AHF Broker service interfaces.       |
-|[`/source/test`][tst]                  | Test source code folder.             |
+| Directory                           | Description                            |
+|:------------------------------------|:---------------------------------------|
+|[`/source/demo`][dem]                | Various demo programs and utilities.   |
+|[`/source/main`][mai]                | Main source code folder.               |
+|[`/source/main/arrowhead`][sar]      | Arrowhead integration.                 |
+|[`/source/main/arrowhead/spec`][sas] | AHF Broker specification.              |
+|[`/source/main/quorum`][quo]         | Quorum integration.                    |
+|[`/source/test`][tst]                | Test source code folder.               |
 
 [arrow]: http://www.arrowhead.eu/
 [arwik]: https://forge.soa4d.org/plugins/mediawiki/wiki/arrowhead-f/index.php/Main_Page
@@ -39,9 +40,10 @@ consider reading source code at the designated locations.
 [jsrpc]: http://www.jsonrpc.org/specification
 [webso]: https://tools.ietf.org/html/rfc6455
 
+[dem]: source/demo
 [mai]: source/main
-[arr]: source/main/arrowhead
-[amo]: source/main/arrowhead/model
-[asr]: source/main/arrowhead/service
+[sar]: source/main/arrowhead
+[sas]: source/main/arrowhead/spec
+[quo]: source/main/quorum
 [tst]: source/test
 
