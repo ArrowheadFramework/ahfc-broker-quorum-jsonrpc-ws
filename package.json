@@ -18,7 +18,10 @@
     "@types/node": ">=8.10",
     "typescript": "^2.7.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/ws": "^4.0.2",
+    "ws": "^5.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ArrowheadFramework/ahfc-broker-websockets-ws.git"
