@@ -12,18 +12,23 @@ export class ArrowheadServer {
     public constructor() {
         this.server = new rpc.json.Server();
         this.server.addListener("connection", (socket: rpc.Socket) => {
+            console.log(`+ <${socket.id}> connected`);
             socket.addListener("call", (event: rpc.SocketCallEvent) => {
-
+                console.log("CALL");
+                console.log(event);
+                if (event.respond) {
+                    event.respond.return(event.params);
+                }
             });
             socket.addListener("close", (event: rpc.SocketCloseEvent) => {
-
+                console.log(`+ <${socket.id}> disconnected`);
             });
             socket.addListener("error", (error: Error) => {
-
+                console.log(`- <${socket.id}> error:\n${error}`);
             });
         });
         this.server.addListener("error", (error: Error) => {
-
+            console.log(`- <${this.server.id}> error:\n${error}`);
         });
     }
 
@@ -36,6 +41,7 @@ export class ArrowheadServer {
      */
     public async start() {
         await this.server.listen(8080); // TODO: Make configurable.
+        console.log(`+ <${this.server.id}> started`);
     }
 
     /**
@@ -48,5 +54,6 @@ export class ArrowheadServer {
      */
     public async stop() {
         await this.server.close();
+        console.log(`+ <${this.server.id}> stopped`);
     }
 }
