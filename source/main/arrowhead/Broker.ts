@@ -7,29 +7,23 @@ import * as util from "../util";
 export class Broker {
     private readonly logger: util.Logger;
     private readonly server: rpc.Server;
+    private readonly router: rpc.Router;
 
     /**
      * Creates new server instance, without starting it.
      */
     public constructor(logger: util.Logger) {
         this.logger = logger;
+
         this.server = new rpc.json.Server();
-        this.server.addListener("connection", (socket: rpc.Socket) => {
-            this.logger.info(`<${socket.id}> connected.`);
-            socket.addListener("call", (event: rpc.SocketCallEvent) => {
-                if (event.respond) {
-                    event.respond.return(event.params);
-                }
-            });
-            socket.addListener("close", (event: rpc.SocketCloseEvent) => {
-                this.logger.info(`<${socket.id}> disconnected.`);
-            });
-            socket.addListener("error", (error: Error) => {
-                this.logger.warn(`<${socket.id}> error:\n%o`, error);
-            });
-        });
         this.server.addListener("error", (error: Error) => {
             this.logger.warn(`<${this.server.id}> error:\n%o`, error);
+        });
+
+        this.router = new rpc.Router(this.logger);
+        this.router.addServer(this.server);
+        this.router.addMethod("echo", async (message) => {
+            return message;
         });
     }
 
