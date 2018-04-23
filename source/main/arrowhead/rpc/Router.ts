@@ -1,4 +1,5 @@
 import { Server, Socket, SocketCallEvent, SocketCloseEvent } from ".";
+import { CodeError, codes } from "./CodeError";
 import * as util from "../../util";
 
 /**
@@ -51,28 +52,45 @@ export class Router {
                         `<${socket.id}> called unkown method "${event.method}".`
                     );
                     if (event.respond) {
-                        event.respond.throw(new ReferenceError(
+                        event.respond.throw(new CodeError(
+                            codes.METHOD_NOT_FOUND,
                             `Method "${event.method}" does not exist.`
                         ));
                     }
                     return;
                 }
-                try {
-                    const promise = method(...event.params);
-                    if (event.respond) {
-                        promise.then(
-                            result => event.respond.return(result),
-                            error => event.respond.throw(error)
+                const handleError = (error) => {
+                    // Only route CodeError instances to method caller.
+                    if (!(error instanceof CodeError)) {
+                        this.logger.error(
+                            `<${socket.id}> "${event.method}" internal error:\n%o`,
+                            error
+                        );
+                        error = new CodeError(
+                            codes.INTERNAL_ERROR,
+                            "Internal server error."
                         );
                     }
-                } catch (error) {
-                    this.logger.error(
-                        `<${socket.id}> call "${event.method}" exception:\n%o`,
-                        error
-                    );
                     if (event.respond) {
                         event.respond.throw(error);
+                        return;
                     }
+                    this.logger.error(
+                        `<${socket.id}> notify "${event.method}" error:\n%o`,
+                        error
+                    );
+                };
+                try {
+                    method(...event.params).then(
+                        result => {
+                            if (event.respond) {
+                                event.respond.return(result);
+                            }
+                        },
+                        handleError
+                    );
+                } catch (error) {
+                    handleError(error);
                 }
             });
             socket.addListener("close", (event: SocketCloseEvent) => {

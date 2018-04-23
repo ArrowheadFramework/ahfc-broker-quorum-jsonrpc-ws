@@ -1,3 +1,4 @@
+import { CodeError } from ".";
 import * as events from 'events';
 
 /**
@@ -104,7 +105,7 @@ export interface SocketCallEvent {
      */
     respond?: {
         return: (result: any) => Promise<void>;
-        throw: (error: Error) => Promise<void>;
+        throw: (error: CodeError) => Promise<void>;
     }
 }
 

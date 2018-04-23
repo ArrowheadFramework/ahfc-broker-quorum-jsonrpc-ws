@@ -119,16 +119,9 @@ export class Socket extends events.EventEmitter implements rpc.Socket {
                     respond = {
                         return: (result: any) => this.return(id, result),
                         throw: (error: Error) => {
-                            let code;
-                            if (error instanceof ReferenceError) {
-                                code = CODE_METHOD_NOT_FOUND;
-                            } else if (error instanceof TypeError) {
-                                code = CODE_INVALID_PARAMS;
-                            } else if (error instanceof rpc.CodeError) {
-                                code = error.code;
-                            } else {
-                                code = CODE_INTERNAL_ERROR;
-                            }
+                            const code = error instanceof rpc.CodeError
+                                ? error.code
+                                : CODE_INTERNAL_ERROR;
                             this.throw(id, code, error.message)
                         },
                     };
@@ -154,11 +147,11 @@ export class Socket extends events.EventEmitter implements rpc.Socket {
                     call.resolve(message.result);
 
                 } else if (message.error) {
-                    let msg = `[${message.error.code}] ${message.error.message}`;
+                    let msg = message.error.message;
                     if (message.error.data) {
                         msg += "\n" + message.error.data;
                     }
-                    call.reject(new Error(msg));
+                    call.reject(new rpc.CodeError(message.error.code, msg));
                 }
             }
 
