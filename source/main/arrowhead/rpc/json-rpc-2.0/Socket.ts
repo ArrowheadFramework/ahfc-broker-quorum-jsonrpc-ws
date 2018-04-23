@@ -2,7 +2,6 @@ import * as events from "events";
 import * as rpc from "../";
 import * as WebSocket from "ws";
 
-const CODE_USER_ERROR = 0;
 const CODE_PARSE_ERROR = -32700;
 const CODE_INVALID_REQUEST = -32600;
 const CODE_METHOD_NOT_FOUND = -32601;
@@ -125,8 +124,10 @@ export class Socket extends events.EventEmitter implements rpc.Socket {
                                 code = CODE_METHOD_NOT_FOUND;
                             } else if (error instanceof TypeError) {
                                 code = CODE_INVALID_PARAMS;
+                            } else if (error instanceof rpc.CodeError) {
+                                code = error.code;
                             } else {
-                                code = CODE_USER_ERROR;
+                                code = CODE_INTERNAL_ERROR;
                             }
                             this.throw(id, code, error.message)
                         },
@@ -173,7 +174,11 @@ export class Socket extends events.EventEmitter implements rpc.Socket {
     private return(id: number, result: any): Promise<void> {
         return new Promise((resolve, reject) => {
             this.socket.send(
-                JSON.stringify({ jsonrpc: "2.0", result, id } as Response),
+                JSON.stringify({
+                    jsonrpc: "2.0",
+                    result: result !== undefined ? result : null,
+                    id
+                } as Response),
                 (error?: Error) => {
                     if (error) {
                         reject(error);
