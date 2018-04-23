@@ -1,11 +1,13 @@
-import { Broker } from "./arrowhead";
+import * as arrowhead from "./arrowhead";
 import * as process from "process";
+import * as util from "./util";
 
 /**
  * Application main class.
  */
 class Application {
-    private readonly broker: Broker;
+    private readonly broker: arrowhead.Broker;
+    private readonly logger: util.Logger;
 
     /**
      * Creates new application.
@@ -13,26 +15,26 @@ class Application {
      * @param argv Application command line arguments.
      */
     constructor(argv = process.argv.slice(2)) {
-        console.log("+ argv: " + argv);
-        this.broker = new Broker();
+        this.logger = new util.ConsoleLogger();
+        this.broker = new arrowhead.Broker(this.logger);
     }
 
     /**
      * Application start routine.
      */
     public async start() {
-        console.log("+ starting ...");
+        this.logger.info("Starting ...");
         await this.broker.start();
-        console.log("+ started")
+        this.logger.info("Started.")
     }
 
     /**
      * Application exit routine.
      */
     public async exit() {
-        console.log("+ exiting ...");
+        this.logger.info("Exiting ...");
         await this.broker.stop();
-        console.log("+ bye!");
+        this.logger.info("Exited.");
     }
 }
 
@@ -46,26 +48,24 @@ class Application {
             return;
         }
         didExit = true;
-        console.log();
         application.exit()
             .then(() => process.exit(0))
             .catch(error => {
-                console.log("+ orderly exit failed");
-                console.log("Reason:");
-                console.log(error);
+                this.logger.error("Orderly exit failed\nReason:\n%o", error);
                 process.exit(2);
             });
     }
 
-    process.on("SIGINT", onExit);
+    process.on("SIGINT", () => {
+        console.log();
+        onExit();
+    });
     process.on("SIGTERM", onExit);
     process.on("SIGHUP", onExit);
 
     application.start()
         .catch(error => {
-            console.log("+ system start failed");
-            console.log("Reason:");
-            console.log(error);
+            this.logger.error("System start failed\nReason:\n%o", error);
             process.exit(1);
         });
 }

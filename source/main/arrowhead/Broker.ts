@@ -1,34 +1,35 @@
 import * as rpc from "./rpc";
+import * as util from "../util";
 
 /**
  * Serves the Arrowhead _Broker_ services.
  */
 export class Broker {
+    private readonly logger: util.Logger;
     private readonly server: rpc.Server;
 
     /**
      * Creates new server instance, without starting it.
      */
-    public constructor() {
+    public constructor(logger: util.Logger) {
+        this.logger = logger;
         this.server = new rpc.json.Server();
         this.server.addListener("connection", (socket: rpc.Socket) => {
-            console.log(`+ <${socket.id}> connected`);
+            this.logger.info(`<${socket.id}> connected.`);
             socket.addListener("call", (event: rpc.SocketCallEvent) => {
-                console.log("CALL");
-                console.log(event);
                 if (event.respond) {
                     event.respond.return(event.params);
                 }
             });
             socket.addListener("close", (event: rpc.SocketCloseEvent) => {
-                console.log(`+ <${socket.id}> disconnected`);
+                this.logger.info(`<${socket.id}> disconnected.`);
             });
             socket.addListener("error", (error: Error) => {
-                console.log(`- <${socket.id}> error:\n${error}`);
+                this.logger.warn(`<${socket.id}> error:\n%o`, error);
             });
         });
         this.server.addListener("error", (error: Error) => {
-            console.log(`- <${this.server.id}> error:\n${error}`);
+            this.logger.warn(`<${this.server.id}> error:\n%o`, error);
         });
     }
 
@@ -41,7 +42,7 @@ export class Broker {
      */
     public async start() {
         await this.server.listen(8080); // TODO: Make configurable.
-        console.log(`+ <${this.server.id}> started`);
+        this.logger.info(`<${this.server.id}> started.`);
     }
 
     /**
@@ -54,6 +55,6 @@ export class Broker {
      */
     public async stop() {
         await this.server.close();
-        console.log(`+ <${this.server.id}> stopped`);
+        this.logger.info(`<${this.server.id}> stopped.`);
     }
 }

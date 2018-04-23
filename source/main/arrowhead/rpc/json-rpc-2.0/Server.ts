@@ -20,7 +20,7 @@ export class Server extends events.EventEmitter implements rpc.Server {
     public constructor() {
         super();
         this.server = undefined;
-        this.id = `WS${Server.nextId++}`;
+        this.id = `jRPC-${Server.nextId++}`;
     }
 
     public listen(port: number): Promise<void> {
