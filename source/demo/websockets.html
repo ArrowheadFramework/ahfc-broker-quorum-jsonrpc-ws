@@ -64,7 +64,7 @@
             }
         
             function onError(evt) {
-                writeToScreen('<span style="color: red;">ERROR:</span> ' + (evt.data || evt));
+                writeToScreen('<span style="color: red;">ERROR:</span> ' + JSON.stringify(evt.data || evt));
             }
         
             function doSend(message) {
