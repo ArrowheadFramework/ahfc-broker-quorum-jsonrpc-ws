@@ -54,8 +54,7 @@ The Broker system facilitates automation of the process of negotiating
 ownership exchanges. To fulfill this role, it must be entrusted with managing
 the ownerships of some set of assets. As a consequence of receiving this trust,
 a _faulty_ Broker could prevent asset ownership management, while a
-_compromised_ Broker, in a worst-case scenario, could be used by a malicious
-party to steal assets.
+_compromised_ Broker could be used to steal assets in a worst-case scenario.
 
 ### 5.1. Security Objectives
 
