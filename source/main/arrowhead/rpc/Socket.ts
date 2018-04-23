@@ -103,8 +103,8 @@ export interface SocketCallEvent {
      * called exactly once.
      */
     respond?: {
-        return?: (result: any) => Promise<void>;
-        throw?: (error: Error) => Promise<void>;
+        return: (result: any) => Promise<void>;
+        throw: (error: Error) => Promise<void>;
     }
 }
 
