@@ -1,5 +1,7 @@
+import * as impl from "./impl";
 import * as log from "../util/log";
 import * as rpc from "../util/rpc";
+import * as spec from "./spec";
 
 /**
  * Serves the Arrowhead _Broker_ services.
@@ -22,9 +24,54 @@ export class Broker {
 
         this.router = new rpc.Router(this.logger);
         this.router.addServer(this.server);
-        this.router.addMethod("echo", async (message) => {
-            return message;
-        });
+        {
+            const service = new impl.BrokerAccounting();
+            this.router.addMethod("BrokerAccounting::getAgent", () => {
+                return service.getAgent();
+            });
+            this.router.addMethod("BrokerAccounting::getExchanges", (query) => {
+                return service.getExchanges(query);
+            });
+            this.router.addMethod("BrokerAccounting::getOwnerships", (query) => {
+                return service.getOwnerships(query);
+            });
+            this.router.addMethod("BrokerAccounting::getTokens", (query) => {
+                return service.getTokens(query);
+            });
+        }
+        {
+            const service = new impl.Brokering();
+            this.router.addMethod("Brokering::propose", (proposal) => {
+                return service.propose(proposal);
+            });
+            this.router.addMethod("Brokering::accept", (id, deadline) => {
+                return service.accept(id, deadline);
+            });
+            this.router.addMethod("Brokering::reject", (id) => {
+                return service.reject(id);
+            });
+            this.router.addMethod("Brokering::confirm", (id) => {
+                return service.confirm(id);
+            });
+            this.router.addMethod("Brokering::abort", (id) => {
+                return service.abort(id);
+            });
+        }
+        {
+            const service = new impl.BrokerTagging();
+            this.router.addMethod("BrokerTagging::getExchangeTags", (query) => {
+                return service.getExchangeTags(query);
+            });
+            this.router.addMethod("BrokerTagging::getTokenTags", (query) => {
+                return service.getTokenTags(query);
+            });
+            this.router.addMethod("BrokerTagging::putExchangeTag", (tag) => {
+                return service.putExchangeTag(tag);
+            });
+            this.router.addMethod("BrokerTagging::putTokenTag", (tag) => {
+                return service.putTokenTag(tag);
+            })
+        }
     }
 
     /**
