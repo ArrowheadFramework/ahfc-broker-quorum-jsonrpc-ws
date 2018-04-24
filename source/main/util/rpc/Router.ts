@@ -1,13 +1,13 @@
 import { Server, Socket, SocketCallEvent, SocketCloseEvent } from ".";
 import { CodeError, codes } from "./CodeError";
-import * as util from "../../util";
+import * as log from "../log";
 
 /**
  * Routes RPC calls to registered functions.
  */
 export class Router {
     private readonly listeners: Map<Server, (socket: Socket) => void>;
-    private readonly logger: util.Logger;
+    private readonly logger: log.Logger;
     private readonly routes: Map<string, (...params: any[]) => Promise<any>>;
 
     /**
@@ -15,7 +15,7 @@ export class Router {
      * 
      * @param logger Logger used for logging significant routing events.
      */
-    public constructor(logger: util.Logger) {
+    public constructor(logger: log.Logger) {
         this.listeners = new Map();
         this.logger = logger;
         this.routes = new Map();

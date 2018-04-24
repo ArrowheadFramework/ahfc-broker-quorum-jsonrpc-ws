@@ -1,18 +1,18 @@
-import * as rpc from "./rpc";
-import * as util from "../util";
+import * as log from "../util/log";
+import * as rpc from "../util/rpc";
 
 /**
  * Serves the Arrowhead _Broker_ services.
  */
 export class Broker {
-    private readonly logger: util.Logger;
+    private readonly logger: log.Logger;
     private readonly server: rpc.Server;
     private readonly router: rpc.Router;
 
     /**
      * Creates new server instance, without starting it.
      */
-    public constructor(logger: util.Logger) {
+    public constructor(logger: log.Logger) {
         this.logger = logger;
 
         this.server = new rpc.json.Server();

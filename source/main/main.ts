@@ -1,13 +1,13 @@
 import * as arrowhead from "./arrowhead";
 import * as process from "process";
-import * as util from "./util";
+import * as log from "./util/log";
 
 /**
  * Application main class.
  */
 class Application {
     private readonly broker: arrowhead.Broker;
-    private readonly logger: util.Logger;
+    private readonly logger: log.Logger;
 
     /**
      * Creates new application.
@@ -15,7 +15,7 @@ class Application {
      * @param argv Application command line arguments.
      */
     constructor(argv = process.argv.slice(2)) {
-        this.logger = new util.ConsoleLogger();
+        this.logger = new log.ConsoleLogger();
         this.broker = new arrowhead.Broker(this.logger);
     }
 
