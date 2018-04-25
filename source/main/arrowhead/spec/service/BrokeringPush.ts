@@ -20,35 +20,40 @@ export interface BrokeringPush {
      * @param id Exchange `Proposal` identifier.
      * @param sender Party sending the `Proposal`.
      * @param proposal Exchange `Proposal`.
+     * @returns Promise of operation completion.
      */
-    propose(id: string, sender: model.Party, proposal: model.Proposal);
+    propose(id: string, sender: model.Party, proposal: model.Proposal): Promise<void>;
 
     /**
      * Called to notify about a previously sent `Proposal` being accepted.
      * 
      * @param id Exchange `Proposal` identifier.
      * @param deadline Moment in time when the received acceptance expires.
+     * @returns Promise of operation completion.
      */
-    accept(id: string, deadline: Date);
+    accept(id: string, deadline: Date): Promise<void>;
 
     /**
      * Called to notify about a previously sent `Proposal` being rejected.
      * 
      * @param id Exchange `Proposal` identifier.
+     * @returns Promise of operation completion.
      */
-    reject(id: string);
+    reject(id: string): Promise<void>;
 
     /**
      * Called to notify about a previously accepted `Proposal` being confirmed.
      *
      * @param id Exchange `Proposal` identifier.
+     * @returns Promise of operation completion.
      */
-    confirm(id: string);
+    confirm(id: string): Promise<void>;
 
     /**
      * Called to notify about a previously accepted `Proposal` being aborted.
      *
      * @param id Exchange `Proposal` identifier.
+     * @returns Promise of operation completion.
      */
-    abort(id: string);
+    abort(id: string): Promise<void>;
 }
