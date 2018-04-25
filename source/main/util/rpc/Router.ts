@@ -45,52 +45,36 @@ export class Router {
         }
         const listener = (socket: Socket) => {
             this.logger.info(`<${socket.id}> connected.`);
-            socket.addListener("call", (event: SocketCallEvent) => {
-                const method = this.routes.get(event.method);
-                if (method === undefined) {
-                    this.logger.warn(
-                        `<${socket.id}> called unkown method "${event.method}".`
-                    );
-                    if (event.respond) {
-                        event.respond.throw(new CodeError(
+            socket.addListener("call", async (event: SocketCallEvent) => {
+                try {
+                    const method = this.routes.get(event.method);
+                    if (method === undefined) {
+                        throw new CodeError(
                             codes.METHOD_NOT_FOUND,
                             `Method "${event.method}" does not exist.`
-                        ));
+                        );
                     }
-                    return;
-                }
-                const handleError = (error) => {
-                    // Only route CodeError instances to method caller.
+                    const result = await method(...event.params);
+                    if (event.respond) {
+                        event.respond.return(result);
+                    }
+                } catch (error) {
                     if (!(error instanceof CodeError)) {
                         this.logger.error(
-                            `<${socket.id}> "${event.method}" internal error:\n%o`,
+                            `<${socket.id}> "${event.method}" failed ` +
+                            "unexpectedly:\n%o",
                             error
                         );
                         error = new CodeError(
                             codes.INTERNAL_ERROR,
                             "Internal server error."
                         );
+                    } else {
+                        this.logger.warn(`<${socket.id}> warning:%o`, error);
                     }
                     if (event.respond) {
                         event.respond.throw(error);
-                        return;
                     }
-                    this.logger.error(
-                        `<${socket.id}> notify "${event.method}" error:\n%o`,
-                        error
-                    );
-                };
-                try {
-                    method(...event.params).then(
-                        result => {
-                            if (event.respond) {
-                                event.respond.return(result);
-                            }
-                        },
-                        handleError
-                    );
-                } catch (error) {
-                    handleError(error);
                 }
             });
             socket.addListener("close", (event: SocketCloseEvent) => {
@@ -121,7 +105,7 @@ export class Router {
      * @returns Whether or not given `server` was removed.
      */
     public removeServer(server: Server): boolean {
-        const listener = this.listeners.get(server);        
+        const listener = this.listeners.get(server);
         if (listener !== undefined) {
             this.listeners.delete(server);
             server.removeListener("connection", listener);
