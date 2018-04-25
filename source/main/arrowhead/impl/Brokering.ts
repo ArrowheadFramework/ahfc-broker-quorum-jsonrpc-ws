@@ -6,8 +6,8 @@ import * as service from "../spec/service";
  *
  * # Sender's Interface
  *
- * This class is used for _sending_ relevant messages. The `BrokeringPush` class
- * is used for _receiving_ messages.
+ * This class is used by consuming AHF services to _send_ relevant messages. The
+ * `BrokeringPush` class is used to _receive_ messages.
  */
 export class Brokering implements service.Brokering {
     public propose(proposal: model.Proposal): Promise<[Buffer, string][]> {

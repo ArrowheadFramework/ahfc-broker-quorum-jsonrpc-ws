@@ -5,8 +5,8 @@ import * as model from "../model";
  *
  * # Receiver's Interface
  *
- * This interface is used for _receiving_ relevant messages. The `Brokering`
- * interface is used for _sending_ messages.
+ * This interface is used by consuming AHF services to _receive_ relevant
+ * messages. The `Brokering` interface is used to _send_ messages.
  *
  * # Exchange State Machine
  *
