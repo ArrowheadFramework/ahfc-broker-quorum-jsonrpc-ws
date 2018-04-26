@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="990.00006"
+   height="430.00003"
+   viewBox="0 0 990.00006 430.00003"
+   id="svg6108"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="uml_class_broker.svg">
+  <defs
+     id="defs6110">
+    <marker
+       inkscape:stockid="DotL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="DotL"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path9662"
+         d="M -2.5,-1.0 C -2.5,1.7600000 -4.7400000,4.0 -7.5,4.0 C -10.260000,4.0 -12.5,1.7600000 -12.5,-1.0 C -12.5,-3.7600000 -10.260000,-6.0 -7.5,-6.0 C -4.7400000,-6.0 -2.5,-3.7600000 -2.5,-1.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(7.4, 1)" />
+    </marker>
+    <marker
+       inkscape:stockid="DotM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="DotM"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path9665"
+         d="M -2.5,-1.0 C -2.5,1.7600000 -4.7400000,4.0 -7.5,4.0 C -10.260000,4.0 -12.5,1.7600000 -12.5,-1.0 C -12.5,-3.7600000 -10.260000,-6.0 -7.5,-6.0 C -4.7400000,-6.0 -2.5,-3.7600000 -2.5,-1.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) translate(7.4, 1)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="489.47429"
+     inkscape:cy="264.89623"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1839"
+     inkscape:window-height="1176"
+     inkscape:window-x="81"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5">
+    <inkscape:grid
+       type="xygrid"
+       id="grid6656"
+       originx="195.00002"
+       originy="145.00004" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata6113">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(195.00002,-767.36216)">
+    <rect
+       style="opacity:1;fill:#e7e7e7;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6658"
+       width="110"
+       height="49.999977"
+       x="245"
+       y="772.36218"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#acacac;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 245,772.36216 0,50 110,0 0,-50 z m 2,2 106,0 0,46 -106,0 z"
+       id="rect6677"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="299.99573"
+       y="791.08301"
+       id="text7690"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="299.99573"
+         y="791.08301"
+         id="tspan7692"><tspan
+           x="299.99573"
+           y="791.08301"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan7694">«system»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="299.14978"
+       y="809.80457"
+       id="text7632"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="299.14978"
+         y="809.80457"
+         id="tspan7634"><tspan
+           x="299.14978"
+           y="809.80457"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan7636">Broker</tspan></tspan></text>
+    <rect
+       style="opacity:1;fill:#e9d7f8;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6658-2"
+       width="455"
+       height="149.99998"
+       x="-190"
+       y="842.36212"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#b272e6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -189.98242,842.36211 -190,992.34456 264.98242,992.36216 265,842.37969 l -454.98242,-0.0176 z m 2,2 450.96484,0 c 0.0106,0 0.0176,0.007 0.0176,0.0176 l 0,47.96484 c -2e-5,0.0106 -0.007,0.0176 -0.0176,0.0176 l -2.98242,0 0,0.0176 -444.98242,-0.0176 -3,0 c -0.0103,-4e-5 -0.0176,-0.007 -0.0176,-0.0176 l 0,-47.96484 c 0,-0.0103 0.007,-0.0176 0.0176,-0.0176 z m 0,50 450.96484,0 c 0.0106,0 0.0176,0.007 0.0176,0.0176 l 0,95.96485 c 0,0.011 -0.007,0.018 -0.0176,0.018 l -450.96484,0 c -0.0103,-4e-4 -0.0176,-0.008 -0.0176,-0.018 l 0,-95.96487 c 0,-0.0103 0.007,-0.0176 0.0176,-0.0176 z"
+       id="rect6677-9"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="37.495728"
+       y="861.08362"
+       id="text7690-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="37.495728"
+         y="861.08362"
+         id="tspan7692-1"><tspan
+           x="37.495728"
+           y="861.08362"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan7694-5">«service»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="37.435913"
+       y="879.80518"
+       id="text7632-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="37.435913"
+         y="879.80518"
+         id="tspan7634-5"><tspan
+           x="37.435913"
+           y="879.80518"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan7636-3">BrokerAccounting</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180"
+       y="914.82147"
+       id="text7680"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-180"
+         y="914.82147"
+         id="tspan7682"
+         style="font-size:12.5px"><tspan
+           x="-180"
+           y="914.82147"
+           style="font-weight:normal;font-size:12.5px"
+           id="tspan7684"><tspan
+   style="font-weight:bold"
+   id="tspan7696">getAgent</tspan>(): Party</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180"
+       y="934.82147"
+       id="text7666"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-180"
+         y="934.82147"
+         id="tspan7668"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7700">getExchanges</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7698">query</tspan>: ExchangeQuery): ExchangeResultSet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180"
+       y="954.82141"
+       id="text7652"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-180"
+         y="954.82141"
+         id="tspan7654"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7702">getOwnerships</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7704">query</tspan>: OwnershipQuery): OwnershipResultSet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180"
+       y="974.82147"
+       id="text7638"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-180"
+         y="974.82147"
+         id="tspan7640"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7708">getTokens</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7706">query</tspan>: TokenQuery): TokenResultSet</tspan></text>
+    <rect
+       ry="0.018521899"
+       rx="0.018521899"
+       y="842.36157"
+       x="335"
+       height="165.00047"
+       width="455"
+       id="rect6658-5"
+       style="opacity:1;fill:#e9d7f8;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="rect6677-5"
+       d="m 335,842.3616 0,165.0006 455,0 2e-5,-165.00012 z m 2,2 c 150.32505,0.0117 451.00002,4.8e-4 451.00002,4.8e-4 L 788,892.36164 c -150.28986,0.0237 -451,4.4e-4 -451,4.4e-4 z m 0,50 451.00002,4.8e-4 -2e-5,111.00012 -451,0 z"
+       style="opacity:1;fill:#b272e6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       id="text7690-28"
+       y="861.08307"
+       x="562.49573"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan7692-6"
+         y="861.08307"
+         x="562.49573"><tspan
+           id="tspan7694-9"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           y="861.08307"
+           x="562.49573">«service»</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7632-0"
+       y="879.80463"
+       x="562.43591"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan7634-7"
+         y="879.80463"
+         x="562.43591"><tspan
+           id="tspan7636-7"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           y="879.80463"
+           x="562.43591">Brokering</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7680-4"
+       y="914.82092"
+       x="345"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         id="tspan7682-4"
+         y="914.82092"
+         x="345"><tspan
+           id="tspan7684-4"
+           style="font-weight:normal;font-size:12.5px"
+           y="914.82092"
+           x="345"><tspan
+   id="tspan7729"
+   style="font-weight:bold">propose</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan8429">proposal</tspan>: Proposal): String</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7666-1"
+       y="934.82092"
+       x="345"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         id="tspan7668-6"
+         y="934.82092"
+         x="345"><tspan
+   id="tspan7731"
+   style="font-weight:bold">accept</tspan>(<tspan
+   id="tspan7733"
+   style="font-style:italic">id</tspan>: String, <tspan
+   id="tspan7735"
+   style="font-style:italic">deadline</tspan>: DateTime)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7652-5"
+       y="954.82086"
+       x="345"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         id="tspan7654-2"
+         y="954.82086"
+         x="345"><tspan
+   id="tspan7702-9"
+   style="font-weight:bold">reject</tspan>(<tspan
+   id="tspan7704-1"
+   style="font-style:italic">id</tspan>: String)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7638-2"
+       y="974.82086"
+       x="345"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         id="tspan7640-3"
+         y="974.82086"
+         x="345"><tspan
+   id="tspan7739"
+   style="font-weight:bold">confirm</tspan>(<tspan
+   id="tspan7706-0"
+   style="font-style:italic">id</tspan>: String, <tspan
+   id="tspan7741"
+   style="font-style:italic">acceptor</tspan>: Party)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="345"
+       y="994.82098"
+       id="text7743"><tspan
+         x="345"
+         y="994.82098"
+         id="tspan7745"
+         style="font-size:12.5px"><tspan
+   id="tspan7753"
+   style="font-weight:bold">abort</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7749">id</tspan>: String, <tspan
+   style="font-style:italic"
+   id="tspan7751">acceptor</tspan>: Party)</tspan></text>
+    <rect
+       style="opacity:1;fill:#d7eaf8;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6658-0"
+       width="455"
+       height="165.00047"
+       x="335"
+       y="1027.3616"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#72b6e6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 335,1027.3616 0,165.0006 455,0 2e-5,-165.0001 z m 2,2 c 150.32505,0.012 451.00002,5e-4 451.00002,5e-4 l -2e-5,47.9995 c -150.28986,0.024 -451,5e-4 -451,5e-4 z m 0,50 451.00002,5e-4 -2e-5,111.0001 -451,0 z"
+       id="rect6677-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="562.49573"
+       y="1046.0831"
+       id="text7690-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="562.49573"
+         y="1046.0831"
+         id="tspan7692-8"><tspan
+           x="562.49573"
+           y="1046.0831"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan7694-4">«push service»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="562.43591"
+       y="1064.8047"
+       id="text7632-13"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="562.43591"
+         y="1064.8047"
+         id="tspan7634-2"><tspan
+           x="562.43591"
+           y="1064.8047"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan7636-0">BrokeringPush</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="345"
+       y="1099.8209"
+       id="text7680-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="345"
+         y="1099.8209"
+         id="tspan7682-2"
+         style="font-size:12.5px"><tspan
+           x="345"
+           y="1099.8209"
+           style="font-weight:normal;font-size:12.5px"
+           id="tspan7684-9"><tspan
+   style="font-weight:bold"
+   id="tspan7729-9">propose</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7842">id</tspan>: String, <tspan
+   style="font-style:italic"
+   id="tspan7844">sender</tspan>: Party, <tspan
+   style="font-style:italic"
+   id="tspan7846">proposal</tspan>: Proposal)</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="345"
+       y="1119.8209"
+       id="text7666-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="345"
+         y="1119.8209"
+         id="tspan7668-3"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7731-3">accept</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7733-0">id</tspan>: String, <tspan
+   style="font-style:italic"
+   id="tspan7848">accceptor</tspan>: Party, <tspan
+   style="font-style:italic"
+   id="tspan7735-1">deadline</tspan>: DateTime)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="345"
+       y="1139.8209"
+       id="text7652-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="345"
+         y="1139.8209"
+         id="tspan7654-4"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7702-2">reject</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7704-2">id</tspan>: String, <tspan
+   style="font-style:italic"
+   id="tspan7850">rejector</tspan>: Party)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="345"
+       y="1159.8209"
+       id="text7638-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="345"
+         y="1159.8209"
+         id="tspan7640-5"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7739-4">confirm</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7706-4">id</tspan>: String)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7743-1"
+       y="1179.821"
+       x="345"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         id="tspan7745-9"
+         y="1179.821"
+         x="345"
+         sodipodi:role="line"><tspan
+   style="font-weight:bold"
+   id="tspan7753-2">abort</tspan>(<tspan
+   id="tspan7749-4"
+   style="font-style:italic">id</tspan>: String)</tspan></text>
+    <rect
+       style="opacity:1;fill:#e9d7f8;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6658-26"
+       width="455"
+       height="145.00053"
+       x="-190.00002"
+       y="1027.3616"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#b272e6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -190.00002,1027.3616 0,145.0006 455,0 2e-5,-145.0001 z m 2,2 c 150.32505,0.012 451.00002,5e-4 451.00002,5e-4 l -2e-5,47.9996 c -150.28986,0.024 -451,4e-4 -451,4e-4 z m 0,50 451.00002,5e-4 -2e-5,91.0001 -451,0 z"
+       id="rect6677-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="37.495708"
+       y="1046.0831"
+       id="text7690-284"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="37.495708"
+         y="1046.0831"
+         id="tspan7692-19"><tspan
+           x="37.495708"
+           y="1046.0831"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan7694-57">«service»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="37.435894"
+       y="1064.8047"
+       id="text7632-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="37.435894"
+         y="1064.8047"
+         id="tspan7634-58"><tspan
+           x="37.435894"
+           y="1064.8047"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan7636-71">BrokerTagging</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180.00002"
+       y="1099.8209"
+       id="text7680-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-180.00002"
+         y="1099.8209"
+         id="tspan7682-9"
+         style="font-size:12.5px"><tspan
+           x="-180.00002"
+           y="1099.8209"
+           style="font-weight:normal;font-size:12.5px"
+           id="tspan7684-8"><tspan
+   style="font-weight:bold"
+   id="tspan9050">getExchangeTags</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan9052">query</tspan>: TagQuery): TagResultSet</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180.00002"
+       y="1119.8209"
+       id="text7666-85"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-180.00002"
+         y="1119.8209"
+         id="tspan7668-4"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan9054">getTokenTags</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan9056">query</tspan>: TagQuery): TagResultSet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180.00002"
+       y="1139.8209"
+       id="text7652-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-180.00002"
+         y="1139.8209"
+         id="tspan7654-7"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan9058">putExchangeTag</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan9060">tag</tspan>: Tag): String</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-180.00002"
+       y="1159.8209"
+       id="text7638-74"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-180.00002"
+         y="1159.8209"
+         id="tspan7640-9"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan9062">putTokenTag</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan9064">tag</tspan>: Tag): String</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 300,822.36215 0,230.00005 -35,0"
+       id="path9589"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)"
+       d="m 300,826.36215 0,226.00005 35,0"
+       id="path9591"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 300,822.36215 0,45 -35,0"
+       id="path9593"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 300,822.36215 0,45 35,0"
+       id="path9595"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

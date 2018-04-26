@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="465"
+   height="175"
+   viewBox="0 0 465 175"
+   id="svg6108"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="uml_class_brokering_push.svg">
+  <defs
+     id="defs6110" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.6150538"
+     inkscape:cx="143.72703"
+     inkscape:cy="90"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1839"
+     inkscape:window-height="1176"
+     inkscape:window-x="81"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid6656" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata6113">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-877.36216)">
+    <rect
+       style="opacity:1;fill:#d7eaf8;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6658"
+       width="455"
+       height="165.00047"
+       x="5"
+       y="882.36163"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#72b6e6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 5,882.36164 0,165.00056 455,0 2e-5,-165.00008 z m 2,2 c 150.32505,0.0117 451.00002,4.8e-4 451.00002,4.8e-4 L 458,932.36168 c -150.28986,0.0237 -451,4.4e-4 -451,4.4e-4 z m 0,50 451.00002,4.8e-4 -2e-5,111.00008 -451,0 z"
+       id="rect6677"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="232.49573"
+       y="901.08313"
+       id="text7690"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="232.49573"
+         y="901.08313"
+         id="tspan7692"><tspan
+           x="232.49573"
+           y="901.08313"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan7694">«push service»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="232.43591"
+       y="919.80469"
+       id="text7632"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="232.43591"
+         y="919.80469"
+         id="tspan7634"><tspan
+           x="232.43591"
+           y="919.80469"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan7636">BrokeringPush</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="15"
+       y="954.82098"
+       id="text7680"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="15"
+         y="954.82098"
+         id="tspan7682"
+         style="font-size:12.5px"><tspan
+           x="15"
+           y="954.82098"
+           style="font-weight:normal;font-size:12.5px"
+           id="tspan7684"><tspan
+   style="font-weight:bold"
+   id="tspan7729">propose</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7842">id</tspan>: String, <tspan
+   style="font-style:italic"
+   id="tspan7844">sender</tspan>: Party, <tspan
+   style="font-style:italic"
+   id="tspan7846">proposal</tspan>: Proposal)</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="15"
+       y="974.82098"
+       id="text7666"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="15"
+         y="974.82098"
+         id="tspan7668"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7731">accept</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7733">id</tspan>: String, <tspan
+   style="font-style:italic"
+   id="tspan7848">accceptor</tspan>: Party, <tspan
+   style="font-style:italic"
+   id="tspan7735">deadline</tspan>: DateTime)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="15"
+       y="994.82092"
+       id="text7652"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="15"
+         y="994.82092"
+         id="tspan7654"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7702">reject</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7704">id</tspan>: String, <tspan
+   style="font-style:italic"
+   id="tspan7850">rejector</tspan>: Party)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="15"
+       y="1014.8209"
+       id="text7638"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="15"
+         y="1014.8209"
+         id="tspan7640"
+         style="font-size:12.5px"><tspan
+   style="font-weight:bold"
+   id="tspan7739">confirm</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan7706">id</tspan>: String)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7743"
+       y="1034.821"
+       x="15"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         id="tspan7745"
+         y="1034.821"
+         x="15"
+         sodipodi:role="line"><tspan
+   style="font-weight:bold"
+   id="tspan7753">abort</tspan>(<tspan
+   id="tspan7749"
+   style="font-style:italic">id</tspan>: String)</tspan></text>
+  </g>
+</svg>

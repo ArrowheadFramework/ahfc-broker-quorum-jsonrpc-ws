@@ -9,6 +9,12 @@ use the _Quorum_ distributed ledger as a _trading platform_.
 
 ## 1. Overview
 
+The AHF Broker acts on behalf of services using it. It may or may not
+represent its clients using multiple different identities. It is
+guaranteed, however, that the same service is always represented by the
+same identity, unless the identity is changed by a system administrator
+or some other authority.
+
 ## 2. Use-Cases
 
 ## 3. Behaviour Diagrams
