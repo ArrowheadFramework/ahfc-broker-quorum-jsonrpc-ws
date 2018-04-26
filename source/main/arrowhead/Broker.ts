@@ -26,49 +26,49 @@ export class Broker {
         this.router.addServer(this.server);
         {
             const service = new impl.BrokerAccounting();
-            this.router.addMethod("BrokerAccounting::getAgent", () => {
+            this.router.addMethod("BrokerAccounting.getAgent", () => {
                 return service.getAgent();
             });
-            this.router.addMethod("BrokerAccounting::getExchanges", (query) => {
+            this.router.addMethod("BrokerAccounting.getExchanges", (query) => {
                 return service.getExchanges(query);
             });
-            this.router.addMethod("BrokerAccounting::getOwnerships", (query) => {
+            this.router.addMethod("BrokerAccounting.getOwnerships", (query) => {
                 return service.getOwnerships(query);
             });
-            this.router.addMethod("BrokerAccounting::getTokens", (query) => {
+            this.router.addMethod("BrokerAccounting.getTokens", (query) => {
                 return service.getTokens(query);
             });
         }
         {
             const service = new impl.Brokering();
-            this.router.addMethod("Brokering::propose", (proposal) => {
+            this.router.addMethod("Brokering.propose", (proposal) => {
                 return service.propose(proposal);
             });
-            this.router.addMethod("Brokering::accept", (id, deadline) => {
+            this.router.addMethod("Brokering.accept", (id, deadline) => {
                 return service.accept(id, deadline);
             });
-            this.router.addMethod("Brokering::reject", (id) => {
+            this.router.addMethod("Brokering.reject", (id) => {
                 return service.reject(id);
             });
-            this.router.addMethod("Brokering::confirm", (id) => {
-                return service.confirm(id);
+            this.router.addMethod("Brokering.confirm", (id, acceptor) => {
+                return service.confirm(id, acceptor);
             });
-            this.router.addMethod("Brokering::abort", (id) => {
-                return service.abort(id);
+            this.router.addMethod("Brokering.abort", (id, acceptor) => {
+                return service.abort(id, acceptor);
             });
         }
         {
             const service = new impl.BrokerTagging();
-            this.router.addMethod("BrokerTagging::getExchangeTags", (query) => {
+            this.router.addMethod("BrokerTagging.getExchangeTags", (query) => {
                 return service.getExchangeTags(query);
             });
-            this.router.addMethod("BrokerTagging::getTokenTags", (query) => {
+            this.router.addMethod("BrokerTagging.getTokenTags", (query) => {
                 return service.getTokenTags(query);
             });
-            this.router.addMethod("BrokerTagging::putExchangeTag", (tag) => {
+            this.router.addMethod("BrokerTagging.putExchangeTag", (tag) => {
                 return service.putExchangeTag(tag);
             });
-            this.router.addMethod("BrokerTagging::putTokenTag", (tag) => {
+            this.router.addMethod("BrokerTagging.putTokenTag", (tag) => {
                 return service.putTokenTag(tag);
             })
         }

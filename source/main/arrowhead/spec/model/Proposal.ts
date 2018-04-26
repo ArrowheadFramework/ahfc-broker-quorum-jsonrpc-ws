@@ -1,4 +1,4 @@
-import * as model from ".";
+import { isTokenSetQualified, PartySet, TokenSet } from ".";
 
 /**
  * A `Token` exchange proposal.
@@ -7,7 +7,8 @@ import * as model from ".";
  *
  * `Proposal`s can be either _qualified_ or _unqualified_, depending on whether
  * it includes any sources of ambiguity. Concretely, a `Proposal` is qualified
- * if its `want` and `give` properties are qualified.
+ * if its `want` and `give` properties are qualified, and its `receivers` is
+ * not `PartyAll`.
  */
 export interface Proposal {
     /**
@@ -37,17 +38,17 @@ export interface Proposal {
     /**
      * A description of what tokens are desired.
      */
-    want: model.TokenSet,
+    want: TokenSet,
 
     /**
      * A description of what tokens are offered in return for the desired such.
      */
-    give: model.TokenSet,
+    give: TokenSet,
 
     /**
      * A description of what parties receives the proposal.
      */
-    receivers: model.PartySet,
+    receivers: PartySet,
 }
 
 /**
@@ -74,6 +75,6 @@ export function isProposalAcceptable(proposal: Proposal, fudgeInMs = 300) {
  * @returns Whether `proposal` is qualified.
  */
 export function isProposalQualified(proposal: Proposal): boolean {
-    return model.isTokenSetQualified(proposal.want)
-        && model.isTokenSetQualified(proposal.give);
+    return isTokenSetQualified(proposal.want)
+        && isTokenSetQualified(proposal.give);
 }

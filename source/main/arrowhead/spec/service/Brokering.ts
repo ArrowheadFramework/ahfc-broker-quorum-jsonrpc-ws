@@ -91,13 +91,12 @@ export interface Brokering {
      * the method returns `null`.
      *
      * @param proposal Exchange `Proposal`.
-     * @returns Promise of receiving party public keys and `Proposal`
-     *          identifiers, if any.
+     * @returns Promise of unique proposal identifier.
      */
-    propose(proposal: model.Proposal): Promise<[Buffer, string][]>;
+    propose(proposal: model.Proposal): Promise<string>;
 
     /**
-     * Accepts a _qualified_ `Proposal`, making it pending ratification.
+     * Accepts a _qualified_ `Proposal`, making it pending confirmation.
      *
      * __Errors__. If the accepted `Proposal` isn't qualified, or if `deadline`
      * has already expired, the call fails and an `Error` is thrown.
@@ -124,23 +123,25 @@ export interface Brokering {
      * Confirms an accepted `Proposal`, making it binding.
      *
      * __Errors__. If the confirmed `Proposal` was not originally proposed by
-     * you, is qualified, and was accepted by another party, the call fails and
-     * an `Error` is thrown.
+     * the caller, is qualified, and was accepted by `acceptor`, the call fails
+     * and an `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
+     * @param acceptor Party having accepted `Proposal`.
      * @returns Promise of operation completion.
      */
-    confirm(id: string): Promise<void>;
+    confirm(id: string, acceptor: model.Party): Promise<void>;
 
     /**
      * Aborts accepted exchange `Proposal`.
      * 
-     * __Errors__. If the aborted `Proposal` was not originally proposed by you,
-     * is qualified, and was accepted by another party, the call fails and an
-     * `Error` is thrown.
+     * __Errors__. If the aborted `Proposal` was not originally proposed by the,
+     * caller, is qualified, and was accepted by `acceptor`, the call fails and
+     * an `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
+     * @param acceptor Party having accepted `Proposal`.
      * @returns Promise of operation completion.
      */
-    abort(id: string): Promise<void>;
+    abort(id: string, acceptor: model.Party): Promise<void>;
 }

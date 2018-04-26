@@ -1,4 +1,4 @@
-import * as model from ".";
+import { Party, Proposal} from ".";
 
 /**
  * Represents a completed `Token` exchange.
@@ -17,7 +17,7 @@ export interface Exchange {
     /**
      * The accepted and confirmed exchange `Proposal`.
      */
-    proposal: model.Proposal;
+    proposal: Proposal;
 
     /**
      * The party that sent and confirmed the `proposal`.
@@ -25,7 +25,7 @@ export interface Exchange {
      * This party gave up the tokens in `proposal.give`, and received ownership
      * of the tokens in `proposal.want`.
      */
-    sender: model.Party;
+    sender: Party;
 
     /**
      * The party that received and accepted the `proposal`.
@@ -33,5 +33,5 @@ export interface Exchange {
      * This party gave up the tokens in `proposal.want`, and received ownership
      * of the tokens in `proposal.give`.
      */
-    receiver: model.Party;
+    receiver: Party;
 }

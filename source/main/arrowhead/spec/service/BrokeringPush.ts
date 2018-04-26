@@ -28,18 +28,20 @@ export interface BrokeringPush {
      * Called to notify about a previously sent `Proposal` being accepted.
      * 
      * @param id Exchange `Proposal` identifier.
+     * @param acceptor Party accepting `Proposal`.
      * @param deadline Moment in time when the received acceptance expires.
      * @returns Promise of operation completion.
      */
-    accept(id: string, deadline: Date): Promise<void>;
+    accept(id: string, acceptor: model.Party, deadline: Date): Promise<void>;
 
     /**
      * Called to notify about a previously sent `Proposal` being rejected.
      * 
      * @param id Exchange `Proposal` identifier.
+     * @param rejector Party rejecting `Proposal`.
      * @returns Promise of operation completion.
      */
-    reject(id: string): Promise<void>;
+    reject(id: string, rejector: model.Party): Promise<void>;
 
     /**
      * Called to notify about a previously accepted `Proposal` being confirmed.

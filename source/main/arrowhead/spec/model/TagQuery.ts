@@ -19,5 +19,5 @@ export interface TagQuery extends Query {
     /**
      * Limites requested `Tag`s to those with a `kind` matching the one given.
      */
-    kind?: any;
+    kind?: string;
 }

@@ -34,7 +34,7 @@ export interface BrokerTagging {
     getTokenTags(query: model.TagQuery): Promise<model.TagResultSet>;
 
     /**
-     * Saves given `Exchange` `Tag`, potentially replacing any previous such
+     * Saves given `Exchange` `Tag`, potentially replacing any existing such
      * with the same `tag.id` or `tag.kind` and `tag.subjectId`.
      *
      * @param tag `Exchange` `Tag` to insert.
@@ -43,7 +43,7 @@ export interface BrokerTagging {
     putExchangeTag(tag: model.Tag): Promise<string>;
 
     /**
-     * Saves given `Token` `Tag`, potentially replacing any previous such with
+     * Saves given `Token` `Tag`, potentially replacing any existing such with
      * the same `tag.id` or `tag.kind` and `tag.subjectId`.
      *
      * @param tag `Token` `Tag` to insert.
