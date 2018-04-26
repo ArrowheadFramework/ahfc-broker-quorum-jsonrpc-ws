@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg6108"
+   viewBox="0 0 370 345"
+   height="345"
+   width="370"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="uml_class_token_set.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1839"
+     inkscape:window-height="1176"
+     id="namedview7887"
+     showgrid="true"
+     inkscape:zoom="2.4079208"
+     inkscape:cx="174.95307"
+     inkscape:cy="186.27045"
+     inkscape:window-x="81"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="5"
+     fit-margin-left="4"
+     fit-margin-bottom="5"
+     fit-margin-right="4">
+    <inkscape:grid
+       type="xygrid"
+       id="grid20004"
+       originx="-40"
+       originy="-250.00001" />
+  </sodipodi:namedview>
+  <defs
+     id="defs6110">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker25604"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path25606" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker25542"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path25544" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker20253"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path20255"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker18656"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path18658"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata6113">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(1e-6,-657.36218)"
+     id="layer1">
+    <rect
+       ry="0.018521899"
+       rx="0.018521899"
+       y="892.36163"
+       x="45"
+       height="105.00053"
+       width="130"
+       id="rect25418"
+       style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="ccccccccccccccc"
+       inkscape:connector-curvature="0"
+       id="path25420"
+       d="m 45,892.36158 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,47.99956 L 47,942.36206 Z m 0,50 126.00001,4.8e-4 -2e-5,51.00008 -125.99999,0 z"
+       style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="55"
+       y="964.82098"
+       id="text25422"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan25424"
+         sodipodi:role="line"
+         x="55"
+         y="964.82098"
+         style="font-size:12.5px"><tspan
+   style="font-style:italic"
+   id="tspan25426">kind </tspan>= <tspan
+   style="font-weight:bold"
+   id="tspan25436">&quot;_ior&quot;</tspan></tspan></text>
+    <rect
+       style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16816"
+       width="130"
+       height="49.999977"
+       x="45"
+       y="767.36218"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 45,767.3621 0,50 130,0 0,-50 z m 2,2 126,0 0,46 -126,0 z"
+       id="path16818"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="109.99573"
+       y="786.08301"
+       id="text16820"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="109.99573"
+         y="786.08301"
+         id="tspan16822"><tspan
+           x="109.99573"
+           y="786.08301"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan16824">«record type»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="109.40186"
+       y="804.80469"
+       id="text7632-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="109.40186"
+         y="804.80469"
+         id="tspan7634-4"><tspan
+           x="109.40186"
+           y="804.80469"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan7636-1">Token</tspan></tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker20253)"
+       d="m 45,727.3622 -40,0 0,64.99996 36,0"
+       id="path16916"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <rect
+       style="opacity:1;fill:#f8d6d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6658-3"
+       width="280"
+       height="85.000534"
+       x="45"
+       y="662.36163"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#e67272;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 45,662.3616 0,85.00056 279.99999,0 2e-5,-85.00008 z m 2,2 276.00001,4.8e-4 -2e-5,47.99956 L 47,712.36208 Z m 0,50 276.00001,4.8e-4 -2e-5,31.00008 -275.99999,0 z"
+       id="rect6677-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="184.99573"
+       y="681.08313"
+       id="text7690-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="184.99573"
+         y="681.08313"
+         id="tspan7692-8"><tspan
+           x="184.99573"
+           y="681.08313"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan7694-4">«union type»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="185.23926"
+       y="699.80469"
+       id="text7632-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="185.23926"
+         y="699.80469"
+         id="tspan7634-9"><tspan
+           x="185.23926"
+           y="699.80469"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan7636-0">TokenSet</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text24210"
+       y="734.82098"
+       x="55"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         y="734.82098"
+         x="55"
+         sodipodi:role="line"
+         id="tspan25390">Token | TokenAND | TokenIOR | TokenXOR</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text25398"
+       y="911.08301"
+       x="109.99573"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan25400"
+         y="911.08301"
+         x="109.99573"
+         sodipodi:role="line"><tspan
+           id="tspan25402"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           y="911.08301"
+           x="109.99573">«record type»</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text25404"
+       y="929.80469"
+       x="109.40186"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan25406"
+         y="929.80469"
+         x="109.40186"
+         sodipodi:role="line"><tspan
+           id="tspan25408"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           y="929.80469"
+           x="109.40186">TokenIOR</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text25428"
+       y="984.82098"
+       x="55"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         y="984.82098"
+         x="55"
+         sodipodi:role="line"
+         id="tspan25430"><tspan
+   style="font-style:italic"
+   id="tspan25434">tokens</tspan>: TokenSet</tspan></text>
+    <rect
+       style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect25438"
+       width="130"
+       height="105.00053"
+       x="195"
+       y="767.36163"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 195,767.36159 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,47.99956 L 197,817.36207 Z m 0,50 126.00001,4.8e-4 -2e-5,51.00008 -125.99999,0 z"
+       id="path25440"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccc" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text25442"
+       y="839.82098"
+       x="205"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         y="839.82098"
+         x="205"
+         sodipodi:role="line"
+         id="tspan25444"><tspan
+   id="tspan25446"
+   style="font-style:italic">kind</tspan> = <tspan
+   id="tspan25448"
+   style="font-weight:bold">&quot;_and&quot;</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="259.99573"
+       y="786.08301"
+       id="text25450"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="259.99573"
+         y="786.08301"
+         id="tspan25452"><tspan
+           x="259.99573"
+           y="786.08301"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan25454">«record type»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="259.40186"
+       y="804.80469"
+       id="text25456"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="259.40186"
+         y="804.80469"
+         id="tspan25458"><tspan
+           x="259.40186"
+           y="804.80469"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan25460">TokenAND</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="205"
+       y="859.82098"
+       id="text25462"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan25464"
+         sodipodi:role="line"
+         x="205"
+         y="859.82098"
+         style="font-size:12.5px"><tspan
+   id="tspan25466"
+   style="font-style:italic">tokens</tspan>: TokenSet</tspan></text>
+    <rect
+       ry="0.018521899"
+       rx="0.018521899"
+       y="892.36163"
+       x="195"
+       height="105.00053"
+       width="130"
+       id="rect25468"
+       style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="ccccccccccccccc"
+       inkscape:connector-curvature="0"
+       id="path25470"
+       d="m 195,892.36159 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,47.99956 L 197,942.36207 Z m 0,50 126.00001,4.8e-4 -2e-5,51.00008 -125.99999,0 z"
+       style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="205"
+       y="964.82098"
+       id="text25472"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan25474"
+         sodipodi:role="line"
+         x="205"
+         y="964.82098"
+         style="font-size:12.5px"><tspan
+           style="font-style:italic"
+           id="tspan25476">kind = </tspan><tspan
+           style="font-weight:bold"
+           id="tspan25478">&quot;_xor&quot;</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text25480"
+       y="911.08301"
+       x="259.99573"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan25482"
+         y="911.08301"
+         x="259.99573"
+         sodipodi:role="line"><tspan
+           id="tspan25484"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           y="911.08301"
+           x="259.99573">«record type»</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text25486"
+       y="929.80469"
+       x="259.40186"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan25488"
+         y="929.80469"
+         x="259.40186"
+         sodipodi:role="line"><tspan
+           id="tspan25490"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           y="929.80469"
+           x="259.40186">TokenXOR</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text25492"
+       y="984.82098"
+       x="205"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         y="984.82098"
+         x="205"
+         sodipodi:role="line"
+         id="tspan25494"><tspan
+   style="font-style:italic"
+   id="tspan25496">tokens</tspan>: TokenSet</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker25542)"
+       d="m 4.999999,792.36217 0,130 36,0"
+       id="path25534"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="path25600"
+       d="m 325,727.3622 40,0 0,64.99996 -36,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker25604)" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path25602"
+       d="m 365,792.36217 0,130 -36,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker25542)" />
+  </g>
+</svg>
