@@ -22,7 +22,7 @@ export interface Token {
     id?: string,
 
     /**
-     * A string classifying the general category this entity.
+     * A string classifying the general category of this entity.
      *
      * Relevant string could containg everything from simple names to article
      * numbers.
