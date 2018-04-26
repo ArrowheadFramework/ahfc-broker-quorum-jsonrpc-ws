@@ -3,12 +3,7 @@ import { Party } from ".";
 /**
  * A set of `Party` objects.
  */
-export type PartySet = Party | PartyAll | PartyArray;
-
-/**
- * The set of all parties.
- */
-export type PartyAll = null;
+export type PartySet = Party | PartyArray | PartyAll;
 
 /**
  * An array of `Party` objects.
@@ -16,8 +11,13 @@ export type PartyAll = null;
 export type PartyArray = Party[];
 
 /**
+ * The set of all parties.
+ */
+export type PartyAll = null;
+
+/**
  * Checks whether given `parties` represents a single `Party`.
- * 
+ *
  * @param set Checked `PartySet`.
  * @returns Whether given `PartySet` is of type `Party`.
  */
@@ -26,23 +26,23 @@ export function isParty(set: PartySet): set is Party {
 }
 
 /**
- * Checks whether given `parties` represents all relevant `Party` objects.
- * 
- * @param set Checked `PartySet`.
- * @returns Whether given `PartySet` is of type `PartyAll`.
- */
-export function isPartyAll(set: PartySet): set is PartyAll {
-    return set === null;
-}
-
-/**
  * Checks whether given `parties` represents an array of `Party` objects.
- * 
+ *
  * @param parties Checked `PartySet`.
  * @returns Whether given `PartySet` is of type `PartyArray`.
  */
 export function isPartyArray(set: PartySet): set is PartyArray {
     return Array.isArray(set);
+}
+
+/**
+ * Checks whether given `parties` represents all relevant `Party` objects.
+ *
+ * @param set Checked `PartySet`.
+ * @returns Whether given `PartySet` is of type `PartyAll`.
+ */
+export function isPartyAll(set: PartySet): set is PartyAll {
+    return set === null;
 }
 
 /**
