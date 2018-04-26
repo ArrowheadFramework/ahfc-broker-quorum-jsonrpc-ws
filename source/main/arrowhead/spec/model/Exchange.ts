@@ -1,4 +1,4 @@
-import { Party, Proposal} from ".";
+import { Party, Proposal } from ".";
 
 /**
  * Represents a completed `Token` exchange.
