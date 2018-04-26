@@ -76,25 +76,6 @@ __confirm__ Called to notify about a previously accepted `Proposal` being confir
 
 __abort__ Called to notify about a previously accepted `Proposal` being aborted.
 
-### 2.4. BrokerTagging
-
-A service associating `Exchange`s and `Token`s with private metadata.
-Tags are _private_ in the sense that they are not made known outside the local cloud of a given Broker.
-This means that they cannot be seen or known to exist by parties using the same trading platform via a different Broker in a different cloud.
-`Tag`s can be seen, however, by other services allowed to access the `BrokerTagging` service inside the same local cloud.
-`Tag`s are suitable for keeping track of plant-specific data, such as internal reference numbers, order identifiers, task assignments, etc.
-They should not be used for highly sensitive information, unless measures are taken to protect it through encryption or otherwise.
-
-![](fig/uml_class_broker_tagging.svg)
-
-__getExchangeTags__ Queries for `Exchange` `Tag`s the consuming service is allowed to see.
-
-__getTokenTags__ Queries for `Token` `Tag`s the consuming service is allowed to see.
-
-__putExchangeTag__ Saves given `Exchange` `Tag`, potentially replacing any existing such with the same `tag.id` or `tag.kind` and `tag.subjectId`.
-
-__putTokenTag__ Saves given `Token` `Tag`, potentially replacing any existing such with the same `tag.id` or `tag.kind` and `tag.subjectId`.
-
 ## 3. Information Model
 
 See [`model/`](model/).

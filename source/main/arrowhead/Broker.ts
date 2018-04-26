@@ -57,21 +57,6 @@ export class Broker {
                 return service.abort(id, acceptor);
             });
         }
-        {
-            const service = new impl.BrokerTagging();
-            this.router.addMethod("BrokerTagging.getExchangeTags", (query) => {
-                return service.getExchangeTags(query);
-            });
-            this.router.addMethod("BrokerTagging.getTokenTags", (query) => {
-                return service.getTokenTags(query);
-            });
-            this.router.addMethod("BrokerTagging.putExchangeTag", (tag) => {
-                return service.putExchangeTag(tag);
-            });
-            this.router.addMethod("BrokerTagging.putTokenTag", (tag) => {
-                return service.putTokenTag(tag);
-            })
-        }
     }
 
     /**
