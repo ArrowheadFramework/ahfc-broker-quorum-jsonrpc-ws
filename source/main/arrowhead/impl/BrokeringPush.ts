@@ -7,10 +7,10 @@ import * as service from "../spec/service";
  *
  * # Receiver's Interface
  *
- * This class is used by consuming AHF services to _receive_ relevant messages.
+ * This class is used by consuming AHF systems to _receive_ relevant messages.
  * The `Brokering` class is used to _send_ messages. From a source code
  * perspective, this means that instances of this class are used for sending
- * messages to consuming services with live RPC sockets.
+ * messages to consuming systems with live RPC sockets.
  */
 export class BrokeringPush implements service.BrokeringPush {
     private readonly socket: rpc.Socket;

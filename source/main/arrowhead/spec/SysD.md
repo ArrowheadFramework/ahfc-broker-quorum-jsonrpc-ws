@@ -4,14 +4,14 @@
 
 This document provides a description of the _Quorum/JSON-RPC 2.0/Web Service_
 variant of the Arrowhead Broker System, an Arrowhead Core Automation Support
-System. The system acts as a mediator, allowing consuming services to access and
+System. The system acts as a mediator, allowing consuming systems to access and
 use the _Quorum_ distributed ledger as a _trading platform_.
 
 ## 1. Overview
 
-The AHF Broker acts on behalf of services using it. It may or may not
+The AHF Broker acts on behalf of systems using it. It may or may not
 represent its clients using multiple different identities. It is
-guaranteed, however, that the same service is always represented by the
+guaranteed, however, that the same system is always represented by the
 same identity, unless the identity is changed by a system administrator
 or some other authority.
 
@@ -69,7 +69,7 @@ TODO: Write this section. (STRIDE)
 - Integrity of cryptographic keys.
     - Key rot.
     - Key theft.
-- Service authorization.
+- System authorization.
     - Key theft.
 - Non-repudiation.
     - Token immutability.
@@ -81,7 +81,7 @@ TODO: Write this section. (STRIDE)
 
 TODO: Write.
 
-Keys, service identities, ownerships, tokens, exchanges, ...
+Keys, system identities, ownerships, tokens, exchanges, ...
 
 ### 5.3. Non-Technical Sequrity Requirements
 

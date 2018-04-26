@@ -5,7 +5,7 @@ import * as model from "../model";
  *
  * # Sender's Interface
  *
- * This interface is used by consuming AHF services to _send_ relevant messages.
+ * This interface is used by consuming AHF systems to _send_ relevant messages.
  * The `BrokeringPush` interface is used to _receive_ messages.
  *
  * # Exchange State Machine
@@ -51,20 +51,6 @@ import * as model from "../model";
  * with an unqualified `Proposal`, two parties can exchange proposals with
  * decreasing ambiguity until a _qualified proposal_ has been formulated, which
  * can be accepted and confirmed if desired by the two parties.
- *
- * ## Exchanges and Confidence
- *
- * If a `Proposal` is formulated and sent to multiple receivers, one state
- * machine is maintained between the sender and each receiver. As multiple
- * receivers may accept the `Proposal`, and there may not be enough tokens to
- * satisfy the claims of each accepting receiver, the proposer may have to
- * abort some of the accepts.
- * 
- * Aborting an accepted `Proposal` could lead to loss of confidence. From the
- * perspective of the receiver, an exchange that initially seemed acceptable to
- * both parties was unexpectedly aborted. To avoid any confusion, the sender of
- * a `Proposal` must append a set of _rules_, which clarify whether the exchange
- * is open to multiple parties, is private or public, etc.
  *
  * ## Exchange Completion
  *

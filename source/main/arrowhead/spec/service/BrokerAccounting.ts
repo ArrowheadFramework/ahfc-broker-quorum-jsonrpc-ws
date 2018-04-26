@@ -3,20 +3,26 @@ import * as model from "../model";
 /**
  * A service able to account for all `Token`s, `Ownership`s and `Exchange`s
  * known by some Broker system.
+ *
+ * # Object Visibility
+ *
+ * The service only serves objects a consumer is authorized to see, meaning that
+ * the results of calling the service functions may be different for different
+ * consumers.
  */
 export interface BrokerAccounting {
     /**
-     * Gets `Party` representing the service using this interface.
+     * Gets `Party` representing the system using this interface.
      *
      * # The Broker is an Agent
      *
-     * The AHF Broker acts on behalf of services using it. It may or may not
+     * The AHF Broker acts on behalf of systems using it. It may or may not
      * represent its clients using multiple different identities. It is
-     * guaranteed, however, that the same service is always represented by the
+     * guaranteed, however, that the same system is always represented by the
      * same identity, unless the identity is changed by a system administrator
      * or some other authority.
      *
-     * @returns Promise of identity of calling service, in the form of a `Party`
+     * @returns Promise of identity of calling system, in the form of a `Party`
      *          object.
      */
     getAgent(): Promise<model.Party>;
