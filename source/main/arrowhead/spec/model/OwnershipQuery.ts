@@ -5,13 +5,14 @@ import { Party, Query } from ".";
  */
 export interface OwnershipQuery extends Query {
     /**
-     * Limits requested owners to those owning a `Token` with an `id` matching
-     * any one of those given.
-     */
-    ids?: string[];
-
-    /**
-     * Limits requested owners to those included in the given array.
+     * Limits requested ownerships to those related to owners included in the
+     * given array.
      */
     parties?: Party[];
+
+    /**
+     * Limits requested ownerships to those related to a `Token` with an `id`
+     * matching any one of those given.
+     */
+    tokenIds?: string[];
 }
