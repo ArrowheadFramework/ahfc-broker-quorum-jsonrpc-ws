@@ -16,7 +16,7 @@ It acts as a trusted intermediary, allowing its consumers to access an arbitrary
 Whenever a properly authorized Arrowhead system consumes the `Brokering` service produced by a `Broker` system, a persistent session is created or resumed.
 Each session is associated with the authenticated identity of its owner, provided via a certificate or otherwise.
 
-#### 1.1.1. Trading Platform Indentity
+#### 1.1.1. Trading Platform Identity
 
 All brokering sessions contain a _trading platform identity_, which is the identity used to represent the session owner while exchanging tokens. The trading platform identity can be queried via the `BrokerAccounting` service `getAgent` function, and is primarily of use to consuming systems for telling their own activity apart from any other data acquired via the `BrokerAccounting` service.
 
@@ -51,11 +51,11 @@ The service is always used together with the `BrokeringPush` service, which is u
 
 | Function  | Description
 |:----------|:---
-| `propose` | Proposes a `Token` exchange.
-| `accept`  | Accepts a _qualified_ `Proposal`, making it pending confirmation. If the accepted `Proposal` is not qualified, or if its deadline has expired, the call fails.
-| `reject`  | Rejects a _qualified_ `Proposal`. If the rejected `Proposal` is not qualified, the call fails.
-| `confirm` | Confirms an accepted `Proposal`, making it binding. If the confirmed `Proposal` is not qualified and accepted, the call fails.
-| `abort`   | Aborts accepted exchange `Proposal`. If the aborted `Proposal` is not qualified and accepted, the call fails.
+| `propose` | Proposes a `Token` exchange to some set of receivers. Returns a `Proposal` identifier only if given `proposal` is qualified.
+| `accept`  | Accepts an identified `Proposal`, making it pending confirmation. If the accepted `Proposal` does not exist, or if its deadline has expired, the call fails.
+| `reject`  | Rejects an identified `Proposal`. If the rejected `Proposal` does not exist, the call fails.
+| `confirm` | Confirms an accepted `Proposal`, making it binding. Unless the confirmed `Proposal` exists and is accepted, the call fails.
+| `abort`   | Aborts accepted exchange `Proposal`. Unless the aborted `Proposal` exists and is accepted, the call fails.
 
 ### 2.3. BrokeringPush
 
@@ -67,7 +67,7 @@ In that case, the same communication channel established by the `Brokering` cons
 
 | Function  | Description
 |:----------|:---
-| `propose` | Called to notify about an incoming `Token` exchange `Proposal`.
+| `propose` | Called to notify about an incoming `Token` exchange `Proposal`. A `Proposal` identifier is only provided if provided `proposal` is qualified.
 | `accept`  | Called to notify about a previously sent `Proposal` being accepted.
 | `reject`  | Called to notify about a previously sent `Proposal` being rejected.
 | `confirm` | Called to notify about a previously accepted `Proposal` being confirmed.
@@ -108,8 +108,8 @@ If, for example, no `offset` is specified, it must be understood as being `0`, a
 | `ids`      | If given, excludes items without an `id` matching any provided.
 | `before`   | If given, includes only items created before provided time.
 | `after`    | If given, includes only items created after provided time.
-| `sender`   | If given, limits to items with provided `sender`.
-| `receiver` | If givem limits to items with provided `receiver`.
+| `sender`   | If given, includes only items with provided `sender`.
+| `receiver` | If given, includes only items with provided `receiver`.
 
 ### 3.3. ExchangeResultSet
 
@@ -187,7 +187,7 @@ If the `offset` of a `OwnershipQuery` exceeds the number of matching items, the 
 
 ### 3.7. Party
 
-Represents the identity of party that can own and exchange `Token`s.
+Represents the identity of a party that can own and exchange `Token`s.
 
 __Valid key algorithm identifiers__.
 `keyalg` values must consist only of lower-case letters.
@@ -220,7 +220,7 @@ A set of `Party` objects.
 |:----------|:---
 | `Party`   | A single `Party`.
 | `Party[]` | An array of zero or more `Party` objects.
-| `Null`    | Represents all existing `Party` objects.
+| `Null`    | Represents all existing parties.
 
 ### 3.9. Proposal
 
@@ -234,26 +234,12 @@ Concretely, a `Proposal` is qualified if its `want` and `give` properties are qu
 
 | Field        | Description
 |:-------------|:---
-| `visibility` | Determines what parties will be able to see the proposal.
 | `baseline`   | The moment in time when this `Proposal` becomes acceptable.
 | `deadline`   | The moment in time when this `Proposal` ceases to be acceptable.
 | `want`       | A description of what tokens are desired.
 | `give`       | A description of what tokens are offered in return for the desired such.
-| `receivers`  | A description of what parties receives the proposal.
 
-### 3.10. ProposalVisibility
-
-Expresses the level of visibility of some `Proposal`.
-
-![](fig/type_proposal_visibility.svg)
-
-| Variant     | Description
-|:------------|:---
-| `Private`   | The proposal is sent in secret to each receiver, and the receivers are __not__ notified about which other parties receives the proposal.
-| `Protected` | The proposal is sent in secret to each receiver, and the receivers are notified about which other parties receives the proposal.
-| `Public`    | The proposal is sent visibly to all parties in the given trading network, including any parties not receiving the proposal.
-
-### 3.11. Token
+### 3.10. Token
 
 ![](fig/type_token.svg)
 
@@ -262,7 +248,7 @@ Expresses the level of visibility of some `Proposal`.
 | |
 | |
 
-### 3.12. TokenQuery
+### 3.11. TokenQuery
 
 ![](fig/type_token_query.svg)
 
@@ -271,7 +257,7 @@ Expresses the level of visibility of some `Proposal`.
 | `offset`           | Number of items to exclude, from beginning of result set.
 | `limit`            | The maximum number of items to include in result set.
 
-### 3.13. TokenResultSet
+### 3.12. TokenResultSet
 
 ![](fig/type_token_result_set.svg)
 
@@ -280,7 +266,7 @@ Expresses the level of visibility of some `Proposal`.
 | |
 | |
 
-### 3.14. TokenSet
+### 3.13. TokenSet
 
 ![](fig/type_token_set.svg)
 

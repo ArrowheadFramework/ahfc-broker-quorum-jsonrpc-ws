@@ -1,4 +1,4 @@
-import * as model from "../model";
+import { Party, Proposal } from "../model";
 
 /**
  * A service useful for exchanging `Token`s through a three-step process.
@@ -17,12 +17,12 @@ export interface BrokeringPush {
     /**
      * Called to notify about an incoming `Token` exchange `Proposal`.
      *
-     * @param id Exchange `Proposal` identifier.
+     * @param id Exchange `Proposal` identifier, if `proposal` is qualified.
      * @param sender Party sending the `Proposal`.
      * @param proposal Exchange `Proposal`.
      * @returns Promise of operation completion.
      */
-    propose(id: string, sender: model.Party, proposal: model.Proposal): Promise<void>;
+    propose(id: string | null, sender: Party, proposal: Proposal): Promise<void>;
 
     /**
      * Called to notify about a previously sent `Proposal` being accepted.
@@ -32,7 +32,7 @@ export interface BrokeringPush {
      * @param deadline Moment in time when the received acceptance expires.
      * @returns Promise of operation completion.
      */
-    accept(id: string, acceptor: model.Party, deadline: Date): Promise<void>;
+    accept(id: string, acceptor: Party, deadline: Date): Promise<void>;
 
     /**
      * Called to notify about a previously sent `Proposal` being rejected.
@@ -41,7 +41,7 @@ export interface BrokeringPush {
      * @param rejector Party rejecting `Proposal`.
      * @returns Promise of operation completion.
      */
-    reject(id: string, rejector: model.Party): Promise<void>;
+    reject(id: string, rejector: Party): Promise<void>;
 
     /**
      * Called to notify about a previously accepted `Proposal` being confirmed.

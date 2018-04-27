@@ -13,7 +13,7 @@
    height="315"
    width="505"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="uml_class_brokering_push.svg">
+   sodipodi:docname="service_brokering_push.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -28,8 +28,8 @@
      id="namedview7887"
      showgrid="true"
      inkscape:zoom="2.4079208"
-     inkscape:cx="254.3896"
-     inkscape:cy="223.94737"
+     inkscape:cx="195.29268"
+     inkscape:cy="190.72369"
      inkscape:window-x="81"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -95,7 +95,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -268,7 +268,7 @@
    style="font-weight:bold"
    id="tspan7729-1">propose</tspan>(<tspan
    style="font-style:italic"
-   id="tspan7842">id</tspan>: String, <tspan
+   id="tspan7842">id</tspan>: String | Null, <tspan
    style="font-style:italic"
    id="tspan7844">sender</tspan>: Party, <tspan
    style="font-style:italic"

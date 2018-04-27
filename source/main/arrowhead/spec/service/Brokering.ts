@@ -1,4 +1,4 @@
-import * as model from "../model";
+import { Party, PartySet, Proposal } from "../model";
 
 /**
  * A service useful for exchanging `Token`s through a three-step process.
@@ -73,18 +73,16 @@ export interface Brokering {
     /**
      * Proposes a `Token` exchange.
      *
-     * __Global Proposals__. If `proposal.receivers` is of type `PartyAll`, then
-     * the method returns `null`.
-     *
+     * @param receivers The receivers of `proposal`.
      * @param proposal Exchange `Proposal`.
-     * @returns Promise of unique proposal identifier.
+     * @returns Promise of proposal identifier, unless proposal is unqualified.
      */
-    propose(proposal: model.Proposal): Promise<string>;
+    propose(receivers: PartySet, proposal: Proposal): Promise<string | null>;
 
     /**
      * Accepts a _qualified_ `Proposal`, making it pending confirmation.
      *
-     * __Errors__. If the accepted `Proposal` isn't qualified, or if `deadline`
+     * __Errors__. If the accepted `Proposal` doesn't exist, or if `deadline`
      * has already expired, the call fails and an `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
@@ -96,9 +94,8 @@ export interface Brokering {
     /**
      * Rejects a _qualified_ `Proposal`.
      *
-     * __Errors__. If the rejected `Proposal` isn't qualified, the call fails
-     * and an `Error` is thrown. As unqualified `Proposal`s cannot be
-     * meaningfully accepted, there is no reason to reject them either.
+     * __Errors__. If the rejected `Proposal` doesn't exist, the call fails
+     * and an `Error` is thrown.
      *
      * @param id Exchange `Proposal` identifier.
      * @returns Promise of operation completion.
@@ -116,12 +113,12 @@ export interface Brokering {
      * @param acceptor Party having accepted `Proposal`.
      * @returns Promise of operation completion.
      */
-    confirm(id: string, acceptor: model.Party): Promise<void>;
+    confirm(id: string, acceptor: Party): Promise<void>;
 
     /**
      * Aborts accepted exchange `Proposal`.
      * 
-     * __Errors__. If the aborted `Proposal` was not originally proposed by the,
+     * __Errors__. If the aborted `Proposal` was not originally proposed by the
      * caller, is qualified, and was accepted by `acceptor`, the call fails and
      * an `Error` is thrown.
      * 
@@ -129,5 +126,5 @@ export interface Brokering {
      * @param acceptor Party having accepted `Proposal`.
      * @returns Promise of operation completion.
      */
-    abort(id: string, acceptor: model.Party): Promise<void>;
+    abort(id: string, acceptor: Party): Promise<void>;
 }

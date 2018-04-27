@@ -15,7 +15,7 @@
    id="svg6108"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="uml_class_broker.svg">
+   sodipodi:docname="services_broker.svg">
   <defs
      id="defs6110">
     <marker
@@ -55,8 +55,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="462.67952"
-     inkscape:cy="264.89623"
+     inkscape:cx="331.70197"
+     inkscape:cy="184.89623"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -307,6 +307,8 @@
            x="345"><tspan
    id="tspan7729"
    style="font-weight:bold">propose</tspan>(<tspan
+   style="font-style:italic"
+   id="tspan31372">receivers</tspan>: PartySet, <tspan
    style="font-style:italic"
    id="tspan8429">proposal</tspan>: Proposal): String</tspan></tspan></text>
     <text

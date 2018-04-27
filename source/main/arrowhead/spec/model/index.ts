@@ -14,7 +14,6 @@ export * from "./OwnershipResultSet";
 export * from "./Party";
 export * from "./PartySet";
 export * from "./Proposal";
-export * from "./ProposalVisibility";
 export * from "./Query";
 export * from "./ResultSet";
 export * from "./Token";

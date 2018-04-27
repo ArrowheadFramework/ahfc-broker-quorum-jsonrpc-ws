@@ -9,11 +9,11 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg6108"
-   viewBox="0 0 460 335"
-   height="335"
-   width="460"
+   viewBox="0 0 250 225"
+   height="225"
+   width="250"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="uml_class_proposal.svg">
+   sodipodi:docname="type_proposal.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -28,8 +28,8 @@
      id="namedview7887"
      showgrid="true"
      inkscape:zoom="2.4079208"
-     inkscape:cx="211.92486"
-     inkscape:cy="151.44952"
+     inkscape:cx="181.05166"
+     inkscape:cy="101.614"
      inkscape:window-x="81"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -41,7 +41,7 @@
     <inkscape:grid
        type="xygrid"
        id="grid20004"
-       originx="-40"
+       originx="-40.000001"
        originy="-330" />
   </sodipodi:namedview>
   <defs
@@ -106,56 +106,11 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(2e-7,-587.36217)"
+     transform="translate(0,-697.36217)"
      id="layer1">
-    <rect
-       style="opacity:1;fill:#e4f8d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect16816"
-       width="170"
-       height="49.999992"
-       x="285"
-       y="592.36218"
-       rx="0.018521899"
-       ry="0.018521899" />
-    <path
-       style="opacity:1;fill:#a0e672;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 285,592.36208 0,50 170,0 0,-50 z m 2,2 166,0 0,46 -166,0 z"
-       id="path16818"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="369.99573"
-       y="611.08301"
-       id="text16820"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="369.99573"
-         y="611.08301"
-         id="tspan16822"><tspan
-           x="369.99573"
-           y="611.08301"
-           style="font-size:8.75px;text-align:center;text-anchor:middle"
-           id="tspan16824">«enumerator type»</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="369.40186"
-       y="629.80469"
-       id="text7632-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="369.40186"
-         y="629.80469"
-         id="tspan7634-4"><tspan
-           x="369.40186"
-           y="629.80469"
-           style="font-size:17.5px;text-align:center;text-anchor:middle"
-           id="tspan7636-1">ProposalVisibility</tspan></tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker20253)"
-       d="m 45,617.36219 -40,0 0,204.99996 36,0"
+       d="m 45,727.36219 -40,0 0,164.99996 36,0"
        id="path16916"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
@@ -163,14 +118,14 @@
        style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect6658-3"
        width="200"
-       height="185"
+       height="144.99998"
        x="45"
-       y="592.36218"
+       y="702.36218"
        rx="0.018521899"
        ry="0.018521899" />
     <path
        style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 45,592.36159 0,185.00056 199.99999,0 2e-5,-185.00008 z m 2,2 196.00001,4.8e-4 -2e-5,47.99956 L 47,642.36207 Z m 0,50 196.00001,4.8e-4 -2e-5,131.00008 -195.99999,0 z"
+       d="m 45,702.36159 0,145.00056 199.99999,0 2e-5,-145.00008 z m 2,2 196.00001,4.8e-4 -2e-5,47.99956 L 47,752.36207 Z m 0,50 196.00001,4.8e-4 -2e-5,91.00008 -195.99999,0 z"
        id="rect6677-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccc" />
@@ -178,54 +133,42 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="144.99573"
-       y="611.08313"
+       y="721.08313"
        id="text7690-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="144.99573"
-         y="611.08313"
+         y="721.08313"
          id="tspan7692-8"><tspan
            x="144.99573"
-           y="611.08313"
+           y="721.08313"
            style="font-size:8.75px;text-align:center;text-anchor:middle"
            id="tspan7694-4">«record type»</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="144.40186"
-       y="629.80469"
+       y="739.80469"
        id="text7632-2"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="144.40186"
-         y="629.80469"
+         y="739.80469"
          id="tspan7634-9"><tspan
            x="144.40186"
-           y="629.80469"
+           y="739.80469"
            style="font-size:17.5px;text-align:center;text-anchor:middle"
            id="tspan7636-0">Proposal</tspan></tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text24210"
-       y="764.82098"
-       x="55"
-       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-size:12.5px"
-         id="tspan24212"
-         y="764.82098"
-         x="55"
-         sodipodi:role="line">receivers: PartySet</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="55"
-       y="744.82098"
+       y="834.82098"
        id="text24376"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="55"
-         y="744.82098"
+         y="834.82098"
          id="tspan24378"
          style="font-style:normal;font-size:12.5px"><tspan
    style="font-style:italic"
@@ -233,13 +176,13 @@
     <text
        sodipodi:linespacing="125%"
        id="text24380"
-       y="724.82098"
+       y="814.82098"
        x="55"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-size:12.5px"
          id="tspan24382"
-         y="724.82098"
+         y="814.82098"
          x="55"
          sodipodi:role="line"><tspan
    style="font-style:italic"
@@ -248,12 +191,12 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="55"
-       y="704.82098"
+       y="794.82098"
        id="text24384"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="55"
-         y="704.82098"
+         y="794.82098"
          id="tspan24386"
          style="font-style:normal;font-size:12.5px"><tspan
    style="font-style:italic"
@@ -261,35 +204,21 @@
     <text
        sodipodi:linespacing="125%"
        id="text24388"
-       y="684.82098"
+       y="774.82098"
        x="55"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-size:12.5px"
          id="tspan24390"
-         y="684.82098"
+         y="774.82098"
          x="55"
          sodipodi:role="line"><tspan
    style="font-style:italic"
    id="tspan24417">baseline</tspan>: DateTime</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="55"
-       y="664.82098"
-       id="text24392"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="55"
-         y="664.82098"
-         id="tspan24394"
-         style="font-style:normal;font-size:12.5px"><tspan
-   style="font-style:italic"
-   id="tspan24415">visibility</tspan>: ProposalVisibility</tspan></text>
     <rect
        ry="0.018521899"
        rx="0.018521899"
-       y="797.36218"
+       y="867.36218"
        x="45"
        height="49.999992"
        width="130"
@@ -299,94 +228,37 @@
        sodipodi:nodetypes="cccccccccc"
        inkscape:connector-curvature="0"
        id="path24469"
-       d="m 45,797.36209 0,50 130,0 0,-50 z m 2,2 126,0 0,46 -126,0 z"
+       d="m 45,867.36209 0,50 130,0 0,-50 z m 2,2 126,0 0,46 -126,0 z"
        style="opacity:1;fill:#e67272;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <text
        sodipodi:linespacing="125%"
        id="text24471"
-       y="816.08301"
+       y="886.08301"
        x="109.99573"
        style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan24473"
-         y="816.08301"
+         y="886.08301"
          x="109.99573"
          sodipodi:role="line"><tspan
            id="tspan24475"
            style="font-size:8.75px;text-align:center;text-anchor:middle"
-           y="816.08301"
+           y="886.08301"
            x="109.99573">«union type»</tspan></tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text24477"
-       y="834.80469"
+       y="904.80469"
        x="110.23926"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan24479"
-         y="834.80469"
+         y="904.80469"
          x="110.23926"
          sodipodi:role="line"><tspan
            id="tspan24481"
            style="font-size:17.5px;text-align:center;text-anchor:middle"
-           y="834.80469"
-           x="110.23926">TokenSet</tspan></tspan></text>
-    <rect
-       style="opacity:1;fill:#f8d6d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect24483"
-       width="130"
-       height="49.999992"
-       x="45"
-       y="867.36218"
-       rx="0.018521899"
-       ry="0.018521899" />
-    <path
-       style="opacity:1;fill:#e67272;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 45,867.36209 0,50 130,0 0,-50 z m 2,2 126,0 0,46 -126,0 z"
-       id="path24485"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="109.99573"
-       y="886.08301"
-       id="text24487"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="109.99573"
-         y="886.08301"
-         id="tspan24489"><tspan
-           x="109.99573"
-           y="886.08301"
-           style="font-size:8.75px;text-align:center;text-anchor:middle"
-           id="tspan24491">«union type»</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="109.35486"
-       y="904.80469"
-       id="text24493"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="109.35486"
-         y="904.80469"
-         id="tspan24495"><tspan
-           x="109.35486"
            y="904.80469"
-           style="font-size:17.5px;text-align:center;text-anchor:middle"
-           id="tspan24497">PartySet</tspan></tspan></text>
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker18656)"
-       d="m 4.9999998,822.36217 0,70 36.0000002,0"
-       id="path24499"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker24539)"
-       d="m 245,617.36217 36,0"
-       id="path24531"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+           x="110.23926">TokenSet</tspan></tspan></text>
   </g>
 </svg>

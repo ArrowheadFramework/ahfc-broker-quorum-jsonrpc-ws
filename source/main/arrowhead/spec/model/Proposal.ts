@@ -1,4 +1,4 @@
-import { isTokenSetQualified, PartySet, ProposalVisibility, TokenSet } from ".";
+import { isTokenSetQualified, PartySet, TokenSet } from ".";
 
 /**
  * A `Token` exchange proposal.
@@ -7,15 +7,9 @@ import { isTokenSetQualified, PartySet, ProposalVisibility, TokenSet } from ".";
  *
  * A `Proposal` can be either _qualified_ or _unqualified_, depending on whether
  * it includes any sources of ambiguity. Concretely, a `Proposal` is qualified
- * if its `want` and `give` properties are qualified, and its `receivers` is
- * not `PartyAll`.
+ * if its `want` and `give` properties are qualified.
  */
 export interface Proposal {
-    /**
-     * Determines what parties will be able to see the proposal.
-     */
-    visibility: ProposalVisibility,
-
     /**
      * The moment in time when this `Proposal` becomes acceptable.
      */
@@ -35,11 +29,6 @@ export interface Proposal {
      * A description of what tokens are offered in return for the desired such.
      */
     give: TokenSet,
-
-    /**
-     * A description of what parties receives the proposal.
-     */
-    receivers: PartySet,
 }
 
 /**

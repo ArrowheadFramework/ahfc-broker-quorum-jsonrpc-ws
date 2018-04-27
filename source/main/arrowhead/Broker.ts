@@ -41,8 +41,8 @@ export class Broker {
         }
         {
             const service = new impl.Brokering();
-            this.router.addMethod("Brokering.propose", (proposal) => {
-                return service.propose(proposal);
+            this.router.addMethod("Brokering.propose", (receivers, proposal) => {
+                return service.propose(receivers, proposal);
             });
             this.router.addMethod("Brokering.accept", (id, deadline) => {
                 return service.accept(id, deadline);
