@@ -1,15 +1,5 @@
 /**
- * Represents either a material or immaterial entity owned by a party, or a
- * kind of entity that could be owned by a party.
- *
- * # Token Credibility
- *
- * Objects of this type are meant to be used as part of cryptographic messaging
- * protocols, relying on distributed ledgers or related technologies, for the
- * purpose of keeping track of what entities can be owned. Tokens do not
- * themselves keep track of who owns them, or if they actually represent any
- * value of relevance. These properties have to be asserted through whatever
- * protocol they are used in.
+ * Represents an ownable material or immaterial entity.
  */
 export interface Token {
     /**

@@ -13,7 +13,7 @@
    height="345"
    width="370"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="uml_class_token_set.svg">
+   sodipodi:docname="type_token_set.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -136,19 +136,19 @@
        sodipodi:nodetypes="ccccccccccccccc"
        inkscape:connector-curvature="0"
        id="path25420"
-       d="m 45,892.36158 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,47.99956 L 47,942.36206 Z m 0,50 126.00001,4.8e-4 -2e-5,51.00008 -125.99999,0 z"
+       d="m 45,892.36158 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,45.99956 L 47,940.36206 Z m 0,48 126.00001,4.8e-4 -2e-5,53.00008 -125.99999,0 z"
        style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="55"
-       y="964.82098"
+       y="962.82098"
        id="text25422"
        sodipodi:linespacing="125%"><tspan
          id="tspan25424"
          sodipodi:role="line"
          x="55"
-         y="964.82098"
+         y="962.82098"
          style="font-size:12.5px"><tspan
    style="font-style:italic"
    id="tspan25426">kind </tspan>= <tspan
@@ -201,7 +201,7 @@
            id="tspan7636-1">Token</tspan></tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker20253)"
-       d="m 45,727.3622 -40,0 0,64.99996 36,0"
+       d="m 45,687.3622 -40,0 0,104.99996 36,0"
        id="path16916"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
@@ -216,7 +216,7 @@
        ry="0.018521899" />
     <path
        style="opacity:1;fill:#e67272;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 45,662.3616 0,85.00056 279.99999,0 2e-5,-85.00008 z m 2,2 276.00001,4.8e-4 -2e-5,47.99956 L 47,712.36208 Z m 0,50 276.00001,4.8e-4 -2e-5,31.00008 -275.99999,0 z"
+       d="m 45,662.3616 0,85.00056 279.99999,0 2e-5,-85.00008 z m 2,2 276.00001,4.8e-4 -2e-5,45.99956 L 47,710.36208 Z m 0,48 276.00001,4.8e-4 -2e-5,33.00008 -275.99999,0 z"
        id="rect6677-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccc" />
@@ -253,12 +253,12 @@
     <text
        sodipodi:linespacing="125%"
        id="text24210"
-       y="734.82098"
+       y="732.82098"
        x="55"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-size:12.5px"
-         y="734.82098"
+         y="732.82098"
          x="55"
          sodipodi:role="line"
          id="tspan25390">Token | TokenAND | TokenIOR | TokenXOR</tspan></text>
@@ -295,12 +295,12 @@
     <text
        sodipodi:linespacing="125%"
        id="text25428"
-       y="984.82098"
+       y="982.82098"
        x="55"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-size:12.5px"
-         y="984.82098"
+         y="982.82098"
          x="55"
          sodipodi:role="line"
          id="tspan25430"><tspan
@@ -317,19 +317,19 @@
        ry="0.018521899" />
     <path
        style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 195,767.36159 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,47.99956 L 197,817.36207 Z m 0,50 126.00001,4.8e-4 -2e-5,51.00008 -125.99999,0 z"
+       d="m 195,767.36159 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,45.99956 L 197,815.36207 Z m 0,48 126.00001,4.8e-4 -2e-5,53.00008 -125.99999,0 z"
        id="path25440"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccc" />
     <text
        sodipodi:linespacing="125%"
        id="text25442"
-       y="839.82098"
+       y="837.82098"
        x="205"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-size:12.5px"
-         y="839.82098"
+         y="837.82098"
          x="205"
          sodipodi:role="line"
          id="tspan25444"><tspan
@@ -371,13 +371,13 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="205"
-       y="859.82098"
+       y="857.82098"
        id="text25462"
        sodipodi:linespacing="125%"><tspan
          id="tspan25464"
          sodipodi:role="line"
          x="205"
-         y="859.82098"
+         y="857.82098"
          style="font-size:12.5px"><tspan
    id="tspan25466"
    style="font-style:italic">tokens</tspan>: TokenSet</tspan></text>
@@ -394,19 +394,19 @@
        sodipodi:nodetypes="ccccccccccccccc"
        inkscape:connector-curvature="0"
        id="path25470"
-       d="m 195,892.36159 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,47.99956 L 197,942.36207 Z m 0,50 126.00001,4.8e-4 -2e-5,51.00008 -125.99999,0 z"
+       d="m 195,892.36159 0,105.00056 129.99999,0 2e-5,-105.00008 z m 2,2 126.00001,4.8e-4 -2e-5,45.99956 L 197,940.36207 Z m 0,48 126.00001,4.8e-4 -2e-5,53.00008 -125.99999,0 z"
        style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="205"
-       y="964.82098"
+       y="962.82098"
        id="text25472"
        sodipodi:linespacing="125%"><tspan
          id="tspan25474"
          sodipodi:role="line"
          x="205"
-         y="964.82098"
+         y="962.82098"
          style="font-size:12.5px"><tspan
            style="font-style:italic"
            id="tspan25476">kind = </tspan><tspan
@@ -445,12 +445,12 @@
     <text
        sodipodi:linespacing="125%"
        id="text25492"
-       y="984.82098"
+       y="982.82098"
        x="205"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-size:12.5px"
-         y="984.82098"
+         y="982.82098"
          x="205"
          sodipodi:role="line"
          id="tspan25494"><tspan
@@ -466,7 +466,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path25600"
-       d="m 325,727.3622 40,0 0,64.99996 -36,0"
+       d="m 325,687.3622 40,0 0,104.99996 -36,0"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker25604)" />
     <path
        sodipodi:nodetypes="ccc"

@@ -13,7 +13,7 @@
    height="245"
    width="250"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="uml_class_ownership_result_set.svg">
+   sodipodi:docname="type_party_result_set.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -28,8 +28,8 @@
      id="namedview7887"
      showgrid="true"
      inkscape:zoom="2.4079208"
-     inkscape:cx="49.327575"
-     inkscape:cy="106.27046"
+     inkscape:cx="66.846219"
+     inkscape:cy="122.8823"
      inkscape:window-x="81"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -41,8 +41,8 @@
     <inkscape:grid
        type="xygrid"
        id="grid20004"
-       originx="-40.000001"
-       originy="-330.00001" />
+       originx="-40.000004"
+       originy="-330" />
   </sodipodi:namedview>
   <defs
      id="defs6110">
@@ -76,6 +76,21 @@
          transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
          inkscape:connector-curvature="0" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker20253-0"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path20255-5"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
   </defs>
   <metadata
      id="metadata6113">
@@ -85,64 +100,13 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      transform="translate(0,-677.36216)"
      id="layer1">
-    <rect
-       style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect16816"
-       width="130"
-       height="49.999977"
-       x="45"
-       y="867.36218"
-       rx="0.018521899"
-       ry="0.018521899" />
-    <path
-       style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 45,867.3621 0,50 130,0 0,-50 z m 2,2 126,0 0,46 -126,0 z"
-       id="path16818"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="109.99573"
-       y="886.08301"
-       id="text16820"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="109.99573"
-         y="886.08301"
-         id="tspan16822"><tspan
-           x="109.99573"
-           y="886.08301"
-           style="font-size:8.75px;text-align:center;text-anchor:middle"
-           id="tspan16824">«record type»</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="109.40186"
-       y="904.80469"
-       id="text7632-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="109.40186"
-         y="904.80469"
-         id="tspan7634-4"><tspan
-           x="109.40186"
-           y="904.80469"
-           style="font-size:17.5px;text-align:center;text-anchor:middle"
-           id="tspan7636-1">Party</tspan></tspan></text>
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker20253)"
-       d="m 45,707.3622 -40,0 0,184.99996 36,0"
-       id="path16916"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
     <rect
        style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect6658-3"
@@ -154,7 +118,7 @@
        ry="0.018521899" />
     <path
        style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 45,682.3616 0,165.00056 199.99999,0 2e-5,-165.00008 z m 2,2 196.00001,4.8e-4 -2e-5,47.99956 L 47,732.36208 Z m 0,50 196.00001,4.8e-4 -2e-5,111.00008 -195.99999,0 z"
+       d="m 45,682.3616 0,165.00056 199.99999,0 2e-5,-165.00008 z m 2,2 196.00001,4.8e-4 -2e-5,45.99956 L 47,730.36208 Z m 0,48 196.00001,4.8e-4 -2e-5,113.00008 -195.99999,0 z"
        id="rect6677-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccc" />
@@ -187,45 +151,45 @@
            x="144.40186"
            y="719.80469"
            style="font-size:17.5px;text-align:center;text-anchor:middle"
-           id="tspan7636-0">OwnershipResultSet</tspan></tspan></text>
+           id="tspan7636-0">PartyResultSet</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="55"
-       y="794.82098"
+       y="792.82098"
        id="text7680-3"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="55"
-         y="794.82098"
+         y="792.82098"
          id="tspan7682-0"
          style="font-size:12.5px"><tspan
    style="font-style:italic"
-   id="tspan21161">parties</tspan>: Party[]?</tspan></text>
+   id="tspan68001">keys</tspan>: Byte[][]?</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="55"
-       y="814.82098"
+       y="812.82098"
        id="text7666-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="55"
-         y="814.82098"
+         y="812.82098"
          id="tspan7668-6"
          style="font-size:12.5px"><tspan
    style="font-style:italic"
-   id="tspan21163">tokenIds</tspan>: String[]?</tspan></text>
+   id="tspan21163">names</tspan>: String[]?</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text24210"
-       y="754.82098"
+       y="752.82098"
        x="55"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-size:12.5px"
          id="tspan24212"
-         y="754.82098"
+         y="752.82098"
          x="55"
          sodipodi:role="line"><tspan
    style="font-style:italic"
@@ -233,13 +197,13 @@
     <text
        sodipodi:linespacing="125%"
        id="text24216"
-       y="774.82098"
+       y="772.82098"
        x="55"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-size:12.5px"
          id="tspan24218"
-         y="774.82098"
+         y="772.82098"
          x="55"
          sodipodi:role="line"><tspan
    style="font-style:italic"
@@ -247,16 +211,67 @@
     <text
        sodipodi:linespacing="125%"
        id="text24317"
-       y="834.82098"
+       y="832.82098"
        x="55"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-size:12.5px"
          id="tspan24319"
-         y="834.82098"
+         y="832.82098"
          x="55"
          sodipodi:role="line"><tspan
    style="font-style:italic"
-   id="tspan24323">items</tspan>: Ownership[]</tspan></text>
+   id="tspan24323">items</tspan>: Party[]</tspan></text>
+    <rect
+       style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16816"
+       width="130"
+       height="49.999977"
+       x="45"
+       y="867.36218"
+       rx="0.018521899"
+       ry="0.018521899" />
+    <path
+       style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 45,867.3621 0,50 130,0 0,-50 z m 2,2 126,0 0,46 -126,0 z"
+       id="path16818"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="109.99573"
+       y="886.08289"
+       id="text16820"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="109.99573"
+         y="886.08289"
+         id="tspan16822"><tspan
+           x="109.99573"
+           y="886.08289"
+           style="font-size:8.75px;text-align:center;text-anchor:middle"
+           id="tspan16824">«record type»</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="109.40186"
+       y="904.80469"
+       id="text7632-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="109.40186"
+         y="904.80469"
+         id="tspan7634-4"><tspan
+           x="109.40186"
+           y="904.80469"
+           style="font-size:17.5px;text-align:center;text-anchor:middle"
+           id="tspan7636-1">Party</tspan></tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker20253)"
+       d="m 45,707.3622 -40,0 0,184.9999 36,0"
+       id="path16916"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
   </g>
 </svg>

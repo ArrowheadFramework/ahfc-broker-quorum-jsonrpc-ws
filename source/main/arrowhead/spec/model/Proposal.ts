@@ -1,4 +1,4 @@
-import { isTokenSetQualified, PartySet, TokenSet } from ".";
+import { isTokenSetQualified, TokenSet } from ".";
 
 /**
  * A `Token` exchange proposal.

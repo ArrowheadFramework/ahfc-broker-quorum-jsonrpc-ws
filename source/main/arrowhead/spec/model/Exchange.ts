@@ -1,4 +1,4 @@
-import { Party, Proposal } from ".";
+import { Proposal } from ".";
 
 /**
  * Represents a completed `Token` exchange.
@@ -20,18 +20,18 @@ export interface Exchange {
     proposal: Proposal;
 
     /**
-     * The party that sent and confirmed the `proposal`.
+     * The public key of the party that proposed and confirmed the `proposal`.
      *
      * This party gave up the tokens in `proposal.give`, and received ownership
      * of the tokens in `proposal.want`.
      */
-    sender: Party;
+    proposerKey: Buffer;
 
     /**
-     * The party that received and accepted the `proposal`.
+     * The public key of the party that accepted the `proposal`.
      *
      * This party gave up the tokens in `proposal.want`, and received ownership
      * of the tokens in `proposal.give`.
      */
-    receiver: Party;
+    acceptorKey: string;
 }

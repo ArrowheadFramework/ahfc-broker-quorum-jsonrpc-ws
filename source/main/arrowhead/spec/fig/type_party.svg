@@ -9,11 +9,11 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg6108"
-   viewBox="0 0 210.00002 115.00056"
-   height="115.00056"
-   width="210.00002"
+   viewBox="0 0 230 155.00001"
+   height="155"
+   width="230"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="uml_class_party.svg">
+   sodipodi:docname="type_party.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -27,9 +27,9 @@
      inkscape:window-height="1176"
      id="namedview7887"
      showgrid="true"
-     inkscape:zoom="2.4079208"
-     inkscape:cx="150.86746"
-     inkscape:cy="-12.907166"
+     inkscape:zoom="2.6434783"
+     inkscape:cx="147.41745"
+     inkscape:cy="52.512241"
      inkscape:window-x="81"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -41,8 +41,8 @@
     <inkscape:grid
        type="xygrid"
        id="grid20004"
-       originx="-40.000001"
-       originy="-200.00001" />
+       originx="-40.000015"
+       originy="-160.00002" />
   </sodipodi:namedview>
   <defs
      id="defs6110">
@@ -90,50 +90,50 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-40,-737.3616)"
+     transform="translate(-40.000015,-737.36215)"
      id="layer1">
     <rect
        style="opacity:1;fill:#f8f1d6;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect6658-3"
-       width="200"
-       height="105.00053"
+       width="220.00002"
+       height="145.00053"
        x="45"
        y="742.36163"
        rx="0.018521899"
        ry="0.018521899" />
     <path
        style="opacity:1;fill:#e6cf72;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 45,742.3616 0,105.00056 199.99999,0 2e-5,-105.00008 z m 2,2 196.00001,4.8e-4 -2e-5,47.99956 L 47,792.36208 Z m 0,50 196.00001,4.8e-4 -2e-5,51.00008 -195.99999,0 z"
+       d="m 45,742.3616 0,145.00056 219.99999,0 2e-5,-145.00008 z m 2,2 216.00001,4.8e-4 -2e-5,45.99956 L 47,790.36208 Z m 0,48 216.00001,4.8e-4 -2e-5,93.00008 -215.99999,0 z"
        id="rect6677-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="144.99573"
+       x="154.99573"
        y="761.08313"
        id="text7690-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="144.99573"
+         x="154.99573"
          y="761.08313"
          id="tspan7692-8"><tspan
-           x="144.99573"
+           x="154.99573"
            y="761.08313"
            style="font-size:8.75px;text-align:center;text-anchor:middle"
            id="tspan7694-4">«record type»</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="144.40186"
+       x="154.40186"
        y="779.80469"
        id="text7632-2"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="144.40186"
+         x="154.40186"
          y="779.80469"
          id="tspan7634-9"><tspan
-           x="144.40186"
+           x="154.40186"
            y="779.80469"
            style="font-size:17.5px;text-align:center;text-anchor:middle"
            id="tspan7636-0">Party</tspan></tspan></text>
@@ -141,29 +141,57 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="55"
-       y="814.82098"
+       y="812.82098"
        id="text7680-3"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="55"
-         y="814.82098"
+         y="812.82098"
          id="tspan7682-0"
          style="font-size:12.5px"><tspan
    style="font-style:italic"
-   id="tspan21161">key</tspan>: Byte[]</tspan></text>
+   id="tspan62099">key</tspan>: Byte[]</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text49876"
+       y="852.82098"
+       x="55"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         id="tspan49878"
+         y="852.82098"
+         x="55"
+         sodipodi:role="line"><tspan
+   id="tspan49880"
+   style="font-style:italic">name</tspan>: String</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="55"
-       y="834.82098"
-       id="text7666-1"
+       y="872.82098"
+       id="text49882"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="55"
-         y="834.82098"
-         id="tspan7668-6"
+         y="872.82098"
+         id="tspan49884"
          style="font-size:12.5px"><tspan
    style="font-style:italic"
-   id="tspan21163">keyalg</tspan>: String</tspan></text>
+   id="tspan49886">attributes</tspan>: Map&lt;String, String&gt;</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text62093"
+       y="832.82098"
+       x="55"
+       style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:12.5px"
+         id="tspan62095"
+         y="832.82098"
+         x="55"
+         sodipodi:role="line"><tspan
+   id="tspan62097"
+   style="font-style:italic">keyalg</tspan>: String</tspan></text>
   </g>
 </svg>

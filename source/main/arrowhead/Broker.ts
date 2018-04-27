@@ -26,17 +26,14 @@ export class Broker {
         this.router.addServer(this.server);
         {
             const service = new impl.BrokerAccounting();
-            this.router.addMethod("BrokerAccounting.getAgent", () => {
-                return service.getAgent();
+            this.router.addMethod("BrokerAccounting.getAgentId", () => {
+                return service.getAgentId();
             });
             this.router.addMethod("BrokerAccounting.getExchanges", (query) => {
                 return service.getExchanges(query);
             });
-            this.router.addMethod("BrokerAccounting.getOwnerships", (query) => {
-                return service.getOwnerships(query);
-            });
-            this.router.addMethod("BrokerAccounting.getTokens", (query) => {
-                return service.getTokens(query);
+            this.router.addMethod("BrokerAccounting.getParties", (query) => {
+                return service.getParties(query);
             });
         }
         {

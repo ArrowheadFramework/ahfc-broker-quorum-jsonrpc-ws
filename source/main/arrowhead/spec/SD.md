@@ -6,19 +6,19 @@ This document describes the abstract services exposed by the Arrowhead Broker Sy
 
 ## 1. Overview
 
-The `Broker` system facilitates token ownership negotitation, accounting, and tagging.
-It acts as a trusted intermediary, allowing its consumers to access an arbitrary _trading platform_, which allows them to exchange `Token`s representing arbitrary value.
+The `Broker` system facilitates token ownership negotitation and accounting.
+It acts as a trusted intermediary, allowing its consumers to exchange tokens via an arbitrary _trading platform_.
 
 ![](fig/services_broker.svg)
 
 ### 1.1. Brokering Sessions
 
-Whenever a properly authorized Arrowhead system consumes the `Brokering` service produced by a `Broker` system, a persistent session is created or resumed.
+Whenever a properly authorized Arrowhead system consumes the `Brokering` service produced by a `Broker` system, a persistent session is created or resumed for the consuming system.
 Each session is associated with the authenticated identity of its owner, provided via a certificate or otherwise.
 
-#### 1.1.1. Trading Platform Identity
+#### 1.1.1. Identities
 
-All brokering sessions contain a _trading platform identity_, which is the identity used to represent the session owner while exchanging tokens. The trading platform identity can be queried via the `BrokerAccounting` service `getAgent` function, and is primarily of use to consuming systems for telling their own activity apart from any other data acquired via the `BrokerAccounting` service.
+All brokering sessions contain a _trading platform identity_, which is the identity used to represent the session owner while exchanging tokens. The trading platform identity can be queried via the `BrokerAccounting` service `getAgentId` function, and corresponds to the `key` field of the `Party` data type. The identity is primarily of use to consuming systems for telling their own activity apart from any other data acquired via the `BrokerAccounting` service.
 
 #### 1.1.2. On-Going Token Exchanges
 
@@ -30,17 +30,16 @@ The `Broker` must try to resend `BrokeringPush` messages being lost due to a ses
 ### 2.1. BrokerAccounting
 
 The `BrokerAccounting` service accounts for past exchange events as well as the identity it uses to represent its consumer.
-The services provides no sophisticated analytical capabilities; it serves lists of `Exchange`s, `Ownership`s and `Token`s in response to simpler queries.
-If data analysis is desired, the service can provide any data required to any properly authorized analysis service.
+The services provides no sophisticated analytical capabilities; it serves lists of `Exchange`, `Party` objects in response to coarse-grained queries.
+The data served could, however, be used as input to any kind of analysis system.
 
 ![](fig/service_broker_accounting.svg)
 
-| Function        | Description
-|:----------------|:---
-| `getAgent`      | Gets _trading platform identity_ used to represent function caller.
-| `getExchanges`  | Queries for `Exchange` objects.
-| `getOwnerships` | Queries for `Ownership` objects.
-| `getTokens`     | Queries for `Token` objects.
+| Function       | Description
+|:---------------|:---
+| `getAgentId`   | Gets _trading platform identity_ used to represent function caller.
+| `getExchanges` | Queries for `Exchange` objects, representing finalized `Token` exchanges.
+| `getParties`   | Queries for `Party` objects, representing known parties that can or have exchanged `Token`s.
 
 ### 2.2. Brokering
 
@@ -77,8 +76,7 @@ In that case, the same communication channel established by the `Brokering` cons
 
 ### 3.1. Exchange
 
-Describes a completed `Token` exchange, where a `sender` gave up ownership of
-some tokens in `proposal.give`, in exchange for the tokens in `proposal.want`.
+Describes a completed `Token` exchange, where a proposer gave up ownership of some tokens in `proposal.give` in exchange for the tokens in `proposal.want`.
 
 ![](fig/type_exchange.svg)
 
@@ -87,8 +85,8 @@ some tokens in `proposal.give`, in exchange for the tokens in `proposal.want`.
 | `id`          | String uniquely identifying `Exchange`.
 | `completedAt` | The date and time at which `Exchange` was finalized.
 | `proposal`    | The accepted and confirmed exchange `Proposal`.
-| `sender`      | `Party` that sent and confirmed `proposal`.
-| `receiver`    | `Party` that received and accepted `proposal`.
+| `proposerKey` | Identity of `Party` that proposed and confirmed `proposal`.
+| `acceptorKey` | Identity of `Party` that accepted `proposal`.
 
 ### 3.2. ExchangeQuery
 
@@ -101,15 +99,15 @@ If, for example, no `offset` is specified, it must be understood as being `0`, a
 
 ![](fig/type_exchange_query.svg)
 
-| Field      | Description
-|:-----------|:---
-| `offset`   | If given, excludes `offset` items from beginning of result set.
-| `limit`    | If given, limits result set size to `limit` items.
-| `ids`      | If given, excludes items without an `id` matching any provided.
-| `before`   | If given, includes only items created before provided time.
-| `after`    | If given, includes only items created after provided time.
-| `sender`   | If given, includes only items with provided `sender`.
-| `receiver` | If given, includes only items with provided `receiver`.
+| Field          | Description
+|:---------------|:---
+| `offset`       | If given, excludes `offset` items from beginning of result set.
+| `limit`        | If given, limits result set size to `limit` items.
+| `ids`          | If given, includes only items with an `id` matching any provided.
+| `before`       | If given, includes only items created before provided time.
+| `after`        | If given, includes only items created after provided time.
+| `proposerKeys` | If given, includes only items with a `proposerKey` matching any provided.
+| `acceptorKeys` | If given, includes onlu items with an `acceptorKey` matching any provided.
 
 ### 3.3. ExchangeResultSet
 
@@ -120,115 +118,83 @@ The receiver of an `ExchangeQuery` is allowed to truncate the set of `items` in 
 If, however, this is done, it must be reflected in the `limit` field in the `ExchangeResultSet`.
 
 __Offset out of bounds__.
-If the `offset` of a `ExchangeQuery` exceeds the number of matching items, the `ExchangeQuery` receiver __must__ reduce the `offset` in the `ExchangeResultSet` to the number of matching items, set `limit` to `0` and provide `items` as an empty array.
+If the `offset` of an `ExchangeQuery` exceeds the number of matching items, the `ExchangeQuery` receiver __must__ reduce the `offset` in the `ExchangeResultSet` to the number of matching items, set `limit` to `0` and provide `items` as an empty array.
 
 ![](fig/type_exchange_result_set.svg)
 
-| Field      | Description
-|:-----------|:---
-| `offset`   | Original or adjusted query offset.
-| `limit`    | Original or adjusted query limit.
-| `ids`      | Original query `ids`, if given.
-| `before`   | Original query `before`, if given.
-| `after`    | Original query `after`, if given.
-| `sender`   | Original query `sender`, if given.
-| `receiver` | Original query `receiver`, if given.
-| `items`    | `Exchange`s matching original `ExchangeQuery`.
+| Field          | Description
+|:---------------|:---
+| `offset`       | Original or adjusted query offset.
+| `limit`        | Original or adjusted query limit.
+| `ids`          | Original query `ids`, if any.
+| `before`       | Original query `before`, if any.
+| `after`        | Original query `after`, if any.
+| `proposerKeys` | Original query `proposerKeys`, if any.
+| `acceptorKeys` | Original query `acceptorKeys`, if any.
+| `items`        | `Exchange`s matching original `ExchangeQuery`.
 
-### 3.4. Ownership
-
-Specifies what `Party` owns one particular `Token`.
-
-![](fig/type_ownership.svg)
-
-| Field     | Description
-|:----------|:---
-| `party`   | The owner of the `Token` identified by `tokenId`.
-| `tokenId` | The `id` of a `Token`.
-
-### 3.5. OwnershipQuery
-
-A query for `Ownership` items.
-
-__Undefined implies all__.
-An `OwnershipQuery` is essentially a set of properties that may or may not be specified in order to limit the size of an `OwnershipResultSet`.
-Properties that are not specified ought to be understood as if a certain restriction has _not_ been imposed, implying that there should be no reduction in result set size.
-If, for example, no `offset` is specified, it must be understood as being `0`, as that is the only way for the property to not reduce the size of a corresponding `OwnershipResultSet`.
-
-![](fig/type_ownership_query.svg)
-
-| Field      | Description
-|:-----------|:---
-| `offset`   | If given, excludes `offset` items from beginning of result set.
-| `limit`    | If given, limits result set size to `limit` items.
-| `parties`  | If given, excludes items without a `party` matching any provided.
-| `tokenIds` | If given, excludes items without a `tokenId` matching any provided.
-
-### 3.6. OwnershipResultSet
-
-The result of some `OwnershipQuery`.
-
-__Truncation__.
-The receiver of an `OwnershipQuery` is allowed to truncate the set of `items` in its result.
-If, however, this is done, it must be reflected in the `limit` field in the `OwnershipResultSet`.
-
-__Offset out of bounds__.
-If the `offset` of a `OwnershipQuery` exceeds the number of matching items, the `OwnershipQuery` receiver __must__ reduce the `offset` in the `OwnershipResultSet` to the number of matching items, set `limit` to `0` and provide `items` as an empty array.
-
-![](fig/type_ownership_result_set.svg)
-
-| Field      | Description
-|:-----------|:---
-| `offset`   | Original or adjusted query offset.
-| `limit`    | Original or adjusted query limit.
-| `parties`  | Original query `parties`, if given.
-| `tokenIds` | Original query `tokenIds`, if given.
-| `items`    | `Ownership`s matching original `OwnershipQuery`.
-
-### 3.7. Party
+### 3.4. Party
 
 Represents the identity of a party that can own and exchange `Token`s.
 
-__Valid key algorithm identifiers__.
-`keyalg` values must consist only of lower-case letters.
-If a group qualifier is required, such as when an elliptic curve algorithm is used, the group name follows the algorithm name and a dash.
-Examples of valid values are `"dsa"`, `"ecdsa-secp256k1"` and `"rsa"`.
-
-__Standardized key algorithm identifiers__.
-The algorithm and group names should, if possible, conform to the _TLS SignatureAlgorithm Registry_ and _TLS Supported Groups Registry_ of the _IANA Transport Layer Security (TLS) Parameters_ document (https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml).
-The _Description_ column of each table contains the identifiers to be used.
-
-__Valid key lengths__.
-The byte length of key __must__ be directly supported by the algorithm specified in `keyalg` _without padding_.
-If, for example, `keyalg` is `"ecdsa-secp256k1"`, then `key.length` must be `32`, even if a certain amount of leading or trailing bytes would be `0`.
-If `keyalg` would be `"rsa"`, then any valid RSA length is allowed (e.g., `128`, `256`, or `512`).
+__Party identifiers__.
+Party identifiers are only guaranteed to be valid for communication with a particular Broker system.
+There may, however, be ways to have this guarantee extended to include more system instances, such as by having multiple Brokers share state by using the same database cluster.
 
 ![](fig/type_party.svg)
 
+| Field        | Description
+|:-------------|:---
+| `id`         | Unique `Party` string identifier.
+| `name`       | Common name of `Party`.
+| `attributes` | Any other `Party` attributes.
+
+### 3.5. PartyQuery
+
+A query for `Party` items.
+
+__Undefined implies all__.
+An `PartyQuery` is essentially a set of properties that may or may not be specified in order to limit the size of an `PartyResultSet`.
+Properties that are not specified ought to be understood as if a certain restriction has _not_ been imposed, implying that there should be no reduction in result set size.
+If, for example, no `offset` is specified, it must be understood as being `0`, as that is the only way for the property to not reduce the size of a corresponding `PartyResultSet`.
+
+![](fig/type_party_query.svg)
+
 | Field    | Description
 |:---------|:---
-| `key`    | Unencoded public key identifying a party.
-| `keyalg` | Signature algoritm used to generate `key`.
+| `offset` | If given, excludes `offset` items from beginning of result set.
+| `limit`  | If given, limits result set size to `limit` items.
+| `keys`   | If given, includes only items with a `key` matching any provided.
+| `names`  | If given, includes only items with a `name` matching any provided.
 
-### 3.8. PartySet
+### 3.6. PartyResultSet
 
-A set of `Party` objects.
+The result of some `PartyQuery`.
 
-![](fig/type_party_set.svg)
+__Truncation__.
+The receiver of an `PartyQuery` is allowed to truncate the set of `items` in its result.
+If, however, this is done, it must be reflected in the `limit` field in the `PartyResultSet`.
 
-| Variant   | Description
-|:----------|:---
-| `Party`   | A single `Party`.
-| `Party[]` | An array of zero or more `Party` objects.
-| `Null`    | Represents all existing parties.
+__Offset out of bounds__.
+If the `offset` of a `PartyQuery` exceeds the number of matching items, the `PartyQuery` receiver __must__ reduce the `offset` in the `PartyResultSet` to the number of matching items, set `limit` to `0` and provide `items` as an empty array.
 
-### 3.9. Proposal
+![](fig/type_party_result_set.svg)
+
+| Field    | Description
+|:---------|:---
+| `offset` | Original or adjusted query offset.
+| `limit`  | Original or adjusted query limit.
+| `keys`   | Original query `keys`, if any.
+| `names`  | Original query `names`, if any.
+| `items`  | `Party` items matching original `PartyQuery`.
+
+### 3.7. Proposal
 
 A `Token` exchange proposal.
 
 __Proposal qualification__.
 A `Proposal` can be either _qualified_ or _unqualified_, depending on whether it includes any sources of ambiguity.
-Concretely, a `Proposal` is qualified if its `want` and `give` properties are qualified, and its `receivers` field is not of type `Null`.
+Concretely, a `Proposal` is qualified if its `want` and `give` properties are qualified.
 
 ![](fig/type_proposal.svg)
 
@@ -239,40 +205,37 @@ Concretely, a `Proposal` is qualified if its `want` and `give` properties are qu
 | `want`       | A description of what tokens are desired.
 | `give`       | A description of what tokens are offered in return for the desired such.
 
-### 3.10. Token
+### 3.8. Token
+
+A representation of an ownable material or immaterial entity.
+
+__Identifiers must be unique__.
+Relevant `Token` `id`s could contain everything from simple names to serial numbers.
+However, an `id` must, without being combined with a `kind`, be able to uniquely identify a single ownable entity.
 
 ![](fig/type_token.svg)
 
-| Field              | Description
-|:-------------------|:---
-| |
-| |
+| Field        | Description
+|:-------------|:---
+| `id`         | A string uniquely idenitifying a particular entity, if given.
+| `kind`       | A string identifying the general category of this entity. Must not be any of `"_and"`, `"_ior"` or `"_xor"`.
+| `properties` | A set of properties distinguishing this entity from other of the same `kind`.
 
-### 3.11. TokenQuery
+### 3.9. TokenSet
 
-![](fig/type_token_query.svg)
+A logical set of `Token`s.
 
-| Field              | Description
-|:-------------------|:---
-| `offset`           | Number of items to exclude, from beginning of result set.
-| `limit`            | The maximum number of items to include in result set.
-
-### 3.12. TokenResultSet
-
-![](fig/type_token_result_set.svg)
-
-| Field              | Description
-|:-------------------|:---
-| |
-| |
-
-### 3.13. TokenSet
+__Logical sets__.
+A `TokenSet` is logical in the sense that it can contain alternatives rather than being a regular list of included `Tokens`.
+The `TokenSet` type is primarily intended to facilitate the presentation of alternatives when proposing token exchanges, as described in the documentation of the `Brokering` service interface.
 
 ![](fig/type_token_set.svg)
 
-| Field              | Description
-|:-------------------|:---
-| |
-| |
+| Variant    | Description
+|:-----------|:---
+| `Token`    | A single `Token`.
+| `TokenAND` | A set of alternatives where _all_ `TokenSet`s must be chosen.
+| `TokenIOR` | A set of alternatives where _at least one_ `TokenSet` must be chosen.
+| `TokenXOR` | A set of alternatives where _exactly one_ `TokenSet` must be chosen.
 
 ## References

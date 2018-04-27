@@ -1,4 +1,4 @@
-import { Party, Query } from ".";
+import { Query } from ".";
 
 /**
  * Specifies properties of a desired set of `Exchange` objects.
@@ -11,22 +11,22 @@ export interface ExchangeQuery extends Query {
     ids?: string[];
 
     /**
-     * Requests only `Exchange`s completed prior to the given `Date`.
+     * Requests only `Exchange`s completed prior to given `Date`.
      */
     before?: Date;
 
     /**
-     * Requests only `Exchange`s completed after the given `Date`.
+     * Requests only `Exchange`s completed after given `Date`.
      */
     after?: Date;
 
     /**
-     * Requests only `Exchange`s where the identified `Party` is _sender_.
+     * Requests only `Exchange`s where `senderId` matches any one given.
      */
-    sender?: Party;
+    proposerKeys?: Buffer[];
 
     /**
-     * Requests only `Exchanges`s where the identified `Party` is _receiver_.
+     * Requests only `Exchanges`s where `receiverId` matches any one given.
      */
-    receiver?: Party;
+    acceptorKeys?: Buffer[];
 }

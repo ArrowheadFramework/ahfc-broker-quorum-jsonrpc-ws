@@ -10,7 +10,7 @@ import * as service from "../spec/service";
  * `BrokeringPush` class is used to _receive_ messages.
  */
 export class Brokering implements service.Brokering {
-    public propose(receivers: model.PartySet, proposal: model.Proposal): Promise<string> {
+    public propose(proposal: model.Proposal, ...receiverKeys: Buffer[]): Promise<string | null> {
         throw new Error("Method not implemented.");
     }
 
@@ -22,11 +22,11 @@ export class Brokering implements service.Brokering {
         throw new Error("Method not implemented.");
     }
 
-    public confirm(id: string, acceptor: model.Party): Promise<void> {
+    public confirm(id: string, acceptorKey: Buffer): Promise<void> {
         throw new Error("Method not implemented.");
     }
 
-    public abort(id: string, acceptor: model.Party): Promise<void> {
+    public abort(id: string, acceptorKey: Buffer): Promise<void> {
         throw new Error("Method not implemented.");
     }
 }

@@ -7,8 +7,8 @@ formal Arrowhead specification of the Broker system.
 
 | File Entry             | Description                                         |
 |:-----------------------|:----------------------------------------------------|
-| [`fig/`](fig/)         | Figures used by the `SySD.md` document.             |
+| [`fig/`](fig/)         | Figures used by the `SD.md` and `SysD.md` documents.|
 | [`model/`](model/)     | Data types used by the Arrowhead interface.         |
 | [`service/`](service/) | Services making up the Broker Arrowhead interface.  |
-| [`SysD.md`](SysD.md)   | Arrowhead Broker System Description.                |
 | [`SD.md`](SD.md)       | Arrowhead Broker Service Description.               |
+| [`SysD.md`](SysD.md)   | Arrowhead Broker System Description.                |

@@ -1,4 +1,4 @@
-import { Party, PartySet, Proposal } from "../model";
+import { Proposal } from "../model";
 
 /**
  * A service useful for exchanging `Token`s through a three-step process.
@@ -73,11 +73,12 @@ export interface Brokering {
     /**
      * Proposes a `Token` exchange.
      *
-     * @param receivers The receivers of `proposal`.
      * @param proposal Exchange `Proposal`.
+     * @param receiverKeys The receivers of `proposal`. An empty array is
+     *        interpreted as representing all possible receivers.
      * @returns Promise of proposal identifier, unless proposal is unqualified.
      */
-    propose(receivers: PartySet, proposal: Proposal): Promise<string | null>;
+    propose(proposal: Proposal, ...receiverKeys: Buffer[]): Promise<string | null>;
 
     /**
      * Accepts a _qualified_ `Proposal`, making it pending confirmation.
@@ -110,10 +111,10 @@ export interface Brokering {
      * and an `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
-     * @param acceptor Party having accepted `Proposal`.
+     * @param acceptorKey Identifies party having accepted `Proposal`.
      * @returns Promise of operation completion.
      */
-    confirm(id: string, acceptor: Party): Promise<void>;
+    confirm(id: string, acceptorKey: Buffer): Promise<void>;
 
     /**
      * Aborts accepted exchange `Proposal`.
@@ -123,8 +124,8 @@ export interface Brokering {
      * an `Error` is thrown.
      * 
      * @param id Exchange `Proposal` identifier.
-     * @param acceptor Party having accepted `Proposal`.
+     * @param acceptorKey Identifies party having accepted `Proposal`.
      * @returns Promise of operation completion.
      */
-    abort(id: string, acceptor: Party): Promise<void>;
+    abort(id: string, acceptorKey: Buffer): Promise<void>;
 }

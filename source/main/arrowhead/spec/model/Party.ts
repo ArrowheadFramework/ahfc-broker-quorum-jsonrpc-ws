@@ -1,9 +1,9 @@
 /**
- * Represents the identity of a single party.
+ * Represents a party that can own and exchange `Token`s.
  */
 export interface Party {
     /**
-     * Unencoded public key identifying a party.
+     * Unencoded public key, or other identifier, identifying a party.
      *
      * # Valid Buffer Lengths
      *
@@ -12,19 +12,20 @@ export interface Party {
      * `"ecdsa-secp256k1"`, then `key.length` must be `32`, even if a certain
      * amount of leading or trailing bytes would be `0`. If `keyalg` would be
      * `"rsa"`, then any valid RSA length is allowed (e.g., `128`, `256`, or
-     * `512`).
+     * `512`). If no `keyalg` is specified no length restrictions are imposed.
      */
     key: Buffer;
 
     /**
-     * Signature algoritm used to generate `key`.
+     * Signature algoritm used to generate `key`, if `key` is known to be a
+     * public key.
      *
      * # Valid Values
      *
-     * `keyalg` values must consist only of lower-case letters. If a group
-     * qualifier is required, such as when an elliptic curve algorithm is used,
-     * the group name follows the algorithm name and a dash. Examples of valid
-     * values are `"dsa"`, `"ecdsa-secp256k1"` and `"rsa"`.
+     * If given, `keyalg` values must consist only of lower-case letters. If a
+     * group qualifier is required, such as when an elliptic curve algorithm is
+     * used, the group name follows the algorithm name and a dash. Examples of
+     * valid values are `"dsa"`, `"ecdsa-secp256k1"` and `"rsa"`.
      *
      * ## Standardized Values
      *
@@ -35,5 +36,15 @@ export interface Party {
      *
      * [iana]: https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml
      */
-    keyalg: string;
+    keyalg?: string;
+
+    /**
+     * Common name of `Party`.
+     */
+    name: string;
+
+    /**
+     * Any other `Party` attributes.
+     */
+    attributes: { [attribute: string]: string };
 }
