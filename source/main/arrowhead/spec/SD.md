@@ -30,8 +30,7 @@ The `Broker` must try to resend `BrokeringPush` messages being lost due to a ses
 ### 2.1. BrokerAccounting
 
 The `BrokerAccounting` service accounts for past exchange events as well as the identity it uses to represent its consumer.
-The services provides no sophisticated analytical capabilities; it serves lists of `Exchange`, `Party` objects in response to coarse-grained queries.
-The data served could, however, be used as input to any kind of analysis system.
+The services provides no sophisticated analytical capabilities; it serves lists of `Exchange` or `Party` objects in response to coarse-grained queries.
 
 ![](fig/service_broker_accounting.svg)
 
@@ -225,10 +224,6 @@ However, an `id` must, without being combined with a `kind`, be able to uniquely
 
 A logical set of `Token`s.
 
-__Logical sets__.
-A `TokenSet` is logical in the sense that it can contain alternatives rather than being a regular list of included `Tokens`.
-The `TokenSet` type is primarily intended to facilitate the presentation of alternatives when proposing token exchanges, as described in the documentation of the `Brokering` service interface.
-
 ![](fig/type_token_set.svg)
 
 | Variant    | Description
@@ -237,5 +232,38 @@ The `TokenSet` type is primarily intended to facilitate the presentation of alte
 | `TokenAND` | A set of alternatives where _all_ `TokenSet`s must be chosen.
 | `TokenIOR` | A set of alternatives where _at least one_ `TokenSet` must be chosen.
 | `TokenXOR` | A set of alternatives where _exactly one_ `TokenSet` must be chosen.
+
+#### 3.9.1. Logical Sets
+
+A `TokenSet` is _logical_ in the sense that it expresses a set of permitted `Token` combinations using the logical constructs `AND`, `IOR` and `XOR`.
+The type is intended to facilitate the presentation of alternatives when proposing token exchanges, as described in the documentation of the `Brokering` service interface.
+
+Consider a scenario when some party _A_ presents the following proposal, _A1_, written in pseudo-code.
+
+```
+A1 = {
+    want: ($1 IOR $2) AND ($3 XOR $4)
+    give: ($5 XOR $6)
+}
+```
+
+Tokens are represented by dollar-signs (`$`) followed by integers.
+Logical constructs are represented by the infix operators `AND`, `IOR` or `XOR`, and parentheses are used to control precedence.
+The `want` field states what `Token`s _A_ want, while `give` expresses what _A_ is willing to provide in return.
+
+Let us assume that a party _B_ formulates a counter-proposal, _B1_, from the original _A1_ proposal.
+In order to be reasonably sure _A_ will be interested in _B1_, it is formulated as a _qualification_ of _A1_.
+A proposal being a _qualification_ implies that it is a less ambigous variant of an original proposal, where `IOR` and `XOR` constructs, as well as `Token`s without `id`s are considered contributors to ambiguity.
+
+```
+B1 = {
+    want: ($6)
+    give: ($1 IOR $2) AND ($4)
+}
+```
+
+Notice how the `want` and `give` fields switched positions in _B2_, as the counter-proposal is written from the perspective of its new sender.
+Even though _B1_ is a _qualification_ of _A1_, it still contains at least one source of ambiguity (the `IOR` operator), making it _unqualified_.
+Parties negotiating about a potential exchange may keep qualifying each other's proposals until one is presented without any sources of ambiguity, which then can be accepted and confirmed by two parties.
 
 ## References
