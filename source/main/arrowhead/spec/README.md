@@ -12,6 +12,5 @@ Arrowhead Broker Interface Design Description.
 
 | File Entry             | Description                                         |
 |:-----------------------|:----------------------------------------------------|
-| [`fig/`](fig/)         | Figures used by the `SD.md` and `SysD.md` documents.|
 | [`model/`](model/)     | Data types used by the Arrowhead interface.         |
 | [`service/`](service/) | Services making up the Broker Arrowhead interface.  |
