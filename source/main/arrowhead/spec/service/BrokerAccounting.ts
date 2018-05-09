@@ -1,33 +1,22 @@
 import * as model from "../model";
 
 /**
- * A service able to account for all parties and exchanges known to a Broker
- * system.
- *
- * # Object Visibility
- *
- * The service only serves objects a consuming system is authorized to see,
- * meaning that the results of calling the service functions may be different
- * for different consumers.
+ * The BrokerAccounting service, accounts for past exchange events as well as
+ * the identities of any exchange parties.
  */
 export interface BrokerAccounting {
-    /**
-     * Requests `Party` identifier used to represent the calling system.
-     *
-     * @returns Promise of `Party` identifier.
-     */
-    getAgentId(): Promise<string>;
 
     /**
-     * Queries for `Exchange`s.
+     * Queries for `Exchange` objects, representing finalized `Token` exchanges.
      * 
      * @param query Specification of what `Exchange`s to acquire.
-     * @returns Promise of any `Exchange`s matching the given `ExchangeQuery`.
+     * @returns Promise of any `Exchanges` matching the given `ExchangeQuery`.
      */
     getExchanges(query: model.ExchangeQuery): Promise<model.ExchangeResultSet>;
 
     /**
-     * Queries for `Party` objects.
+     * Queries for `Party` objects, representing known parties that can or have
+     * exchanged `Tokens`.
      * 
      * @param query Specification of what `Party` objects to acquire.
      * @returns Promise of any `Party` objects matching given `PartyQuery`.

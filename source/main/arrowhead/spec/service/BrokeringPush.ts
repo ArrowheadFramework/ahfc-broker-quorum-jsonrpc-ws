@@ -1,17 +1,13 @@
-import { Proposal } from "../model";
+import { Proposal, ProposalError } from "../model";
 
 /**
- * A service useful for exchanging `Token`s through a three-step process.
+ * The Brokering service, used by consuming systems to receive messages related
+ * to negotiating Token exchanges.
  *
  * # Receiver's Interface
  *
  * This interface is used by consuming AHF systems to _receive_ relevant
  * messages. The `Brokering` interface is used to _send_ messages.
- *
- * # Exchange State Machine
- *
- * See the documentation of the `Brokering` interface for more details about the
- * ownership exchange state machine.
  */
 export interface BrokeringPush {
     /**
@@ -58,4 +54,21 @@ export interface BrokeringPush {
      * @returns Promise of operation completion.
      */
     abort(id: string): Promise<void>;
+
+    /**
+     * Notifies about an accepted or confirmed `Proposal` having become binding.
+     * 
+     * @param id Exchange `Proposal` identifier.
+     * @returns Promise of operation completion.
+     */
+    finalized(id: string): Promise<void>;
+
+    /**
+     * Notifies about a proposed, accepted and/or confirmed `Proposal` failing
+     * due to a system error.
+     * 
+     * @param error Description of error.
+     * @returns Promise of operation completion.
+     */
+    error(error: ProposalError): Promise<void>;
 }

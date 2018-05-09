@@ -1,13 +1,7 @@
-import { isTokenSetQualified, TokenSet } from ".";
+import { isTokenExprValid, isTokenExprQualified, TokenExpr } from ".";
 
 /**
  * A `Token` exchange proposal.
- *
- * # Proposal Qualification
- *
- * A `Proposal` can be either _qualified_ or _unqualified_, depending on whether
- * it includes any sources of ambiguity. Concretely, a `Proposal` is qualified
- * if its `want` and `give` properties are qualified.
  */
 export interface Proposal {
     /**
@@ -23,12 +17,12 @@ export interface Proposal {
     /**
      * A description of what tokens are desired.
      */
-    want: TokenSet,
+    want: TokenExpr,
 
     /**
      * A description of what tokens are offered in return for the desired such.
      */
-    give: TokenSet,
+    give: TokenExpr,
 }
 
 /**
@@ -40,12 +34,23 @@ export interface Proposal {
  * @returns Whether `proposal` is acceptable.
  */
 export function isProposalAcceptable(proposal: Proposal, fudgeInMs = 300) {
-    if (!isProposalQualified(proposal)) {
+    if (!isProposalQualified(proposal) || !isProposalValid(proposal)) {
         return false;
     }
     const now = Date.now();
     return now >= (proposal.baseline.getTime() - fudgeInMs)
         && now < (proposal.deadline.getTime() + fudgeInMs);
+}
+
+/**
+ * Checks whether given `Proposal` is valid.
+ * 
+ * @param proposal Checked `Proposal`
+ * @returns Whether `proposal` is valid.
+ */
+export function isProposalValid(proposal: Proposal): boolean {
+    return isTokenExprValid(proposal.want)
+        && isTokenExprValid(proposal.give);
 }
 
 /**
@@ -55,6 +60,6 @@ export function isProposalAcceptable(proposal: Proposal, fudgeInMs = 300) {
  * @returns Whether `proposal` is qualified.
  */
 export function isProposalQualified(proposal: Proposal): boolean {
-    return isTokenSetQualified(proposal.want)
-        && isTokenSetQualified(proposal.give);
+    return isTokenExprQualified(proposal.want)
+        && isTokenExprQualified(proposal.give);
 }

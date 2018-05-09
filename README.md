@@ -1,11 +1,18 @@
 # Arrowhead Broker System (Quorum/JSON-RPC/WS)
 
 [Arrowhead][arrow] Broker System, useful for allowing IoT devices to use the
-[Quorum][quoru] distributed ledger as a _trading platform_, allowing them to buy
+[Quorum][quoru] distributed ledger as a _exchange network_, allowing them to buy
 and sell _tokens_ representing arbitrary value.
 
 This implementation communicates exclusively using [JSON-RPC 2.0][jsrpc]
 messages sent via [WebSocket][webso]s.
+
+The official documentation for the system is available in the form of the
+Arrowhead Broker [System Description][sysd] and [Service Description][sd]
+documents.
+
+[sysd]: https://forge.soa4d.org/plugins/scmgit/cgi-bin/gitweb.cgi?p=arrowhead-f/arrowhead-f.git;a=blob_plain;f=3_Core+Systems/2_Support+Core+Systems/11_Broker+system/Documentation/Arrowhead+SysD+Broker+JSON-RPC_WS.pdf;hb=HEAD
+[sd]: https://forge.soa4d.org/plugins/scmgit/cgi-bin/gitweb.cgi?p=arrowhead-f/arrowhead-f.git;a=blob_plain;f=3_Core+Systems/2_Support+Core+Systems/11_Broker+system/Documentation/Arrowhead+SD+Broker.pdf;hb=HEAD
 
 _This repository currently contains a work-in-progress._
 

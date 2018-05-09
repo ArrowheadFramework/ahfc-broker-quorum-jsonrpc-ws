@@ -26,9 +26,6 @@ export class Broker {
         this.router.addServer(this.server);
         {
             const service = new impl.BrokerAccounting();
-            this.router.addMethod("BrokerAccounting.getAgentId", () => {
-                return service.getAgentId();
-            });
             this.router.addMethod("BrokerAccounting.getExchanges", (query) => {
                 return service.getExchanges(query);
             });
@@ -52,6 +49,24 @@ export class Broker {
             });
             this.router.addMethod("Brokering.abort", (id, acceptor) => {
                 return service.abort(id, acceptor);
+            });
+        }
+        {
+            const service = new impl.BrokerSession();
+            this.router.addMethod("BrokeringSession.getAgentKey", () => {
+                return service.getAgentKey();
+            });
+            this.router.addMethod("BrokeringSession.getCallback", () => {
+                return service.getCallback();
+            });
+            this.router.addMethod("BrokeringSession.getProposalFilter", () => {
+                return service.getProposalFilter();
+            });
+            this.router.addMethod("BrokeringSession.setCallback", (callback) => {
+                return service.setCallback(callback);
+            });
+            this.router.addMethod("BrokeringSession.setProposalFilter", (filter) => {
+                return service.setProposalFilter(filter);
             });
         }
     }

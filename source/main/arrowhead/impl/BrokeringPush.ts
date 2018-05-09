@@ -43,4 +43,12 @@ export class BrokeringPush implements service.BrokeringPush {
     public abort(id: string): Promise<void> {
         return this.socket.call("BrokeringPush.abort", id);
     }
+
+    public finalized(id: string): Promise<void> {
+        return this.socket.call("BrokeringPush.finalized", id);
+    }
+
+    public error(error: model.ProposalError): Promise<void> {
+        return this.socket.call("BrokeringPush.error", error);
+    }
 }
