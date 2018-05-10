@@ -86,7 +86,7 @@ export interface Suite {
     /**
      * Function called after suite units.
      *
-     * The function is provided with any values returned by `before`, if set.
+     * The function is provided with any values returned by `setup`, if set.
      */
     teardown?: (...extras: any[]) => PromiseLike<void> | void;
 

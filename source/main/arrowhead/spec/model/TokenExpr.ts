@@ -55,7 +55,7 @@ export function isToken(expr: TokenExpr): expr is Token {
  * @returns Whether given `TokenExpr` is of type `TokenNOT`.
  */
 export function isTokenNOT(expr: TokenExpr): expr is TokenNOT {
-    return expr.kind === "_not";
+    return expr.kind === "__not";
 }
 
 /**
@@ -65,7 +65,7 @@ export function isTokenNOT(expr: TokenExpr): expr is TokenNOT {
  * @returns Whether given `TokenExpr` is of type `TokenAND`.
  */
 export function isTokenAND(expr: TokenExpr): expr is TokenAND {
-    return expr.kind === "_and";
+    return expr.kind === "__and";
 }
 
 /**
@@ -75,7 +75,7 @@ export function isTokenAND(expr: TokenExpr): expr is TokenAND {
  * @returns Whether given `TokenExpr` is of type `TokenIOR`.
  */
 export function isTokenIOR(expr: TokenExpr): expr is TokenIOR {
-    return expr.kind === "_ior";
+    return expr.kind === "__ior";
 }
 
 /**
@@ -85,17 +85,7 @@ export function isTokenIOR(expr: TokenExpr): expr is TokenIOR {
  * @returns Whether given `TokenExpr` is of type `TokenXOR`.
  */
 export function isTokenXOR(expr: TokenExpr): expr is TokenXOR {
-    return expr.kind === "_xor";
-}
-
-/**
- * Checks whether given `expr` represent a _valid_ `Token` expression.
- *
- * @param expr Checked `TokenExpr`.
- * @returns Whether given `TokenExpr` is valid.
- */
-export function isTokenExprValid(expr: TokenExpr): boolean {
-    return true; // TODO (see https://github.com/cemulate/SAT.js)
+    return expr.kind === "__xor";
 }
 
 /**
@@ -112,4 +102,31 @@ export function isTokenExprQualified(expr: TokenExpr): boolean {
         return expr.items.every(t => isTokenExprQualified(t));
     }
     return false;
+}
+
+/**
+ * Checks whether given `expr` represent a _valid_ `Token` expression.
+ *
+ * @param expr Checked `TokenExpr`.
+ * @returns Whether given `TokenExpr` is valid.
+ */
+export function isTokenExprSatisfiable(expr: TokenExpr): boolean {
+    const tokens: Token[] = [];
+
+    
+    return true; // TODO (see https://github.com/cemulate/SAT.js)
+/*
+    function normalize(expr: TokenExpr) {
+        if (isToken(expr)) {
+            tokens.push(expr);
+            return;
+        }
+        if (isTokenNOT(expr)) {
+            findTokens(expr.item);
+            return;
+        }
+        for (const item of expr.items) {
+            findTokens(item);
+        }
+    }*/
 }

@@ -13,10 +13,10 @@ export interface Token {
     kind: string,
 
     /**
-     * A map of properties distinguishing this entity from other of the same
-     * `kind`.
+     * An arbitrary data structure distinguishing the entity from other of the
+     * same `kind`.
      */
-    properties?: { [property: string]: string },
+    data?: any,
 }
 
 /**

@@ -1,4 +1,4 @@
-import { isTokenExprValid, isTokenExprQualified, TokenExpr } from ".";
+import { isTokenExprSatisfiable, isTokenExprQualified, TokenExpr } from ".";
 
 /**
  * A `Token` exchange proposal.
@@ -34,23 +34,12 @@ export interface Proposal {
  * @returns Whether `proposal` is acceptable.
  */
 export function isProposalAcceptable(proposal: Proposal, fudgeInMs = 300) {
-    if (!isProposalQualified(proposal) || !isProposalValid(proposal)) {
+    if (!isProposalQualified(proposal) || !isProposalSatisfiable(proposal)) {
         return false;
     }
     const now = Date.now();
     return now >= (proposal.baseline.getTime() - fudgeInMs)
         && now < (proposal.deadline.getTime() + fudgeInMs);
-}
-
-/**
- * Checks whether given `Proposal` is valid.
- * 
- * @param proposal Checked `Proposal`
- * @returns Whether `proposal` is valid.
- */
-export function isProposalValid(proposal: Proposal): boolean {
-    return isTokenExprValid(proposal.want)
-        && isTokenExprValid(proposal.give);
 }
 
 /**
@@ -62,4 +51,15 @@ export function isProposalValid(proposal: Proposal): boolean {
 export function isProposalQualified(proposal: Proposal): boolean {
     return isTokenExprQualified(proposal.want)
         && isTokenExprQualified(proposal.give);
+}
+
+/**
+ * Checks whether given `Proposal` is a satisfiable Boolean expression.
+ *
+ * @param proposal Checked `Proposal`
+ * @returns Whether `proposal` is valid.
+ */
+export function isProposalSatisfiable(proposal: Proposal): boolean {
+    return isTokenExprSatisfiable(proposal.want)
+        && isTokenExprSatisfiable(proposal.give);
 }
