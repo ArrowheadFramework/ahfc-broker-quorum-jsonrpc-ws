@@ -11,29 +11,29 @@ export class TestTokenExpr implements unit.Suite {
                 const pairs = [
                     // Token.
                     [1, t("A")],
-                    [1, t("A", "1")],
+                    [1, t("A1")],
 
                     // TokenAND.
                     [1, and(t("A"))],
-                    [1, and(t("A", "1"))],
-                    [1, and(t("A", "1"), t("A"))],
-                    [1, and(t("A", "1"), t("A", "1"))],
-                    [0, and(t("A", "1"), not(t("A", "1")))],                    
+                    [1, and(t("A1"))],
+                    [1, and(t("A1"), t("A"))],
+                    [1, and(t("A1"), t("A1"))],
+                    [0, and(t("A1"), not(t("A1")))],                    
 
                     // TokenIOR.
-                    [1, ior(t("A"))],
-                    [1, ior(t("A"), t("A"))],
-                    [1, ior(t("A"), t("B"))],
-                    [1, and(ior(t("A"), t("B")), not(t("B")))],
-                    [1, and(ior(t("A"), t("B"), t("C")), t("A"), t("B"))],
-                    [0, and(ior(t("A"), t("B")), not(and(t("A"), t("B"))))],                                        
+                    [1, ior(t("A1"))],
+                    [1, ior(t("A1"), t("A1"))],
+                    [1, ior(t("A1"), t("B1"))],
+                    [1, and(ior(t("A1"), t("B1")), not(t("B1")))],
+                    [1, and(ior(t("A1"), t("B1"), t("C1")), t("A1"), t("B1"))],
+                    [0, and(ior(t("A1"), t("B1")), not(and(t("A1"), t("B1"))))],                                        
 
                     // TokenXOR.
-                    [1, xor(t("A"))],
-                    [1, xor(t("A"), t("B"))],
-                    [1, and(xor(t("A"), t("B")), not(t("B")))],
-                    [0, and(xor(t("A"), t("B"), t("C")), t("A"), t("B"))],
-                    [0, and(xor(t("A"), t("B")), not(t("A")), not(t("B")))],
+                    [1, xor(t("A1"))],
+                    [1, xor(t("A1"), t("B1"))],
+                    [1, and(xor(t("A1"), t("B1")), not(t("B1")))],
+                    [0, and(xor(t("A1"), t("B1"), t("C1")), t("A1"), t("B1"))],
+                    [0, and(xor(t("A1"), t("B1")), not(t("A1")), not(t("B1")))],
                 ];
 
                 for (const pair of pairs) {
@@ -52,8 +52,8 @@ export class TestTokenExpr implements unit.Suite {
     ];
 }
 
-function t(kind: string, id?: string): model.Token {
-    return { id, kind };
+function t(kindId: string): model.Token {
+    return { id: kindId[1] || undefined, kind: kindId[0] };
 }
 
 function not(expr: model.TokenExpr): model.TokenNOT {

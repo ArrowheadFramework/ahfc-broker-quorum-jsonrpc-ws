@@ -105,28 +105,53 @@ export function isTokenExprQualified(expr: TokenExpr): boolean {
 }
 
 /**
- * Checks whether given `expr` represent a _valid_ `Token` expression.
+ * Checks whether given `expr` represent a _satisfiable_ `Token` expression.
  *
  * @param expr Checked `TokenExpr`.
- * @returns Whether given `TokenExpr` is valid.
+ * @returns Whether given `TokenExpr` is satisfiable.
  */
 export function isTokenExprSatisfiable(expr: TokenExpr): boolean {
-    const tokens: Token[] = [];
+    const [n, clauses] = intoCNF(expr);
+    return solveCNF(n, clauses);
 
+    function intoCNF(expr) {
+        return [1, [[1]]]; // TODO.
+    }
+
+    function solveCNF(n, clauses) {
+        if (n < 1) {
+            return true;
+        }
+        return branch(new Array(n), 0, clauses);
     
-    return true; // TODO (see https://github.com/cemulate/SAT.js)
-/*
-    function normalize(expr: TokenExpr) {
-        if (isToken(expr)) {
-            tokens.push(expr);
-            return;
+        function branch(variables, offset, clauses) {
+            if (variables.length <= offset) {
+                return true;
+            }
+            variables[offset] = true;
+            if (evaluate(variables, offset + 1, clauses)) {
+                return true;
+            }
+            variables[offset] = false;
+            return evaluate(variables, offset + 1, clauses);
         }
-        if (isTokenNOT(expr)) {
-            findTokens(expr.item);
-            return;
+    
+        function evaluate(variables, offset, clauses) {
+            outer: for (const clause of clauses) {
+                for (const literal of clause) {
+                    if (isTrueOrUnset(variables, offset, literal)) {
+                        continue outer;
+                    }
+                }
+                return false;
+            }
+            return branch(variables, offset, clauses);
         }
-        for (const item of expr.items) {
-            findTokens(item);
+    
+        function isTrueOrUnset(variables, offset, literal) {
+            return literal > offset
+                || literal > 0 && variables[literal - 1]
+                || literal < 0 && !variables[-literal - 1];
         }
-    }*/
+    }
 }
