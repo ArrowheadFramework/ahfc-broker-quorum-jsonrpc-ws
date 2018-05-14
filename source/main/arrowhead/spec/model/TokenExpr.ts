@@ -155,10 +155,10 @@ export function isTokenExprSatisfiable(expr: TokenExpr): boolean {
     // PEF into Negation Normal Form (NNF).
     //
     // Removes NOT expressions by transforming AND and IOR expressions and
-    // negating relevant NOT literals. Substitutes XOR expressions with
-    // equivalent such that use only IOR, NOT and AND constructs. Finally,
-    // replaces the expression identifiers with "&" (AND) and "|" (OR), for the
-    // sake of brevity.
+    // negating relevant literals. Substitutes XOR expressions with equivalent
+    // such that use only IOR, NOT and AND constructs. Finally, replaces the
+    // expression identifiers with "&" (AND) and "|" (OR), for the sake of
+    // brevity.
     //
     // See: https://en.wikipedia.org/wiki/Conjunctive_normal_form
     function intoNNF(pef, neg = false) {
@@ -272,7 +272,7 @@ export function isTokenExprSatisfiable(expr: TokenExpr): boolean {
     // Solve CNF clauses, which refer to n different variables.
     //
     // Performs a recursive binary tree search of all variable combinations.
-    // Can be improved in many ways for improved performance.
+    // Could be improved in many ways for improved performance.
     function solveCNF(clauses, n) {
         if (n < 1) {
             return true;
