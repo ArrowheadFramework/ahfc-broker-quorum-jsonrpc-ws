@@ -4,7 +4,7 @@ import { isTokenQualified, Token } from ".";
  * A logical expression of `Tokens`, useful for expressing conditional `Token`
  * interest.
  */
-export type TokenExpr = Token | TokenNOT | TokenAND | TokenIOR | TokenXOR;
+export type TokenExpr = Token | TokenNOT | TokenAND | TokenOR;
 
 /**
  * The logical inverse of its contents.
@@ -25,16 +25,8 @@ export interface TokenAND {
 /**
  * A set of alternatives where _at least one_ `TokenExpr` must be chosen.
  */
-export interface TokenIOR {
-    kind: "__ior",
-    items: TokenExpr[];
-}
-
-/**
- * A set of alternatives where _exactly one_ `TokenExpr` must be chosen.
- */
-export interface TokenXOR {
-    kind: "__xor",
+export interface TokenOR {
+    kind: "__or",
     items: TokenExpr[];
 }
 
@@ -74,18 +66,8 @@ export function isTokenAND(expr: TokenExpr): expr is TokenAND {
  * @param expr Checked `TokenExpr`.
  * @returns Whether given `TokenExpr` is of type `TokenIOR`.
  */
-export function isTokenIOR(expr: TokenExpr): expr is TokenIOR {
-    return expr.kind === "__ior";
-}
-
-/**
- * Checks whether given `expr` is a `Token` XOR expression.
- *
- * @param expr Checked `TokenExpr`.
- * @returns Whether given `TokenExpr` is of type `TokenXOR`.
- */
-export function isTokenXOR(expr: TokenExpr): expr is TokenXOR {
-    return expr.kind === "__xor";
+export function isTokenIOR(expr: TokenExpr): expr is TokenOR {
+    return expr.kind === "__or";
 }
 
 /**
@@ -173,14 +155,9 @@ export function isTokenExprSatisfiable(expr: TokenExpr): boolean {
                 return [neg ? "|" : "&", pef[1]
                     .map(item => intoNNF(item, neg))];
 
-            case "__ior":
+            case "__or":
                 return [neg ? "&" : "|", pef[1]
                     .map(item => intoNNF(item, neg))];
-
-            case "__xor":
-                return intoNNF(["__and", [
-                    ["__ior", pef[1]],
-                    ["__not", ["__and", pef[1]]]]], neg);
 
             default:
                 throw new Error("Unreachable!");

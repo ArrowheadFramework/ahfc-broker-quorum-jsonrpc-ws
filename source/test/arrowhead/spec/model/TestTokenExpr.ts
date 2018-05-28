@@ -34,14 +34,7 @@ export class TestTokenExpr implements unit.Suite {
                     [1, and(ior(t("A1"), t("B1")), not(t("B1")))],
                     [1, and(ior(t("A1"), t("B1"), t("C1")), t("A1"), t("B1"))],
                     [1, and(ior(t("A1"), t("B1")), not(and(t("A1"), t("B1"))))],
-
-                    // TokenXOR.
-                    [1, xor()],
-                    [0, xor(t("A1"))],
-                    [1, xor(t("A1"), t("B1"))],
-                    [1, and(xor(t("A1"), t("B1")), not(t("B1")))],
-                    [1, and(xor(t("A1"), t("B1"), t("C1")), t("A1"), t("B1"))],
-                    [0, and(xor(t("A1"), t("B1")), not(t("A1")), not(t("B1")))],
+                    [0, and(ior(t("A1"), t("B1")), not(t("A1")), not(t("B1")))],
                 ];
 
                 for (const pair of pairs) {
@@ -72,10 +65,6 @@ function and(...exprs: model.TokenExpr[]): model.TokenAND {
     return { kind: "__and", items: exprs };
 }
 
-function ior(...exprs: model.TokenExpr[]): model.TokenIOR {
-    return { kind: "__ior", items: exprs };
-}
-
-function xor(...exprs: model.TokenExpr[]): model.TokenXOR {
-    return { kind: "__xor", items: exprs };
+function ior(...exprs: model.TokenExpr[]): model.TokenOR {
+    return { kind: "__or", items: exprs };
 }
