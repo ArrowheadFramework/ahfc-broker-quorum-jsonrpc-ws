@@ -26,15 +26,15 @@ export class TestTokenExpr implements unit.Suite {
                     [1, and(t("A"), not(t("A")))],
                     [1, and(t("A1"), not(not(t("A1"))))],
 
-                    // TokenIOR.
-                    [1, ior()],
-                    [1, ior(t("A1"))],
-                    [1, ior(t("A1"), t("A1"))],
-                    [1, ior(t("A1"), t("B1"))],
-                    [1, and(ior(t("A1"), t("B1")), not(t("B1")))],
-                    [1, and(ior(t("A1"), t("B1"), t("C1")), t("A1"), t("B1"))],
-                    [1, and(ior(t("A1"), t("B1")), not(and(t("A1"), t("B1"))))],
-                    [0, and(ior(t("A1"), t("B1")), not(t("A1")), not(t("B1")))],
+                    // TokenOR.
+                    [1, or()],
+                    [1, or(t("A1"))],
+                    [1, or(t("A1"), t("A1"))],
+                    [1, or(t("A1"), t("B1"))],
+                    [1, and(or(t("A1"), t("B1")), not(t("B1")))],
+                    [1, and(or(t("A1"), t("B1"), t("C1")), t("A1"), t("B1"))],
+                    [1, and(or(t("A1"), t("B1")), not(and(t("A1"), t("B1"))))],
+                    [0, and(or(t("A1"), t("B1")), not(t("A1")), not(t("B1")))],
                 ];
 
                 for (const pair of pairs) {
@@ -65,6 +65,6 @@ function and(...exprs: model.TokenExpr[]): model.TokenAND {
     return { kind: "__and", items: exprs };
 }
 
-function ior(...exprs: model.TokenExpr[]): model.TokenOR {
+function or(...exprs: model.TokenExpr[]): model.TokenOR {
     return { kind: "__or", items: exprs };
 }
