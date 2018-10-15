@@ -2,9 +2,9 @@ import * as model from "../spec/model";
 import * as service from "../spec/service";
 
 /**
- * Implementation of the `BrokerAccounting` Arrowhead service.
+ * Implementation of the `BrokerStore` Arrowhead service.
  */
-export class BrokerAccounting implements service.BrokerAccounting {
+export class BrokerStore implements service.BrokerStore {
     getExchanges(query: model.ExchangeQuery): Promise<model.ExchangeResultSet> {
         throw new Error("Method not implemented.");
     }

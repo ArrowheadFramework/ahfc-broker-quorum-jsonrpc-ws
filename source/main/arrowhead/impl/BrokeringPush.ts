@@ -28,27 +28,19 @@ export class BrokeringPush implements service.BrokeringPush {
         return this.socket.call("BrokeringPush.propose", id, proposerKey, proposal);
     }
 
-    public accept(id: string, acceptorKey: Buffer, deadline: Date): Promise<void> {
-        return this.socket.call("BrokeringPush.accept", id, acceptorKey, deadline);
+    public accept(id: string): Promise<void> {
+        return this.socket.call("BrokeringPush.accept", id);
     }
 
-    public reject(id: string, rejectorKey: Buffer): Promise<void> {
-        return this.socket.call("BrokeringPush.reject", id, rejectorKey);
-    }
-
-    public confirm(id: string): Promise<void> {
-        return this.socket.call("BrokeringPush.confirm", id);
-    }
-
-    public abort(id: string): Promise<void> {
-        return this.socket.call("BrokeringPush.abort", id);
+    public reject(id: string): Promise<void> {
+        return this.socket.call("BrokeringPush.reject", id);
     }
 
     public finalized(id: string): Promise<void> {
         return this.socket.call("BrokeringPush.finalized", id);
     }
 
-    public error(error: model.ProposalError): Promise<void> {
-        return this.socket.call("BrokeringPush.error", error);
+    public failed(error: model.ProposalError): Promise<void> {
+        return this.socket.call("BrokeringPush.failed", error);
     }
 }

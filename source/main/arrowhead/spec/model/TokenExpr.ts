@@ -4,15 +4,7 @@ import { isTokenQualified, Token } from ".";
  * A logical expression of `Tokens`, useful for expressing conditional `Token`
  * interest.
  */
-export type TokenExpr = Token | TokenNOT | TokenAND | TokenOR;
-
-/**
- * The logical inverse of its contents.
- */
-export interface TokenNOT {
-    kind: "__not",
-    item: TokenExpr,
-}
+export type TokenExpr = Token | TokenAND | TokenOR | TokenNOT;
 
 /**
  * A set of alternatives where _all_ `TokenExprs` must be chosen.
@@ -31,6 +23,14 @@ export interface TokenOR {
 }
 
 /**
+ * The logical inverse of its contents.
+ */
+export interface TokenNOT {
+    kind: "__not",
+    item: TokenExpr,
+}
+
+/**
  * Checks whether given `expr` represent a single `Token`.
  * 
  * @param expr Checked `TokenExpr`.
@@ -38,16 +38,6 @@ export interface TokenOR {
  */
 export function isToken(expr: TokenExpr): expr is Token {
     return !expr.kind.startsWith("__");
-}
-
-/**
- * Checks whether given `expr` is a `Token` NOT expression.
- * 
- * @param expr Checked `TokenExpr`.
- * @returns Whether given `TokenExpr` is of type `TokenNOT`.
- */
-export function isTokenNOT(expr: TokenExpr): expr is TokenNOT {
-    return expr.kind === "__not";
 }
 
 /**
@@ -68,6 +58,16 @@ export function isTokenAND(expr: TokenExpr): expr is TokenAND {
  */
 export function isTokenIOR(expr: TokenExpr): expr is TokenOR {
     return expr.kind === "__or";
+}
+
+/**
+ * Checks whether given `expr` is a `Token` NOT expression.
+ * 
+ * @param expr Checked `TokenExpr`.
+ * @returns Whether given `TokenExpr` is of type `TokenNOT`.
+ */
+export function isTokenNOT(expr: TokenExpr): expr is TokenNOT {
+    return expr.kind === "__not";
 }
 
 /**
@@ -137,10 +137,8 @@ export function isTokenExprSatisfiable(expr: TokenExpr): boolean {
     // PEF into Negation Normal Form (NNF).
     //
     // Removes NOT expressions by transforming AND and IOR expressions and
-    // negating relevant literals. Substitutes XOR expressions with equivalent
-    // such that use only IOR, NOT and AND constructs. Finally, replaces the
-    // expression identifiers with "&" (AND) and "|" (OR), for the sake of
-    // brevity.
+    // negating relevant literals. Finally, it replaces the expression
+    // identifiers with "&" (AND) and "|" (OR), for the sake of brevity.
     //
     // See: https://en.wikipedia.org/wiki/Conjunctive_normal_form
     function intoNNF(pef, neg = false) {

@@ -11,14 +11,14 @@ export interface ExchangeQuery extends Query {
     ids?: string[];
 
     /**
-     * Requests only `Exchange`s completed prior to given `Date`.
-     */
-    before?: Date;
-
-    /**
      * Requests only `Exchange`s completed after given `Date`.
      */
-    after?: Date;
+    createdAfter?: Date;
+
+    /**
+     * Requests only `Exchange`s completed prior to given `Date`.
+     */
+    createdBefore?: Date;
 
     /**
      * Requests only `Exchange`s where `senderId` matches any one given.

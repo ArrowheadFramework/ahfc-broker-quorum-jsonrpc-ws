@@ -1,10 +1,10 @@
 import * as model from "../model";
 
 /**
- * The BrokerAccounting service, accounts for past exchange events as well as
+ * The `BrokerStore` service, accounts for past exchange events as well as
  * the identities of any exchange parties.
  */
-export interface BrokerAccounting {
+export interface BrokerStore {
 
     /**
      * Queries for `Exchange` objects, representing finalized `Token` exchanges.

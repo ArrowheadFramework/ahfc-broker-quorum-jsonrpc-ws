@@ -13,7 +13,7 @@ export * from "./PartyQuery";
 export * from "./PartyResultSet";
 export * from "./Proposal";
 export * from "./ProposalError";
-export * from "./ProposalFilter";
+export * from "./ProposalErrorKind";
 export * from "./Query";
 export * from "./ResultSet";
 export * from "./Token";
